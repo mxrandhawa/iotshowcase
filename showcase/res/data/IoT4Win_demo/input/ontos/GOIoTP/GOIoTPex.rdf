@@ -1,0 +1,1788 @@
+@prefix : <http://inter-iot.eu/GOIoTPex#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix ogc: <http://www.opengis.net/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix iiot: <http://inter-iot.eu/GOIoTP#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix iiotex: <http://inter-iot.eu/GOIoTPex#> .
+@prefix oldssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix geosparqlf: <http://www.opengis.net/def/function/geosparql/> .
+@prefix geosparqlr: <http://www.opengis.net/def/rule/geosparql/> .
+@prefix sweet_oper: <http://sweet.jpl.nasa.gov/2.3/reprMathOperation.owl#> .
+@prefix sweet_repr: <http://sweet.jpl.nasa.gov/2.3/repr.owl#> .
+@prefix sweet_mrela: <http://sweet.jpl.nasa.gov/2.3/relaMath.owl#> .
+@prefix sweet_units: <http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#> .
+@prefix sweet_screla: <http://sweet.jpl.nasa.gov/2.3/relaSci.owl#> .
+@base <http://inter-iot.eu/GOIoTPex#> .
+
+<http://inter-iot.eu/GOIoTPex#> rdf:type owl:Ontology ;
+                                 owl:imports iiot: ;
+                                 dcterms:modified "2017-12-12" ;
+                                 dcterms:issued "2017-05-10"^^xsd:date ;
+                                 rdfs:comment """INTER-IoT. Interoperability of IoT Platforms.
+ 
+INTER-IoT is a R&D project which has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 687283.
+
+Copyright (C) 2016-2018, by (Author's company of this file):
+  - Systems Research Institute Polish Academy of Sciences
+  
+ For more information, contact:
+  - author pawel.szmeja@ibspan.waw.pl
+  - Project coordinator:  coordinator@inter-iot.eu"""@en ;
+                                 dc:description """Generic Ontology for IoT Platforms Extended (GOIoTPex) is an extension, and a vertical module that imports the GOIoTP ontology, both developed as part of the INTER-IoT project. GOIoTPex extends and \"fills\" select stub classes from GOIoTP with more specific classes, properties and individuals.
+
+The ontology extends the following GOIoTP modules:
+    Platform - software platforms that host IoT devices
+    Units & measurements - systems of units and values
+    User - human or software that uses, or is a client of IoT entities
+    Service - web services offered by software
+
+For more information, please refer to INTER-IoT deliverables (specifically D4.2) and GOIoTP documentation available online."""@en ;
+                                 rdfs:comment "This ontology extends GOIoTP with terms required in the concrete instantiation in the INTER-IoT project." ,
+                                              "Current modules include: Platform, Units and Measurements, User"@en ;
+                                 vann:preferredNamespaceUri "http://inter-iot.eu/GOIoTPex#" ;
+                                 dc:creator [ rdf:type foaf:Person ;
+                                              foaf:name "Paweł Szmeja"
+                                            ] ;
+                                 vann:preferredNamespacePrefix "iiotex" ;
+                                 vs:term_status "stable"@en ;
+                                 owl:versionInfo 0.9 ;
+                                 dc:title "Generic Ontology for IoT Platforms - INTER-IoT instantiation and extension"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasOperand
+sweet_mrela:hasOperand rdf:type owl:AnnotationProperty .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasScalingNumber
+sweet_mrela:hasScalingNumber rdf:type owl:AnnotationProperty .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasShiftingNumber
+sweet_mrela:hasShiftingNumber rdf:type owl:AnnotationProperty .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaMath.owl#toThePower
+sweet_mrela:toThePower rdf:type owl:AnnotationProperty .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasBaseUnit
+sweet_screla:hasBaseUnit rdf:type owl:AnnotationProperty .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasNumericValue
+sweet_screla:hasNumericValue rdf:type owl:AnnotationProperty .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasPrefix
+sweet_screla:hasPrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasSymbol
+sweet_screla:hasSymbol rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://inter-iot.eu/GOIoTPex#hasAuthenticationData
+iiotex:hasAuthenticationData rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdfs:range iiotex:AuthenticationData .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasScale
+sweet_mrela:hasScale rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://inter-iot.eu/GOIoTPex#hasLocalID
+iiotex:hasLocalID rdf:type owl:DatatypeProperty ;
+                  rdfs:comment """A value used to identify an entity locally, i.e. within a scope of an IoT artifact, e.g. a platform. Whether this identifier is unique, and what is its format depends on the IoT artifact that manages the identifier system, to which this loacl ID belongs.
+
+The local ID should not be used to uniquely identify entities in an IoT ecosystem that manages multiple platforms, each with its own, independent, ID system."""@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://inter-iot.eu/GOIoTP#IoTDevice
+iiot:IoTDevice rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty iiotex:hasLocalID ;
+                                 owl:someValuesFrom rdfs:Literal
+                               ] .
+
+
+###  http://inter-iot.eu/GOIoTP#Middleware
+iiot:Middleware rdf:type owl:Class .
+
+
+###  http://inter-iot.eu/GOIoTP#User
+iiot:User rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty iiotex:hasAuthenticationData ;
+                            owl:someValuesFrom iiotex:AuthenticationData
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty iiotex:hasLocalID ;
+                            owl:someValuesFrom rdfs:Literal
+                          ] .
+
+
+###  http://inter-iot.eu/GOIoTPex#AbsorbedDoseRate
+iiotex:AbsorbedDoseRate rdf:type owl:Class ;
+                        rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Acceleration
+iiotex:Acceleration rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ActivityOfRadionuclide
+iiotex:ActivityOfRadionuclide rdf:type owl:Class ;
+                              rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#AmountOfSubstance
+iiotex:AmountOfSubstance rdf:type owl:Class ;
+                         rdfs:subClassOf iiotex:SIBaseMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#AmountOfSubstanceConcentration
+iiotex:AmountOfSubstanceConcentration rdf:type owl:Class ;
+                                      rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#AngularAcceleration
+iiotex:AngularAcceleration rdf:type owl:Class ;
+                           rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#AngularVelocity
+iiotex:AngularVelocity rdf:type owl:Class ;
+                       rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Area
+iiotex:Area rdf:type owl:Class ;
+            rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#AuthenticationData
+iiotex:AuthenticationData rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> .
+
+
+###  http://inter-iot.eu/GOIoTPex#Azure
+iiotex:Azure rdf:type owl:Class ;
+             rdfs:subClassOf iiot:Middleware .
+
+
+###  http://inter-iot.eu/GOIoTPex#CEPWebService
+iiotex:CEPWebService rdf:type owl:Class ;
+                     rdfs:subClassOf iiotex:WebService ;
+                     rdfs:comment "Complex Event Processing Service."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#Capacitance
+iiotex:Capacitance rdf:type owl:Class ;
+                   rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#CatalyticActivity
+iiotex:CatalyticActivity rdf:type owl:Class ;
+                         rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#CatalyticActivityConcentration
+iiotex:CatalyticActivityConcentration rdf:type owl:Class ;
+                                      rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#CurrentDensity
+iiotex:CurrentDensity rdf:type owl:Class ;
+                      rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Depth
+iiotex:Depth rdf:type owl:Class ;
+             rdfs:subClassOf iiotex:Distance .
+
+
+###  http://inter-iot.eu/GOIoTPex#Distance
+iiotex:Distance rdf:type owl:Class ;
+                rdfs:subClassOf iiotex:SIBaseMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#DoseEquivalent
+iiotex:DoseEquivalent rdf:type owl:Class ;
+                      rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#DynamicViscosity
+iiotex:DynamicViscosity rdf:type owl:Class ;
+                        rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#EclipseOM2M
+iiotex:EclipseOM2M rdf:type owl:Class ;
+                   rdfs:subClassOf iiot:Middleware .
+
+
+###  http://inter-iot.eu/GOIoTPex#ElectricCharge
+iiotex:ElectricCharge rdf:type owl:Class ;
+                      rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ElectricChargeDensity
+iiotex:ElectricChargeDensity rdf:type owl:Class ;
+                             rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ElectricCurrent
+iiotex:ElectricCurrent rdf:type owl:Class ;
+                       rdfs:subClassOf iiotex:SIBaseMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ElectricFieldStrength
+iiotex:ElectricFieldStrength rdf:type owl:Class ;
+                             rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ElectricFluxDensity
+iiotex:ElectricFluxDensity rdf:type owl:Class ;
+                           rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ElectricPotentialDifference
+iiotex:ElectricPotentialDifference rdf:type owl:Class ;
+                                   rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ElectricResistance
+iiotex:ElectricResistance rdf:type owl:Class ;
+                          rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Electricconductance
+iiotex:Electricconductance rdf:type owl:Class ;
+                           rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Energy
+iiotex:Energy rdf:type owl:Class ;
+              rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#EnergyDensity
+iiotex:EnergyDensity rdf:type owl:Class ;
+                     rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#FIWARE
+iiotex:FIWARE rdf:type owl:Class ;
+              rdfs:subClassOf iiot:Middleware .
+
+
+###  http://inter-iot.eu/GOIoTPex#Force
+iiotex:Force rdf:type owl:Class ;
+             rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Frequency
+iiotex:Frequency rdf:type owl:Class ;
+                 rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#HeatCapacity
+iiotex:HeatCapacity rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#HeatFluxDensity
+iiotex:HeatFluxDensity rdf:type owl:Class ;
+                       rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Height
+iiotex:Height rdf:type owl:Class ;
+              rdfs:subClassOf iiotex:Distance .
+
+
+###  http://inter-iot.eu/GOIoTPex#Illuminance
+iiotex:Illuminance rdf:type owl:Class ;
+                   rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Inductance
+iiotex:Inductance rdf:type owl:Class ;
+                  rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#JSON
+iiotex:JSON rdf:type owl:Class ;
+            rdfs:subClassOf iiot:DataFormat .
+
+
+###  http://inter-iot.eu/GOIoTPex#JSON-LD
+iiotex:JSON-LD rdf:type owl:Class ;
+               rdfs:subClassOf iiotex:JSON .
+
+
+###  http://inter-iot.eu/GOIoTPex#Kerma
+iiotex:Kerma rdf:type owl:Class ;
+             rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Length
+iiotex:Length rdf:type owl:Class ;
+              rdfs:subClassOf iiotex:Distance .
+
+
+###  http://inter-iot.eu/GOIoTPex#Luminance
+iiotex:Luminance rdf:type owl:Class ;
+                 rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#LuminousFlux
+iiotex:LuminousFlux rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#LuminousIntensity
+iiotex:LuminousIntensity rdf:type owl:Class ;
+                         rdfs:subClassOf iiotex:SIBaseMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MagneticFieldStrength
+iiotex:MagneticFieldStrength rdf:type owl:Class ;
+                             rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MagneticFlux
+iiotex:MagneticFlux rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MagneticFluxDensity
+iiotex:MagneticFluxDensity rdf:type owl:Class ;
+                           rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Mass
+iiotex:Mass rdf:type owl:Class ;
+            rdfs:subClassOf iiotex:SIBaseMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MassDensity
+iiotex:MassDensity rdf:type owl:Class ;
+                   rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MassFraction
+iiotex:MassFraction rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MolarEnergy
+iiotex:MolarEnergy rdf:type owl:Class ;
+                   rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MolarEntropy
+iiotex:MolarEntropy rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#MomentOfForce
+iiotex:MomentOfForce rdf:type owl:Class ;
+                     rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#OneM2M
+iiotex:OneM2M rdf:type owl:Class ;
+              rdfs:subClassOf iiot:Middleware .
+
+
+###  http://inter-iot.eu/GOIoTPex#OpenIoT
+iiotex:OpenIoT rdf:type owl:Class ;
+               rdfs:subClassOf iiot:Middleware .
+
+
+###  http://inter-iot.eu/GOIoTPex#Permeability
+iiotex:Permeability rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Permittivity
+iiotex:Permittivity rdf:type owl:Class ;
+                    rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#PlaneAngle
+iiotex:PlaneAngle rdf:type owl:Class ;
+                  rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Power
+iiotex:Power rdf:type owl:Class ;
+             rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Pressure
+iiotex:Pressure rdf:type owl:Class ;
+                rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#RDF
+iiotex:RDF rdf:type owl:Class ;
+           rdfs:subClassOf iiot:DataFormat .
+
+
+###  http://inter-iot.eu/GOIoTPex#REST
+iiotex:REST rdf:type owl:Class ;
+            rdfs:subClassOf iiot:ServiceInterface .
+
+
+###  http://inter-iot.eu/GOIoTPex#Radiance
+iiotex:Radiance rdf:type owl:Class ;
+                rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#RadiantIntensity
+iiotex:RadiantIntensity rdf:type owl:Class ;
+                        rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#RayExposure
+iiotex:RayExposure rdf:type owl:Class ;
+                   rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#SIBaseMK
+iiotex:SIBaseMK rdf:type owl:Class ;
+                rdfs:subClassOf iiot:MeasurementKind ;
+                rdfs:comment "Class of basic SI measurement kinds."@en ,
+                             "The SI is founded on seven SI base units for seven base quantities assumed to be mutually independent."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#SIDerivedMK
+iiotex:SIDerivedMK rdf:type owl:Class ;
+                   rdfs:subClassOf iiot:MeasurementKind ;
+                   rdfs:comment "Class of derived SI measurement kinds."@en ,
+                                "Quantities other than base, called derived quantities, are defined in terms of the seven base quantities via a system of quantity equations. The SI derived units for these derived quantities are obtained from these equations and the seven SI base units."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK
+iiotex:SIDerivedSpecialInclusiveMK rdf:type owl:Class ;
+                                   rdfs:subClassOf iiot:MeasurementKind ;
+                                   rdfs:comment "SI derived units whose names and symbols include SI derived units with special names and symbols."@en ,
+                                                "The special names and symbols of the 22 SI derived units with special names and symbols may themselves be included in the names and symbols of other SI derived units."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK
+iiotex:SIDerivedSpecialMK rdf:type owl:Class ;
+                          rdfs:subClassOf iiot:MeasurementKind ;
+                          rdfs:comment "For ease of understanding and convenience, 22 SI derived units have been given special names and symbols."@en ,
+                                       "SI derived units with special names and symbols."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#SOAP
+iiotex:SOAP rdf:type owl:Class ;
+            rdfs:subClassOf iiot:ServiceInterface .
+
+
+###  http://inter-iot.eu/GOIoTPex#SolidAngle
+iiotex:SolidAngle rdf:type owl:Class ;
+                  rdfs:subClassOf iiotex:SIDerivedSpecialMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#SpecificEnergy
+iiotex:SpecificEnergy rdf:type owl:Class ;
+                      rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#SpecificHeatCapacity
+iiotex:SpecificHeatCapacity rdf:type owl:Class ;
+                            rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#SpecificVolume
+iiotex:SpecificVolume rdf:type owl:Class ;
+                      rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#SurfaceTension
+iiotex:SurfaceTension rdf:type owl:Class ;
+                      rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Temperature
+iiotex:Temperature rdf:type owl:Class ;
+                   rdfs:subClassOf iiotex:SIBaseMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#ThermalConductivity
+iiotex:ThermalConductivity rdf:type owl:Class ;
+                           rdfs:subClassOf iiotex:SIDerivedSpecialInclusiveMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Time
+iiotex:Time rdf:type owl:Class ;
+            rdfs:subClassOf iiotex:SIBaseMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#UniversAAL
+iiotex:UniversAAL rdf:type owl:Class ;
+                  rdfs:subClassOf iiot:Middleware .
+
+
+###  http://inter-iot.eu/GOIoTPex#Velocity
+iiotex:Velocity rdf:type owl:Class ;
+                rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#Volume
+iiotex:Volume rdf:type owl:Class ;
+              rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#WSO2
+iiotex:WSO2 rdf:type owl:Class ;
+            rdfs:subClassOf iiot:Middleware .
+
+
+###  http://inter-iot.eu/GOIoTPex#WaveNumber
+iiotex:WaveNumber rdf:type owl:Class ;
+                  rdfs:subClassOf iiotex:SIDerivedMK .
+
+
+###  http://inter-iot.eu/GOIoTPex#WebService
+iiotex:WebService rdf:type owl:Class ;
+                  rdfs:subClassOf iiot:Service .
+
+
+###  http://inter-iot.eu/GOIoTPex#Width
+iiotex:Width rdf:type owl:Class ;
+             rdfs:subClassOf iiotex:Distance .
+
+
+###  http://inter-iot.eu/GOIoTPex#XML
+iiotex:XML rdf:type owl:Class ;
+           rdfs:subClassOf iiot:DataFormat .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/repr.owl#LogarithmicScale
+sweet_repr:LogarithmicScale rdf:type owl:Class .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/repr.owl#Measurement
+sweet_repr:Measurement rdf:type owl:Class .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprMathOperation.owl#Product
+sweet_oper:Product rdf:type owl:Class .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit
+sweet_units:BaseUnit rdf:type owl:Class ;
+                     rdfs:subClassOf sweet_units:Unit ;
+                     owl:disjointWith sweet_units:ComplexUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit
+sweet_units:ComplexUnit rdf:type owl:Class ;
+                        rdfs:subClassOf sweet_units:Unit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#LogarithmicUnit
+sweet_units:LogarithmicUnit rdf:type owl:Class ;
+                            rdfs:subClassOf sweet_units:Unit ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty sweet_mrela:hasScale ;
+                                              owl:allValuesFrom sweet_repr:LogarithmicScale
+                                            ] .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix
+sweet_units:Prefix rdf:type owl:Class ;
+                   rdfs:subClassOf sweet_repr:Measurement .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit
+sweet_units:Unit rdf:type owl:Class ;
+                 rdfs:subClassOf sweet_repr:Measurement .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct
+sweet_units:UnitDefinedByProduct rdf:type owl:Class ;
+                                 rdfs:subClassOf sweet_oper:Product ,
+                                                 sweet_units:ComplexUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower
+sweet_units:UnitDerivedByRaisingToPower rdf:type owl:Class ;
+                                        rdfs:subClassOf sweet_units:ComplexUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling
+sweet_units:UnitDerivedByScaling rdf:type owl:Class ;
+                                 rdfs:subClassOf sweet_units:ComplexUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByShifting
+sweet_units:UnitDerivedByShifting rdf:type owl:Class ;
+                                  rdfs:subClassOf sweet_units:ComplexUnit .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://inter-iot.eu/GOIoTPex#NGSIv1JSON
+iiotex:NGSIv1JSON rdf:type owl:NamedIndividual ,
+                           iiotex:JSON ;
+                  rdfs:comment "A Java Script Object Notation format compliant with FIWARE NGSI (Next Generation Service Interface) version 1."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#NGSIv2JSON
+iiotex:NGSIv2JSON rdf:type owl:NamedIndividual ,
+                           iiotex:JSON ;
+                  rdfs:comment "A Java Script Object Notation format compliant with FIWARE NGSI (Next Generation Service Interface) version 2."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#genericJSON
+iiotex:genericJSON rdf:type owl:NamedIndividual ,
+                            iiotex:JSON ;
+                   rdfs:comment "A Java Script Object Notation format."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#genericJSON-LD
+iiotex:genericJSON-LD rdf:type owl:NamedIndividual ,
+                               iiotex:JSON-LD ;
+                      rdfs:comment "A Java Script Object Notation for Linked Data format."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#genericRDF
+iiotex:genericRDF rdf:type owl:NamedIndividual ,
+                           iiotex:RDF ;
+                  rdfs:comment "A Resource Description Framework format."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#genericXML
+iiotex:genericXML rdf:type owl:NamedIndividual ,
+                           iiotex:XML ;
+                  rdfs:comment "An Extensible Markup Language format."@en .
+
+
+###  http://inter-iot.eu/GOIoTPex#iiotJSON
+iiotex:iiotJSON rdf:type owl:NamedIndividual ,
+                         iiotex:JSON-LD ;
+                rdfs:comment """A Java Script Object Notation for Linked Data format compliant with INTER-IoT JSON-LD definition.
+
+iiotJSON is used in INTER-MW and IPSM components of INTER-IoT."""@en .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FNU
+sweet_units:FNU rdf:type owl:NamedIndividual ,
+                         sweet_units:Unit ;
+                owl:sameAs sweet_units:FTU .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FTU
+sweet_units:FTU rdf:type owl:NamedIndividual ,
+                         sweet_units:Unit ;
+                owl:sameAs sweet_units:FormazinTurbidityUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FormazinTurbidityUnit
+sweet_units:FormazinTurbidityUnit rdf:type owl:NamedIndividual ,
+                                           sweet_units:Unit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#MHz
+sweet_units:MHz rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDerivedByScaling ;
+                owl:sameAs sweet_units:megahertz .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#MYA
+sweet_units:MYA rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDerivedByScaling ;
+                sweet_mrela:hasScalingNumber "1000.0"^^xsd:double ;
+                sweet_screla:hasBaseUnit sweet_units:year .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere
+sweet_units:ampere rdf:type owl:NamedIndividual ,
+                            sweet_units:BaseUnit ;
+                   sweet_screla:hasSymbol "a"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#amperePerMeter
+sweet_units:amperePerMeter rdf:type owl:NamedIndividual ,
+                                    sweet_units:UnitDefinedByProduct ;
+                           sweet_mrela:hasOperand sweet_units:ampere ,
+                                                  sweet_units:perMeter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#amperePerMeterSquared
+sweet_units:amperePerMeterSquared rdf:type owl:NamedIndividual ,
+                                           sweet_units:UnitDefinedByProduct ;
+                                  sweet_mrela:hasOperand sweet_units:ampere ,
+                                                         sweet_units:perMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampereSquared
+sweet_units:ampereSquared rdf:type owl:NamedIndividual ,
+                                   sweet_units:UnitDerivedByRaisingToPower ;
+                          sweet_mrela:toThePower "2.0"^^xsd:double ;
+                          sweet_screla:hasBaseUnit sweet_units:ampere .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#arcminute
+sweet_units:arcminute rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "2.909E-4"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:radian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#arcsecond
+sweet_units:arcsecond rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "4.848E-6"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:radian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candela
+sweet_units:candela rdf:type owl:NamedIndividual ,
+                             sweet_units:BaseUnit ;
+                    sweet_screla:hasSymbol "cd"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candelaPerMeterSquared
+sweet_units:candelaPerMeterSquared rdf:type owl:NamedIndividual ,
+                                            sweet_units:UnitDefinedByProduct ;
+                                   sweet_mrela:hasOperand sweet_units:candela ,
+                                                          sweet_units:perMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#centi
+sweet_units:centi rdf:type owl:NamedIndividual ,
+                           sweet_units:Prefix ;
+                  sweet_screla:hasNumericValue "0.01"^^xsd:double ;
+                  sweet_screla:hasSymbol "c"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#centimeter
+sweet_units:centimeter rdf:type owl:NamedIndividual ,
+                                sweet_units:UnitDerivedByScaling ;
+                       sweet_mrela:hasScalingNumber "0.01"^^xsd:double ;
+                       sweet_screla:hasBaseUnit sweet_units:meter ;
+                       sweet_screla:hasPrefix sweet_units:centi .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#century
+sweet_units:century rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByScaling ;
+                    sweet_mrela:hasScalingNumber "3.1556926E9"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulomb
+sweet_units:coulomb rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDefinedByProduct ;
+                    sweet_mrela:hasOperand sweet_units:ampere ,
+                                           sweet_units:second ;
+                    sweet_screla:hasSymbol "C"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombMeter
+sweet_units:coulombMeter rdf:type owl:NamedIndividual ,
+                                  sweet_units:UnitDefinedByProduct ;
+                         sweet_mrela:hasOperand sweet_units:coulomb ,
+                                                sweet_units:meter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombPerMeterCubed
+sweet_units:coulombPerMeterCubed rdf:type owl:NamedIndividual ,
+                                          sweet_units:UnitDefinedByProduct ;
+                                 sweet_mrela:hasOperand sweet_units:coulomb ,
+                                                        sweet_units:perMeterCubed .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombPerMeterSquared
+sweet_units:coulombPerMeterSquared rdf:type owl:NamedIndividual ,
+                                            sweet_units:UnitDefinedByProduct ;
+                                   sweet_mrela:hasOperand sweet_units:coulomb ,
+                                                          sweet_units:perMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#day
+sweet_units:day rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDerivedByScaling ;
+                sweet_mrela:hasScalingNumber "86400.0"^^xsd:double ;
+                sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#db
+sweet_units:db rdf:type owl:NamedIndividual ,
+                        sweet_units:LogarithmicUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#deca
+sweet_units:deca rdf:type owl:NamedIndividual ,
+                          sweet_units:Prefix ;
+                 sweet_screla:hasNumericValue "10.0"^^xsd:double ;
+                 sweet_screla:hasSymbol "da"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#decade
+sweet_units:decade rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDerivedByScaling ;
+                   sweet_mrela:hasScalingNumber "3.1556926E8"^^xsd:double ;
+                   sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degreeC
+sweet_units:degreeC rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByShifting ;
+                    sweet_mrela:hasShiftingNumber "-273.0"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:kelvin ;
+                    sweet_screla:hasSymbol "C"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degreeF
+sweet_units:degreeF rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByShifting ;
+                    sweet_mrela:hasScalingNumber "1.8"^^xsd:double ;
+                    sweet_mrela:hasShiftingNumber "32.0"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:degreeC .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degrees
+sweet_units:degrees rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByScaling ;
+                    sweet_mrela:hasScalingNumber "57.2957795"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:radian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#dimensionlessUnit
+sweet_units:dimensionlessUnit rdf:type owl:NamedIndividual ,
+                                       sweet_units:BaseUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#exa
+sweet_units:exa rdf:type owl:NamedIndividual ,
+                         sweet_units:Prefix ;
+                sweet_screla:hasNumericValue "1.0E18"^^xsd:double ;
+                sweet_screla:hasSymbol "E"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#farad
+sweet_units:farad rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDefinedByProduct ;
+                  sweet_mrela:hasOperand sweet_units:coulomb ,
+                                         sweet_units:perVolt ;
+                  sweet_screla:hasSymbol "F"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#faradPerMeter
+sweet_units:faradPerMeter rdf:type owl:NamedIndividual ,
+                                   sweet_units:UnitDefinedByProduct ;
+                          sweet_mrela:hasOperand sweet_units:farad ,
+                                                 sweet_units:perMeter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#giga
+sweet_units:giga rdf:type owl:NamedIndividual ,
+                          sweet_units:Prefix ;
+                 sweet_screla:hasNumericValue "1.0E9"^^xsd:double ;
+                 sweet_screla:hasSymbol "G"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#gigahertz
+sweet_units:gigahertz rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "1.0E9"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:hertz ;
+                      sweet_screla:hasPrefix sweet_units:giga .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hecto
+sweet_units:hecto rdf:type owl:NamedIndividual ,
+                           sweet_units:Prefix ;
+                  sweet_screla:hasNumericValue "100.0"^^xsd:double ;
+                  sweet_screla:hasSymbol "h"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#henry
+sweet_units:henry rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDefinedByProduct ;
+                  sweet_mrela:hasOperand sweet_units:kilogram ,
+                                         sweet_units:meterSquared ,
+                                         sweet_units:perAmpereSquared ,
+                                         sweet_units:perSecondSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#henryPerMeter
+sweet_units:henryPerMeter rdf:type owl:NamedIndividual ,
+                                   sweet_units:UnitDefinedByProduct ;
+                          sweet_mrela:hasOperand sweet_units:henry ,
+                                                 sweet_units:perMeter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hertz
+sweet_units:hertz rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDerivedByRaisingToPower ;
+                  owl:sameAs sweet_units:perSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hour
+sweet_units:hour rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDerivedByScaling ;
+                 sweet_mrela:hasScalingNumber "3600.0"^^xsd:double ;
+                 sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule
+sweet_units:joule rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDefinedByProduct ;
+                  sweet_mrela:hasOperand sweet_units:kilogram ,
+                                         sweet_units:perSecondSquared ;
+                  sweet_screla:hasSymbol "J"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKelvin
+sweet_units:joulePerKelvin rdf:type owl:NamedIndividual ,
+                                    sweet_units:UnitDefinedByProduct ;
+                           sweet_mrela:hasOperand sweet_units:joule ,
+                                                  sweet_units:perKelvin .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKilogram
+sweet_units:joulePerKilogram rdf:type owl:NamedIndividual ,
+                                      sweet_units:UnitDefinedByProduct ;
+                             sweet_mrela:hasOperand sweet_units:joule ,
+                                                    sweet_units:perKilogram .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKilogramPerKelvin
+sweet_units:joulePerKilogramPerKelvin rdf:type owl:NamedIndividual ,
+                                               sweet_units:UnitDefinedByProduct ;
+                                      sweet_mrela:hasOperand sweet_units:joule ,
+                                                             sweet_units:perKelvin ,
+                                                             sweet_units:perKilogram .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMeterCubedPerKelvin
+sweet_units:joulePerMeterCubedPerKelvin rdf:type owl:NamedIndividual ,
+                                                 sweet_units:UnitDefinedByProduct ;
+                                        sweet_mrela:hasOperand sweet_units:joule ,
+                                                               sweet_units:perKelvin ,
+                                                               sweet_units:perMeterCubed .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMeterSquared
+sweet_units:joulePerMeterSquared rdf:type owl:NamedIndividual ,
+                                          sweet_units:UnitDefinedByProduct ;
+                                 sweet_mrela:hasOperand sweet_units:joule ,
+                                                        sweet_units:perMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMolePerKelvin
+sweet_units:joulePerMolePerKelvin rdf:type owl:NamedIndividual ,
+                                           sweet_units:UnitDefinedByProduct ;
+                                  sweet_mrela:hasOperand sweet_units:joule ,
+                                                         sweet_units:perKelvin ,
+                                                         sweet_units:perMole .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerTesla
+sweet_units:joulePerTesla rdf:type owl:NamedIndividual ,
+                                   sweet_units:UnitDefinedByProduct ;
+                          sweet_mrela:hasOperand sweet_units:joule ,
+                                                 sweet_units:perTesla .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#jouleSecond
+sweet_units:jouleSecond rdf:type owl:NamedIndividual ,
+                                 sweet_units:UnitDefinedByProduct ;
+                        sweet_mrela:hasOperand sweet_units:joule ,
+                                               sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvin
+sweet_units:kelvin rdf:type owl:NamedIndividual ,
+                            sweet_units:BaseUnit ;
+                   sweet_screla:hasSymbol "K"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvinPerMeter
+sweet_units:kelvinPerMeter rdf:type owl:NamedIndividual ,
+                                    sweet_units:UnitDefinedByProduct ;
+                           sweet_mrela:hasOperand sweet_units:kelvin ,
+                                                  sweet_units:perMeter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilo
+sweet_units:kilo rdf:type owl:NamedIndividual ,
+                          sweet_units:Prefix ;
+                 sweet_screla:hasNumericValue "1000.0"^^xsd:double ;
+                 sweet_screla:hasSymbol "k"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram
+sweet_units:kilogram rdf:type owl:NamedIndividual ,
+                              sweet_units:BaseUnit ;
+                     sweet_screla:hasSymbol "kg"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramMeterPerSecond
+sweet_units:kilogramMeterPerSecond rdf:type owl:NamedIndividual ,
+                                            sweet_units:UnitDefinedByProduct ;
+                                   sweet_mrela:hasOperand sweet_units:kilogram ,
+                                                          sweet_units:meter ,
+                                                          sweet_units:perSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramPerMeterCubed
+sweet_units:kilogramPerMeterCubed rdf:type owl:NamedIndividual ,
+                                           sweet_units:UnitDefinedByProduct ;
+                                  sweet_mrela:hasOperand sweet_units:kilogram ,
+                                                         sweet_units:perMeterCubed .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramPerMeterSquared
+sweet_units:kilogramPerMeterSquared rdf:type owl:NamedIndividual ,
+                                             sweet_units:UnitDefinedByProduct ;
+                                    sweet_mrela:hasOperand sweet_units:kilogram ,
+                                                           sweet_units:perMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramRadianPerSecond
+sweet_units:kilogramRadianPerSecond rdf:type owl:NamedIndividual ,
+                                             sweet_units:UnitDefinedByProduct ;
+                                    sweet_mrela:hasOperand sweet_units:kilogram ,
+                                                           sweet_units:perSecond ,
+                                                           sweet_units:radian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilohertz
+sweet_units:kilohertz rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "1000.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:hertz ;
+                      sweet_screla:hasPrefix sweet_units:kilo .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilometer
+sweet_units:kilometer rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "1000.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:meter ;
+                      sweet_screla:hasPrefix sweet_units:kilo .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilometerPerHour
+sweet_units:kilometerPerHour rdf:type owl:NamedIndividual ,
+                                      sweet_units:UnitDerivedByScaling ;
+                             sweet_mrela:hasScalingNumber "0.27777777"^^xsd:double ;
+                             sweet_screla:hasBaseUnit sweet_units:meterPerSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#lumen
+sweet_units:lumen rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDefinedByProduct ;
+                  sweet_mrela:hasOperand sweet_units:candela ,
+                                         sweet_units:steradian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#lux
+sweet_units:lux rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDefinedByProduct ;
+                sweet_mrela:hasOperand sweet_units:candela ,
+                                       sweet_units:lumen ,
+                                       sweet_units:perMeterSquared ;
+                sweet_screla:hasSymbol "Lx"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mega
+sweet_units:mega rdf:type owl:NamedIndividual ,
+                          sweet_units:Prefix ;
+                 sweet_screla:hasNumericValue "1000000.0"^^xsd:double ;
+                 sweet_screla:hasSymbol "M"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#megahertz
+sweet_units:megahertz rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "1000000.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:hertz ;
+                      sweet_screla:hasPrefix sweet_units:mega .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter
+sweet_units:meter rdf:type owl:NamedIndividual ,
+                           sweet_units:BaseUnit ;
+                  owl:sameAs sweet_units:metre ;
+                  sweet_screla:hasSymbol "m"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubed
+sweet_units:meterCubed rdf:type owl:NamedIndividual ,
+                                sweet_units:UnitDerivedByRaisingToPower ;
+                       sweet_mrela:toThePower "3.0"^^xsd:double ;
+                       sweet_screla:hasBaseUnit sweet_units:meter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerKelvin
+sweet_units:meterCubedPerKelvin rdf:type owl:NamedIndividual ,
+                                         sweet_units:UnitDefinedByProduct ;
+                                sweet_mrela:hasOperand sweet_units:meterCubed ,
+                                                       sweet_units:perKelvin .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerKilogram
+sweet_units:meterCubedPerKilogram rdf:type owl:NamedIndividual ,
+                                           sweet_units:UnitDefinedByProduct ;
+                                  sweet_mrela:hasOperand sweet_units:meterCubed ,
+                                                         sweet_units:perKilogram .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerSecond
+sweet_units:meterCubedPerSecond rdf:type owl:NamedIndividual ,
+                                         sweet_units:UnitDefinedByProduct ;
+                                sweet_mrela:hasOperand sweet_units:meterCubed ,
+                                                       sweet_units:perSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerKelvin
+sweet_units:meterPerKelvin rdf:type owl:NamedIndividual ,
+                                    sweet_units:UnitDefinedByProduct ;
+                           sweet_mrela:hasOperand sweet_units:meter ,
+                                                  sweet_units:perKelvin .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecond
+sweet_units:meterPerSecond rdf:type owl:NamedIndividual ,
+                                    sweet_units:UnitDefinedByProduct ;
+                           sweet_mrela:hasOperand sweet_units:meter ,
+                                                  sweet_units:perSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecondSquared
+sweet_units:meterPerSecondSquared rdf:type owl:NamedIndividual ,
+                                           sweet_units:UnitDefinedByProduct ;
+                                  sweet_mrela:hasOperand sweet_units:meter ,
+                                                         sweet_units:perSecondSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared
+sweet_units:meterSquared rdf:type owl:NamedIndividual ,
+                                  sweet_units:UnitDerivedByRaisingToPower ;
+                         sweet_mrela:toThePower "2.0"^^xsd:double ;
+                         sweet_screla:hasBaseUnit sweet_units:meter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerKilogram
+sweet_units:meterSquaredPerKilogram rdf:type owl:NamedIndividual ,
+                                             sweet_units:UnitDefinedByProduct ;
+                                    sweet_mrela:hasOperand sweet_units:meterSquared ,
+                                                           sweet_units:perKilogram .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerSecond
+sweet_units:meterSquaredPerSecond rdf:type owl:NamedIndividual ,
+                                           sweet_units:UnitDefinedByProduct ;
+                                  sweet_mrela:hasOperand sweet_units:meterSquared ,
+                                                         sweet_units:perSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerSecondSquared
+sweet_units:meterSquaredPerSecondSquared rdf:type owl:NamedIndividual ,
+                                                  sweet_units:UnitDefinedByProduct ;
+                                         sweet_mrela:hasOperand sweet_units:meterSquared ,
+                                                                sweet_units:perSecondSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#metre
+sweet_units:metre rdf:type owl:NamedIndividual ,
+                           sweet_units:BaseUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micro
+sweet_units:micro rdf:type owl:NamedIndividual ,
+                           sweet_units:Prefix ;
+                  sweet_screla:hasNumericValue "1.0E-6"^^xsd:double .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micrometer
+sweet_units:micrometer rdf:type owl:NamedIndividual ,
+                                sweet_units:UnitDerivedByScaling ;
+                       owl:sameAs sweet_units:micron ;
+                       sweet_mrela:hasScalingNumber "1.0E-6"^^xsd:double ;
+                       sweet_screla:hasBaseUnit sweet_units:meter ;
+                       sweet_screla:hasPrefix sweet_units:micro .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micron
+sweet_units:micron rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDerivedByScaling .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#millenium
+sweet_units:millenium rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "1000.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:year .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#milli
+sweet_units:milli rdf:type owl:NamedIndividual ,
+                           sweet_units:Prefix ;
+                  sweet_screla:hasNumericValue "0.001"^^xsd:double ;
+                  sweet_screla:hasSymbol "m"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#millimeter
+sweet_units:millimeter rdf:type owl:NamedIndividual ,
+                                sweet_units:UnitDerivedByScaling ;
+                       sweet_mrela:hasScalingNumber "0.001"^^xsd:double ;
+                       sweet_screla:hasBaseUnit sweet_units:meter ;
+                       sweet_screla:hasPrefix sweet_units:milli .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#million_km2
+sweet_units:million_km2 rdf:type owl:NamedIndividual ,
+                                 sweet_units:UnitDerivedByScaling ;
+                        sweet_mrela:hasScalingNumber "1.0E-12"^^xsd:double ;
+                        sweet_screla:hasBaseUnit sweet_units:meterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#million_km3
+sweet_units:million_km3 rdf:type owl:NamedIndividual ,
+                                 sweet_units:UnitDerivedByScaling ;
+                        sweet_mrela:hasScalingNumber "1.0E-15"^^xsd:double ;
+                        sweet_screla:hasBaseUnit sweet_units:meterCubed .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#minute
+sweet_units:minute rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDerivedByScaling ;
+                   sweet_mrela:hasScalingNumber "60.0"^^xsd:double ;
+                   sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mole
+sweet_units:mole rdf:type owl:NamedIndividual ,
+                          sweet_units:BaseUnit ;
+                 sweet_screla:hasSymbol "mol"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#month
+sweet_units:month rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDerivedByScaling ;
+                  sweet_mrela:hasScalingNumber "2629744.0"^^xsd:double ;
+                  sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#nano
+sweet_units:nano rdf:type owl:NamedIndividual ,
+                          sweet_units:Prefix ;
+                 sweet_screla:hasNumericValue "1.0E-9"^^xsd:double ;
+                 sweet_screla:hasSymbol "n"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#nanometer
+sweet_units:nanometer rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "1.0E-9"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:meter ;
+                      sweet_screla:hasPrefix sweet_units:nano .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newton
+sweet_units:newton rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDefinedByProduct ;
+                   sweet_mrela:hasOperand sweet_units:kilogram ,
+                                          sweet_units:meter ,
+                                          sweet_units:perSecondSquared ;
+                   sweet_screla:hasSymbol "N"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newtonMeter
+sweet_units:newtonMeter rdf:type owl:NamedIndividual ,
+                                 sweet_units:UnitDefinedByProduct ;
+                        sweet_mrela:hasOperand sweet_units:meter ,
+                                               sweet_units:newton .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newtonPerMeter
+sweet_units:newtonPerMeter rdf:type owl:NamedIndividual ,
+                                    sweet_units:UnitDefinedByProduct ;
+                           sweet_mrela:hasOperand sweet_units:newton ,
+                                                  sweet_units:perMeter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#normalizedUnit
+sweet_units:normalizedUnit rdf:type owl:NamedIndividual ,
+                                    sweet_units:BaseUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohm
+sweet_units:ohm rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDefinedByProduct ;
+                sweet_mrela:hasOperand sweet_units:kilogram ,
+                                       sweet_units:meterSquared ,
+                                       sweet_units:perAmpereSquared ,
+                                       sweet_units:perSecondCubed .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohmMeter
+sweet_units:ohmMeter rdf:type owl:NamedIndividual ,
+                              sweet_units:UnitDefinedByProduct ;
+                     sweet_mrela:hasOperand sweet_units:meter ,
+                                            sweet_units:ohm .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascal
+sweet_units:pascal rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDefinedByProduct ;
+                   sweet_mrela:hasOperand sweet_units:newton ,
+                                          sweet_units:perMeterSquared ;
+                   sweet_screla:hasSymbol "Pa"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascalPerSecond
+sweet_units:pascalPerSecond rdf:type owl:NamedIndividual ,
+                                     sweet_units:UnitDefinedByProduct ;
+                            sweet_mrela:hasOperand sweet_units:pascal ,
+                                                   sweet_units:perSecond ;
+                            sweet_screla:hasSymbol "pa/s"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascalSecond
+sweet_units:pascalSecond rdf:type owl:NamedIndividual ,
+                                  sweet_units:UnitDefinedByProduct ;
+                         sweet_mrela:hasOperand sweet_units:pascal ,
+                                                sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpere
+sweet_units:perAmpere rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByRaisingToPower ;
+                      sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:ampere .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpereSquared
+sweet_units:perAmpereSquared rdf:type owl:NamedIndividual ,
+                                      sweet_units:UnitDerivedByRaisingToPower ;
+                             sweet_mrela:toThePower "-2.0"^^xsd:double ;
+                             sweet_screla:hasBaseUnit sweet_units:ampere .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perCandela
+sweet_units:perCandela rdf:type owl:NamedIndividual ,
+                                sweet_units:UnitDerivedByRaisingToPower ;
+                       sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                       sweet_screla:hasBaseUnit sweet_units:candela .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin
+sweet_units:perKelvin rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByRaisingToPower ;
+                      sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:kelvin .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram
+sweet_units:perKilogram rdf:type owl:NamedIndividual ,
+                                 sweet_units:UnitDerivedByRaisingToPower ;
+                        sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                        sweet_screla:hasBaseUnit sweet_units:kilogram .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogramMeterSquaredPerSecondKelvin
+sweet_units:perKilogramMeterSquaredPerSecondKelvin rdf:type owl:NamedIndividual ,
+                                                            sweet_units:UnitDefinedByProduct ;
+                                                   sweet_mrela:hasOperand sweet_units:kelvin ,
+                                                                          sweet_units:meterSquared ,
+                                                                          sweet_units:perKilogram ,
+                                                                          sweet_units:perSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogramMole
+sweet_units:perKilogramMole rdf:type owl:NamedIndividual ,
+                                     sweet_units:UnitDefinedByProduct ;
+                            sweet_mrela:hasOperand sweet_units:mole ,
+                                                   sweet_units:perKilogram .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter
+sweet_units:perMeter rdf:type owl:NamedIndividual ,
+                              sweet_units:UnitDerivedByRaisingToPower ;
+                     sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                     sweet_screla:hasBaseUnit sweet_units:meter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterCubed
+sweet_units:perMeterCubed rdf:type owl:NamedIndividual ,
+                                   sweet_units:UnitDerivedByRaisingToPower ;
+                          sweet_mrela:toThePower "-3.0"^^xsd:double ;
+                          sweet_screla:hasBaseUnit sweet_units:meter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared
+sweet_units:perMeterSquared rdf:type owl:NamedIndividual ,
+                                     sweet_units:UnitDerivedByRaisingToPower ;
+                            sweet_mrela:toThePower "-2.0"^^xsd:double ;
+                            sweet_screla:hasBaseUnit sweet_units:meter .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMil
+sweet_units:perMil rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDerivedByScaling ;
+                   sweet_mrela:hasScalingNumber "0.001"^^xsd:double ;
+                   sweet_screla:hasBaseUnit sweet_units:ratio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMole
+sweet_units:perMole rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByRaisingToPower ;
+                    sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:mole .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perPascal
+sweet_units:perPascal rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByRaisingToPower ;
+                      sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:pascal .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perRadian
+sweet_units:perRadian rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByRaisingToPower ;
+                      sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:radian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond
+sweet_units:perSecond rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByRaisingToPower ;
+                      sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:second ;
+                      sweet_screla:hasSymbol "Hz"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondCubed
+sweet_units:perSecondCubed rdf:type owl:NamedIndividual ,
+                                    sweet_units:UnitDerivedByRaisingToPower ;
+                           sweet_mrela:toThePower "-3.0"^^xsd:double ;
+                           sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared
+sweet_units:perSecondSquared rdf:type owl:NamedIndividual ,
+                                      sweet_units:UnitDerivedByRaisingToPower ;
+                             sweet_mrela:toThePower "-2.0"^^xsd:double ;
+                             sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSteradian
+sweet_units:perSteradian rdf:type owl:NamedIndividual ,
+                                  sweet_units:UnitDerivedByRaisingToPower ;
+                         sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                         sweet_screla:hasBaseUnit sweet_units:steradian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perTesla
+sweet_units:perTesla rdf:type owl:NamedIndividual ,
+                              sweet_units:UnitDerivedByRaisingToPower ;
+                     sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                     sweet_screla:hasBaseUnit sweet_units:tesla .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perVolt
+sweet_units:perVolt rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByRaisingToPower ;
+                    sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:volt .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#percent
+sweet_units:percent rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByScaling ;
+                    sweet_mrela:hasScalingNumber "0.01"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:ratio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#permil
+sweet_units:permil rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDerivedByScaling ;
+                   sweet_mrela:hasScalingNumber "0.001"^^xsd:double ;
+                   sweet_screla:hasBaseUnit sweet_units:ratio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#peta
+sweet_units:peta rdf:type owl:NamedIndividual ,
+                          sweet_units:Prefix ;
+                 sweet_screla:hasNumericValue "1.0E15"^^xsd:double ;
+                 sweet_screla:hasSymbol "P"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppb
+sweet_units:ppb rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDerivedByScaling ;
+                sweet_mrela:hasScalingNumber "1.0E-9"^^xsd:double ;
+                sweet_screla:hasBaseUnit sweet_units:ratio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppbv
+sweet_units:ppbv rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDerivedByScaling ;
+                 sweet_mrela:hasScalingNumber "1.0E-9"^^xsd:double ;
+                 sweet_screla:hasBaseUnit sweet_units:volumeRatio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppm
+sweet_units:ppm rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDerivedByScaling ;
+                sweet_mrela:hasScalingNumber "1.0E-6"^^xsd:double ;
+                sweet_screla:hasBaseUnit sweet_units:ratio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppmv
+sweet_units:ppmv rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDerivedByScaling ;
+                 sweet_mrela:hasScalingNumber "1.0E-6"^^xsd:double ;
+                 sweet_screla:hasBaseUnit sweet_units:volumeRatio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppt
+sweet_units:ppt rdf:type owl:NamedIndividual ,
+                         sweet_units:UnitDerivedByScaling ;
+                sweet_mrela:hasScalingNumber "1.0E-12"^^xsd:double ;
+                sweet_screla:hasBaseUnit sweet_units:ratio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pptv
+sweet_units:pptv rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDerivedByScaling ;
+                 sweet_mrela:hasScalingNumber "1.0E-12"^^xsd:double ;
+                 sweet_screla:hasBaseUnit sweet_units:volumeRatio .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian
+sweet_units:radian rdf:type owl:NamedIndividual ,
+                            sweet_units:BaseUnit ;
+                   sweet_screla:hasSymbol "rad"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radianPerSecond
+sweet_units:radianPerSecond rdf:type owl:NamedIndividual ,
+                                     sweet_units:UnitDefinedByProduct ;
+                            sweet_mrela:hasOperand sweet_units:perSecond ,
+                                                   sweet_units:radian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radianPerSecondSquared
+sweet_units:radianPerSecondSquared rdf:type owl:NamedIndividual ,
+                                            sweet_units:UnitDefinedByProduct ;
+                                   sweet_mrela:hasOperand sweet_units:perSecondSquared ,
+                                                          sweet_units:radian .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio
+sweet_units:ratio rdf:type owl:NamedIndividual ,
+                           sweet_units:BaseUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#season
+sweet_units:season rdf:type owl:NamedIndividual ,
+                            sweet_units:UnitDerivedByScaling ;
+                   sweet_mrela:hasScalingNumber "7889232.0"^^xsd:double ;
+                   sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second
+sweet_units:second rdf:type owl:NamedIndividual ,
+                            sweet_units:BaseUnit ;
+                   sweet_screla:hasSymbol "s"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#secondSquared
+sweet_units:secondSquared rdf:type owl:NamedIndividual ,
+                                   sweet_units:UnitDerivedByRaisingToPower ;
+                          sweet_mrela:toThePower "2.0"^^xsd:double ;
+                          sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemens
+sweet_units:siemens rdf:type owl:NamedIndividual ,
+                             sweet_units:UnitDerivedByRaisingToPower ;
+                    sweet_mrela:toThePower "-1.0"^^xsd:double ;
+                    sweet_screla:hasBaseUnit sweet_units:ohm ;
+                    sweet_screla:hasSymbol "G"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemensPerKilogram
+sweet_units:siemensPerKilogram rdf:type owl:NamedIndividual ,
+                                        sweet_units:UnitDefinedByProduct ;
+                               sweet_mrela:hasOperand sweet_units:perKilogram ,
+                                                      sweet_units:siemens .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemensPerMeter
+sweet_units:siemensPerMeter rdf:type owl:NamedIndividual ,
+                                     sweet_units:UnitDefinedByProduct ;
+                            sweet_mrela:hasOperand sweet_units:perMeter ,
+                                                   sweet_units:siemens .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#steradian
+sweet_units:steradian rdf:type owl:NamedIndividual ,
+                               sweet_units:BaseUnit ;
+                      sweet_screla:hasSymbol "sr"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tera
+sweet_units:tera rdf:type owl:NamedIndividual ,
+                          sweet_units:Prefix ;
+                 sweet_screla:hasNumericValue "1.0E12"^^xsd:double ;
+                 sweet_screla:hasSymbol "T"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#terahertz
+sweet_units:terahertz rdf:type owl:NamedIndividual ,
+                               sweet_units:UnitDerivedByScaling ;
+                      sweet_mrela:hasScalingNumber "1.0E12"^^xsd:double ;
+                      sweet_screla:hasBaseUnit sweet_units:hertz ;
+                      sweet_screla:hasPrefix sweet_units:tera .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tesla
+sweet_units:tesla rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDefinedByProduct ;
+                  sweet_mrela:hasOperand sweet_units:perMeterSquared ,
+                                         sweet_units:weber .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volt
+sweet_units:volt rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDefinedByProduct ;
+                 sweet_mrela:hasOperand sweet_units:kilogram ,
+                                        sweet_units:meterSquared ,
+                                        sweet_units:perAmpere ,
+                                        sweet_units:perSecondCubed ;
+                 sweet_screla:hasSymbol "V"^^xsd:string .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#voltPerMeter
+sweet_units:voltPerMeter rdf:type owl:NamedIndividual ,
+                                  sweet_units:UnitDefinedByProduct ;
+                         sweet_mrela:hasOperand sweet_units:perMeter ,
+                                                sweet_units:volt .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volumeRatio
+sweet_units:volumeRatio rdf:type owl:NamedIndividual ,
+                                 sweet_units:BaseUnit .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#watt
+sweet_units:watt rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDefinedByProduct ;
+                 sweet_mrela:hasOperand sweet_units:joule ,
+                                        sweet_units:perSecond .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterPerKelvin
+sweet_units:wattPerMeterPerKelvin rdf:type owl:NamedIndividual ,
+                                           sweet_units:UnitDefinedByProduct ;
+                                  sweet_mrela:hasOperand sweet_units:perKelvin ,
+                                                         sweet_units:perMeter ,
+                                                         sweet_units:watt .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquared
+sweet_units:wattPerMeterSquared rdf:type owl:NamedIndividual ,
+                                         sweet_units:UnitDefinedByProduct ;
+                                sweet_mrela:hasOperand sweet_units:perMeterSquared ,
+                                                       sweet_units:watt .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerKelvin
+sweet_units:wattPerMeterSquaredPerKelvin rdf:type owl:NamedIndividual ,
+                                                  sweet_units:UnitDefinedByProduct ;
+                                         sweet_mrela:hasOperand sweet_units:perKelvin ,
+                                                                sweet_units:wattPerMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerSteradian
+sweet_units:wattPerMeterSquaredPerSteradian rdf:type owl:NamedIndividual ,
+                                                     sweet_units:UnitDefinedByProduct ;
+                                            sweet_mrela:hasOperand sweet_units:perSteradian ,
+                                                                   sweet_units:wattPerMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerSteradianPerWavelength
+sweet_units:wattPerMeterSquaredPerSteradianPerWavelength rdf:type owl:NamedIndividual ,
+                                                                  sweet_units:UnitDefinedByProduct ;
+                                                         sweet_mrela:hasOperand sweet_units:perMeter ,
+                                                                                sweet_units:perSteradian ,
+                                                                                sweet_units:wattPerMeterSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#weber
+sweet_units:weber rdf:type owl:NamedIndividual ,
+                           sweet_units:UnitDefinedByProduct ;
+                  sweet_mrela:hasOperand sweet_units:kilogram ,
+                                         sweet_units:meterSquared ,
+                                         sweet_units:perAmpere ,
+                                         sweet_units:perSecondSquared .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#week
+sweet_units:week rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDerivedByScaling ;
+                 sweet_mrela:hasScalingNumber "604800.0"^^xsd:double ;
+                 sweet_screla:hasBaseUnit sweet_units:second .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#year
+sweet_units:year rdf:type owl:NamedIndividual ,
+                          sweet_units:UnitDerivedByScaling ;
+                 sweet_mrela:hasScalingNumber "3.1556926E7"^^xsd:double ;
+                 sweet_screla:hasBaseUnit sweet_units:second .
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

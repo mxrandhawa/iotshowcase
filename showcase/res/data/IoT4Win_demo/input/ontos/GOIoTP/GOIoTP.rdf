@@ -1,0 +1,551 @@
+@prefix : <http://inter-iot.eu/GOIoTP#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix ogc: <http://www.opengis.net/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix iiot: <http://inter-iot.eu/GOIoTP#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix oldssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix geosparqlf: <http://www.opengis.net/def/function/geosparql/> .
+@prefix geosparqlr: <http://www.opengis.net/def/rule/geosparql/> .
+@prefix sweet_units: <http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#> .
+@base <http://inter-iot.eu/GOIoTP#> .
+
+<http://inter-iot.eu/GOIoTP#> rdf:type owl:Ontology ;
+                               owl:imports ssn: ;
+                               dcterms:modified "2017-12-12" ;
+                               vann:preferredNamespacePrefix "iiot" ;
+                               rdfs:comment """INTER-IoT. Interoperability of IoT Platforms.
+ 
+INTER-IoT is a R&D project which has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 687283.
+
+Copyright (C) 2016-2018, by (Author's company of this file):
+  - Systems Research Institute Polish Academy of Sciences
+  
+ For more information, contact:
+  - author pawel.szmeja@ibspan.waw.pl
+  - Project coordinator:  coordinator@inter-iot.eu"""@en ;
+                               vann:preferredNamespaceUri "http://inter-iot.eu/GOIoTP#" ;
+                               dcterms:issued "2017-01-01"^^xsd:date ;
+                               dc:creator [ rdf:type foaf:Person ;
+                                            foaf:name "Paweł Szmeja"
+                                          ] ;
+                               dc:description """Generic Ontology for IoT Platforms (GOIoTP) is a core ontology for IoT. Developed as part of the INTER-IoT project, it offers modular data structures for description of entities most commonly appearing in IoT in the context of interoperating various different IoT artifacts.
+
+The ontology has the following horizontal modules:
+    Device - (optionally virtualized) hardware connected to IoT
+    Platform - software platforms that host IoT devices
+    Observation (and actuation) - information gathered by IoT entities from the world, or the intention to act upon it
+    Units & measurements - systems of units and values
+    User - human or software that uses, or is a client of IoT entities
+    Geolocation - position within the world, defined by coordinates
+    Service - web services offered by software
+    Provenance - origin, ownership and history of IoT entities
+
+For more information, please refer to INTER-IoT deliverables (specifically D4.2) and GOIoTP documentation available online."""@en ;
+                               owl:versionInfo 0.9 ;
+                               vs:term_status "stable"@en ;
+                               dc:title "Generic Ontology for IoT Platforms"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.opengis.net/ont/geosparql#wktLiteral
+geosparql:wktLiteral rdf:type rdfs:Datatype ;
+                     dc:contributor "Matthew Perry" ;
+                     dc:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+                     dc:date "2011-06-16"^^xsd:date ;
+                     dc:description """
+                  A Well-known Text serialization of a geometry object.
+                """@en ;
+                     rdfs:comment """
+                  A Well-known Text serialization of a geometry object.
+                """@en ;
+                     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                      <http://www.opengis.net/spec/geosparql/1.0> ;
+                     rdfs:label "Well-known Text Literal"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> """
+                  A Well-known Text serialization of a geometry object.
+                """@en ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Well-known Text Literal"@en .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://inter-iot.eu/GOIoTP#hasComponent
+iiot:hasComponent rdf:type owl:ObjectProperty ;
+                  rdfs:range iiot:PlatformComponent .
+
+
+###  http://inter-iot.eu/GOIoTP#hasCoverage
+iiot:hasCoverage rdf:type owl:ObjectProperty ;
+                 rdfs:range iiot:Location ;
+                 rdfs:comment "Denotes a physical location in which an entity (e.g. IoTDevice, SoftwarePlatform, Sensor) operates. Any functionality or capability of an entity should be restricted to the locations included in its coverage."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasDataFormat
+iiot:hasDataFormat rdf:type owl:ObjectProperty ;
+                   rdfs:range iiot:DataFormat .
+
+
+###  http://inter-iot.eu/GOIoTP#hasDomainOfInterest
+iiot:hasDomainOfInterest rdf:type owl:ObjectProperty ;
+                         rdfs:range iiot:DomainOfInterest .
+
+
+###  http://inter-iot.eu/GOIoTP#hasLocation
+iiot:hasLocation rdf:type owl:ObjectProperty ;
+                 rdfs:range iiot:Location ;
+                 rdfs:comment "Denotes last known physical location of an entity."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasMeasurementKind
+iiot:hasMeasurementKind rdf:type owl:ObjectProperty ;
+                        rdfs:range iiot:MeasurementKind .
+
+
+###  http://inter-iot.eu/GOIoTP#hasOwner
+iiot:hasOwner rdf:type owl:ObjectProperty ;
+              owl:inverseOf iiot:isOwnerOf ;
+              rdfs:comment "Denotes an ownership relation between two entities."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasSemantics
+iiot:hasSemantics rdf:type owl:ObjectProperty ;
+                  rdfs:range iiot:Semantics .
+
+
+###  http://inter-iot.eu/GOIoTP#hasServiceInput
+iiot:hasServiceInput rdf:type owl:ObjectProperty ;
+                     rdfs:domain iiot:ServiceInterface ;
+                     rdfs:range iiot:ServiceInput .
+
+
+###  http://inter-iot.eu/GOIoTP#hasServiceInterface
+iiot:hasServiceInterface rdf:type owl:ObjectProperty ;
+                         rdfs:domain iiot:Service ;
+                         rdfs:range iiot:ServiceInterface .
+
+
+###  http://inter-iot.eu/GOIoTP#hasServiceOutput
+iiot:hasServiceOutput rdf:type owl:ObjectProperty ;
+                      rdfs:domain iiot:ServiceInterface ;
+                      rdfs:range iiot:ServiceOutput .
+
+
+###  http://inter-iot.eu/GOIoTP#hasUnit
+iiot:hasUnit rdf:type owl:ObjectProperty ;
+             rdfs:range sweet_units:Unit .
+
+
+###  http://inter-iot.eu/GOIoTP#hasUser
+iiot:hasUser rdf:type owl:ObjectProperty ;
+             owl:inverseOf iiot:isUserOf ;
+             rdfs:range iiot:User ;
+             rdfs:comment "Denotes that the subject entity is used by another entity."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#isOwnerOf
+iiot:isOwnerOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:comment "Denotes an ownership relation between two entities."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#isUserOf
+iiot:isUserOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain iiot:User ;
+              rdfs:comment "Denotes that the subject entity uses another entity."@en ;
+              <http://www.w3.org/2004/02/skos/core#example> "A User uses a Device, which means that observations coming from that device may be relevant to the user."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#offersService
+iiot:offersService rdf:type owl:ObjectProperty ;
+                   rdfs:domain sosa:Platform ;
+                   rdfs:range iiot:Service .
+
+
+###  http://inter-iot.eu/GOIoTP#orderedByUser
+iiot:orderedByUser rdf:type owl:ObjectProperty ;
+                   rdfs:range iiot:User ;
+                   rdfs:comment """An activity (an Observation or an Actuation) can be ordered by a User, in which case the device performing the activity is responsible for carrying it out, but the User is responsible for making the decision to do so. Ordering an activity may involve more than making a decision, i.e. actually using the device to perform an Actuation, or an Observation by handling the device physically, or controlling it remotely.
+
+An anonymous device will not have a User that orderd its activity, itself being responsible for making the decision to perform it."""@en ;
+                   <http://www.w3.org/2004/02/skos/core#example> """A port operator that moves a port crane orders an actuation that is then made by the crane device.
+
+A doctor that uses a smart thermometer to measure a patients temperature orders the temperature observation carried out by the thermometer.
+
+A truck driver that sets the preferred fuel usage in a smart car orders it to make an actuation, making the smart truck controller device change the state of the smart truck and recalculate route data (e.g. estimated time of arrival)."""@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://inter-iot.eu/GOIoTP#hasBaseEndpoint
+iiot:hasBaseEndpoint rdf:type owl:DatatypeProperty ;
+                     rdfs:comment "A primary (default, base) endpoint at which an entity is accessible e.g. a REST URL."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasDescription
+iiot:hasDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:comment "A human-readable description of an IoT entity."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasName
+iiot:hasName rdf:type owl:DatatypeProperty ;
+             rdfs:comment "A generic property describing a name of any entity in the context of IoT."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasResultValue
+iiot:hasResultValue rdf:type owl:DatatypeProperty ;
+                    rdfs:domain sosa:Result .
+
+
+###  http://inter-iot.eu/GOIoTP#hasServiceDefinition
+iiot:hasServiceDefinition rdf:type owl:DatatypeProperty ;
+                          rdfs:domain iiot:Service ;
+                          rdfs:range xsd:anyURI ;
+                          rdfs:comment "Specifies an address  under which a technical and formal definition of a Service is accessible."@en ;
+                          <http://www.w3.org/2004/02/skos/core#example> "For webservices: a WSDL file, a WADL file, an OpenAPI specification file."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasURI
+iiot:hasURI rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:anyURI .
+
+
+###  http://inter-iot.eu/GOIoTP#hasVersion
+iiot:hasVersion rdf:type owl:DatatypeProperty .
+
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+geosparql:asWKT rdf:type owl:DatatypeProperty ;
+                rdfs:domain geosparql:Geometry ;
+                rdfs:range geosparql:wktLiteral ;
+                dc:contributor "Matthew Perry" ;
+                dc:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+                dc:date "2011-06-16"^^xsd:date ;
+                dc:description """
+        The WKT serialization of a geometry
+      """@en ;
+                rdfs:comment """
+        The WKT serialization of a geometry
+      """@en ;
+                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                 <http://www.opengis.net/spec/geosparql/1.0> ;
+                rdfs:label "asWKT"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> """
+        The WKT serialization of a geometry
+      """@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "asWKT"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://inter-iot.eu/GOIoTP#DataFormat
+iiot:DataFormat rdf:type owl:Class .
+
+
+###  http://inter-iot.eu/GOIoTP#DomainOfInterest
+iiot:DomainOfInterest rdf:type owl:Class ;
+                      rdfs:comment "A domain in which an IoT artifact operates."@en ;
+                      <http://www.w3.org/2004/02/skos/core#example> "Healthcare, AAL (ambient assisted living), transportation, smart city."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#IoTDevice
+iiot:IoTDevice rdf:type owl:Class ;
+               rdfs:subClassOf sosa:Platform ;
+               rdfs:comment "A physical or virtual entity that is the basic unit of an IoT system. An IoT Device is a Platform, and can serve as a host for multiple Sensors, Actuators, or Samplers."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#Location
+iiot:Location rdf:type owl:Class ;
+              rdfs:subClassOf geosparql:Geometry ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty geosparql:asWKT ;
+                                owl:allValuesFrom geosparql:wktLiteral
+                              ] ;
+              rdfs:comment "Any physical entity that can be thought of as a location that contains other entities. The geoposition of the Location is (optionally) given in Well Known Text by the geosparql:asWKT property."@en ;
+              <http://www.w3.org/2004/02/skos/core#example> "A room or a floor in a building; a specific point in a city, a city as a whole."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#MeasurementKind
+iiot:MeasurementKind rdf:type owl:Class ;
+                     rdfs:subClassOf ssn:Property ;
+                     rdfs:comment "A kind or class of measurement."@en ;
+                     <http://www.w3.org/2004/02/skos/core#example> "Length, mass, time."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#Middleware
+iiot:Middleware rdf:type owl:Class ;
+                rdfs:subClassOf iiot:PlatformComponent ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty iiot:hasBaseEndpoint ;
+                                  owl:someValuesFrom rdfs:Literal
+                                ] .
+
+
+###  http://inter-iot.eu/GOIoTP#Ontology
+iiot:Ontology rdf:type owl:Class ;
+              rdfs:subClassOf iiot:Semantics ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty iiot:hasURI ;
+                                owl:someValuesFrom xsd:anyURI
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty iiot:hasVersion ;
+                                owl:someValuesFrom rdfs:Literal
+                              ] ;
+              rdfs:comment "A specific description of concepts, entities, properties and relations between them, expressed in a formalized way."@en ;
+              <http://www.w3.org/2004/02/skos/core#example> "GOIoTP ontology."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#PlatformComponent
+iiot:PlatformComponent rdf:type owl:Class ;
+                       rdfs:subClassOf ssn:System .
+
+
+###  http://inter-iot.eu/GOIoTP#Semantics
+iiot:Semantics rdf:type owl:Class ;
+               <http://www.w3.org/2004/02/skos/core#example> "A description of the meaning of data terms and data structure."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#Service
+iiot:Service rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty iiot:hasServiceInterface ;
+                               owl:someValuesFrom iiot:ServiceInterface
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ssn:implements ;
+                               owl:someValuesFrom sosa:Procedure
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty iiot:hasDescription ;
+                               owl:someValuesFrom rdfs:Literal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty iiot:hasName ;
+                               owl:someValuesFrom rdfs:Literal
+                             ] ;
+             rdfs:comment "The provision of a function in an IoT ecosystem. note that a Service is not a Procedure, as understood by SOSA ontology."@en ;
+             <http://www.w3.org/2004/02/skos/core#example> "A webservice."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#ServiceInput
+iiot:ServiceInput rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty iiot:hasDataFormat ;
+                                    owl:someValuesFrom iiot:DataFormat
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty iiot:hasBaseEndpoint ;
+                                    owl:someValuesFrom xsd:anyURI
+                                  ] .
+
+
+###  http://inter-iot.eu/GOIoTP#ServiceInterface
+iiot:ServiceInterface rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty iiot:hasServiceInput ;
+                                        owl:someValuesFrom iiot:ServiceInput
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty iiot:hasServiceOutput ;
+                                        owl:someValuesFrom iiot:ServiceOutput
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty iiot:hasServiceDefinition ;
+                                        owl:someValuesFrom xsd:anyURI
+                                      ] ;
+                      rdfs:comment "A way of accessing the function offered by the Service."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#ServiceOutput
+iiot:ServiceOutput rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty iiot:hasDataFormat ;
+                                     owl:someValuesFrom iiot:DataFormat
+                                   ] .
+
+
+###  http://inter-iot.eu/GOIoTP#SoftwarePlatform
+iiot:SoftwarePlatform rdf:type owl:Class ;
+                      rdfs:subClassOf sosa:Platform ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty iiot:hasComponent ;
+                                        owl:someValuesFrom iiot:PlatformComponent
+                                      ] .
+
+
+###  http://inter-iot.eu/GOIoTP#User
+iiot:User rdf:type owl:Class ;
+          rdfs:subClassOf sosa:FeatureOfInterest .
+
+
+###  http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit
+sweet_units:Unit rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+geosparql:Geometry rdf:type owl:Class ;
+                   rdfs:subClassOf geosparql:SpatialObject .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+geosparql:SpatialObject rdf:type owl:Class ;
+                        dc:contributor "Matthew Perry" ;
+                        dc:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+                        dc:date "2011-06-16"^^xsd:date ;
+                        dc:description """
+      The class spatial-object represents everything that can have
+      a spatial representation. It is superclass of feature and geometry.
+    """@en ;
+                        rdfs:comment """
+      The class spatial-object represents everything that can have
+      a spatial representation. It is superclass of feature and geometry.
+    """@en ;
+                        rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                         <http://www.opengis.net/spec/geosparql/1.0> ;
+                        rdfs:label "SpatialObject"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> """
+      The class spatial-object represents everything that can have
+      a spatial representation. It is superclass of feature and geometry.
+    """@en ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "SpatialObject"@en .
+
+
+###  http://www.w3.org/ns/sosa/Actuation
+sosa:Actuation rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty iiot:orderedByUser ;
+                                 owl:someValuesFrom iiot:User
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty iiot:hasLocation ;
+                                 owl:allValuesFrom iiot:Location
+                               ] .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+sosa:Observation rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty iiot:orderedByUser ;
+                                   owl:someValuesFrom iiot:User
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty iiot:hasLocation ;
+                                   owl:allValuesFrom iiot:Location
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sosa:phenomenonTime ;
+                                   owl:allValuesFrom time:TemporalEntity
+                                 ] .
+
+
+###  http://www.w3.org/ns/sosa/Platform
+sosa:Platform rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty iiot:hasCoverage ;
+                                owl:someValuesFrom iiot:Location
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty iiot:hasSemantics ;
+                                owl:someValuesFrom iiot:Semantics
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty iiot:offersService ;
+                                owl:someValuesFrom iiot:Service
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty iiot:hasLocation ;
+                                owl:allValuesFrom iiot:Location
+                              ] .
+
+
+###  http://www.w3.org/ns/sosa/Result
+sosa:Result rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty iiot:hasUnit ;
+                              owl:someValuesFrom sweet_units:Unit
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty iiot:hasResultValue ;
+                              owl:someValuesFrom rdfs:Literal
+                            ] .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+sosa:Sensor rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty iiot:hasUnit ;
+                              owl:someValuesFrom sweet_units:Unit
+                            ] .
+
+
+###  http://www.w3.org/ns/ssn/System
+ssn:System rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty iiot:hasCoverage ;
+                             owl:someValuesFrom iiot:Location
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty iiot:hasLocation ;
+                             owl:allValuesFrom iiot:Location
+                           ] .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://inter-iot.eu/GOIoTP#
+<http://inter-iot.eu/GOIoTP#> rdf:type owl:NamedIndividual ,
+                                       voaf:Vocabulary .
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

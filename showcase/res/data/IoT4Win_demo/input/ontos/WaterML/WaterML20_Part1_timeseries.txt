@@ -1,0 +1,263 @@
+
+OGC WaterML 2.0 OGC 10-126r4
+Open Geospatial Consortium
+Approval Date: 2012-06-23
+Publication Date: 2014-02-24
+Reference number of this OGC ® project document: OGC 10-126r4
+OGC name of this OGC® project document: http://www.opengis.net/doc/IS/waterml/2.0.1
+Version: 2.0.1
+Category: OGC ® Implementation Standard - Corrigendum
+Editor: Peter Taylor
+OGC ® WaterML 2.0: Part 1- Timeseries
+Copyright notice
+Copyright © 2012-2014 Open Geospatial Consortium
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+Notice
+This document is an OGC Member approved international standard. This document is available on a
+royalty free, non-discriminatory basis. Recipients of this document are invited to submit, with their
+comments, notification of any relevant patent rights of which they are aware and to provide supporting
+documentation.
+Document type: OGC ® Implementation Standard - Corrigendum
+Document subtype: Encoding
+Document stage: Approved for Public Release
+Document language: English
+OGC 10-126r4 WaterML 2.0
+Copyright © 2012-2014 Open Geospatial Consortiumii
+License Agreement
+Permission is hereby granted by the Open Geospatial Consortium, ("Licensor"), free of charge and subject to the terms set forth below,
+to any person obtaining a copy of this Intellectual Property and any associated documentation, to deal in the Intellectual Property
+without restriction (except as set forth below), including without limitation the rights to implement, use, copy, modify, merge, publish,
+distribute, and/or sublicense copies of the Intellectual Property, and to permit persons to whom the Intellectual Property is furnished to
+do so, provided that all copyright notices on the intellectual property are retained intact and that each person to whom the Intellectual
+Property is furnished agrees to the terms of this Agreement.
+If you modify the Intellectual Property, all copies of the modified Intellectual Property must include, in addition to the above
+copyright notice, a notice that the Intellectual Property includes modifications that have not been approved or adopted by LICENSOR.
+THIS LICENSE IS A COPYRIGHT LICENSE ONLY, AND DOES NOT CONVEY ANY RIGHTS UNDER ANY PATENTS
+THAT MAY BE IN FORCE ANYWHERE IN THE WORLD.
+THE INTELLECTUAL PROPERTY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. THE COPYRIGHT HOLDER OR HOLDERS INCLUDED
+IN THIS NOTICE DO NOT WARRANT THAT THE FUNCTIONS CONTAINED IN THE INTELLECTUAL PROPERTY WILL
+MEET YOUR REQUIREMENTS OR THAT THE OPERATION OF THE INTELLECTUAL PROPERTY WILL BE
+UNINTERRUPTED OR ERROR FREE. ANY USE OF THE INTELLECTUAL PROPERTY SHALL BE MADE ENTIRELY AT
+THE USER’S OWN RISK. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR ANY CONTRIBUTOR OF
+INTELLECTUAL PROPERTY RIGHTS TO THE INTELLECTUAL PROPERTY BE LIABLE FOR ANY CLAIM, OR ANY
+DIRECT, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING
+FROM ANY ALLEGED INFRINGEMENT OR ANY LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+CONTRACT, NEGLIGENCE OR UNDER ANY OTHER LEGAL THEORY, ARISING O UT OF OR IN CONNECTION WITH
+THE IMPLEMENTATION, USE, COMMERCIALIZATION OR PERFORMANCE OF THIS INTELLECTUAL PROPERTY.
+This license is effective until terminated. You may terminate it at any time by destroying the Intellectual Property together with all
+copies in any form. The license will also terminate if you fail to comply with any term or condition of this Agreement. Except as
+provided in the following sentence, no such termination of this license shall require the termination of any third party end-user
+sublicense to the Intellectual Property which is in force as of the date of notice of such termination. In addition, should the Intellectual
+Property, or the operation of the Intellectual Property, infringe, or in LICENSOR’s sole opinion be likely to infringe, any patent,
+copyright, trademark or other right of a third party, you agree that LICENSOR, in its sole discretion, may terminate this license
+without any compensation or liability to you, your licensees or any other party. You agree upon termination of any kind to destroy or
+cause to be destroyed the Intellectual Property together with all copies in any form, whether held by you or by any third party.
+Except as contained in this notice, the name of LICENSOR or of any other holder of a copyright in all or part of the Intellectual
+Property shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Intellectual Property without
+prior written authorization of LICENSOR or such copyright holder. LICENSOR is and shall at all times be the sole entity that may
+authorize you or any third party to use certification marks, trademarks or other special designations to indicate compliance with any
+LICENSOR standards or specifications.
+This Agreement is governed by the laws of the Commonwealth of Massachusetts. The application to this Agreement of the United
+Nations Convention on Contracts for the International Sale of Goods is hereby expressly excluded. In the event any provision of this
+Agreement shall be deemed unenforceable, void or invalid, such provision shall be modified so as to make it valid and enforceable,
+and as so modified the entire Agreement shall remain in full force and effect. No decision, action or inaction by LICENSOR shall be
+construed to be a waiver of any rights or remedies available to it.
+OGC WaterML 2.0 OGC 10-126r4
+Copyright © 2012-2014 Open Geospatial Consortium iii
+Contents
+i. Preface ......................................................................................................................... ix
+ii. Submitting Organizations.......................................................................................... ix
+iii. Submission Contact Points ........................................................................................ xi
+iv. Future Work ............................................................................................................... xi
+v. Changes to the OGC® Abstract Specification......................................................... xii
+1 Scope ............................................................................................................................ 3
+2 Conformance ............................................................................................................... 4
+3 Normative References................................................................................................. 5
+4 Terms and Definitions ................................................................................................ 6
+5 Conventions ................................................................................................................. 8
+5.1 Abbreviated terms ................................................................................................. 8
+5.2 UML notation........................................................................................................ 8
+5.3 Finding requirements and recommendations ........................................................ 9
+6 Overview of WaterML2.0 ........................................................................................ 10
+7 Observations and Measurements overview ............................................................ 12
+7.1 Sampling features................................................................................................ 12
+8 The nature of hydrological observations ................................................................ 13
+8.1 Observations and forecasts.................................................................................. 15
+9 UML Conceptual Models (normative) ..................................................................... 15
+9.1 Structural overview of requirements classes....................................................... 15
+9.2 Package dependencies ......................................................................................... 17
+9.3 Use of vocabularies ............................................................................................. 19
+9.4 Requirements class: Timeseries Observation...................................................... 20
+9.5 Time series observation specialisations .............................................................. 27
+9.6 Requirements class – Timeseries (domain range) Observation .......................... 28
+9.7 Requirements class – Measurement Timeseries (domain range) Observation ... 29
+9.8 Requirements class – Categorical Timeseries (domain range) Observation....... 30
+9.9 Requirements class – Timeseries time-value pair (interleaved) Observation ..... 31
+9.10 Requirements class – Measurement Timeseries time-value pair
+(interleaved) Observation............................................................................... 31
+OGC 10-126r4 WaterML 2.0
+Copyright © 2012-2014 Open Geospatial Consortiumiv
+9.11 Requirements class – Categorical Timeseries time-value pair (interleaved)
+Observation .................................................................................................... 32
+9.12 Requirements class: Timeseries (Core) .............................................................. 33
+9.13 Requirements class: Timeseries Domain-Range ................................................ 42
+9.14 Requirements class: Timeseries Time-Value Pair (interleaved)......................... 43
+9.15 Requirements class: Measurement Timeseries TVP (interleaved) ..................... 45
+9.16 Requirements class: Categorical Timeseries TVP (interleaved) ........................ 56
+9.17 Requirements class: Measurement Timeseries (Domain-Range)....................... 57
+9.18 Requirements class: Categorical Timeseries (Domain-Range) .......................... 58
+9.19 Requirements class: Monitoring Points .............................................................. 59
+9.20 Requirements class: Monitoring Point feature of interest .................................. 64
+9.21 Requirements class: Sampling Feature Collections............................................ 64
+9.22 Requirements class: Observation process........................................................... 65
+9.23 Requirements Class: Collection.......................................................................... 68
+10 XML Implementation (normative) ........................................................................... 72
+10.1 Scope of XML implementation .......................................................................... 73
+10.2 XML encoding principles ................................................................................... 75
+10.3 Requirements Class: XML Rules ....................................................................... 75
+10.4 Requirements Class: Timeseries Observation .................................................... 77
+10.5 Requirements Class: Timeseries Time-Value Pair (interleaved) Observation ... 79
+10.6 Requirements Class: Measurement time-value pair Timeseries (interleaved)
+Observation .................................................................................................... 80
+10.7 Requirements Class: Categorical time-value pair Timeseries (interleaved)
+Observation .................................................................................................... 81
+10.8 Requirements Class: Timeseries – time-value pair representation..................... 81
+10.9 Requirements Class: Measurement Timeseries – time-value pair
+representation ................................................................................................. 83
+10.10 Requirements Class: Categorical Timeseries – time-value pair
+representation ................................................................................................. 87
+10.11 Requirements Class: Monitoring point as feature of interest ............................. 88
+10.12 Requirements Class: Observation Process.......................................................... 89
+10.13 Requirements Class: Monitoring Point............................................................... 90
+10.14 Requirements Class: Collection.......................................................................... 91
+A.1 Conformance classes - UML Package ................................................................ 92
+A.1.1 Conformance Class: Timeseries Observation..................................................... 92
+A.1.2 Conformance Class: Domain Range Timeseries Observation............................ 94
+OGC WaterML 2.0 OGC 10-126r4
+Copyright © 2012-2014 Open Geospatial Consortium v
+A.1.3 Conformance Class: Measurement (Domain Range) Timeseries
+Observation .................................................................................................... 94
+A.1.4 Conformance Class: Categorical (Domain Range) Timeseries Observation...... 95
+A.1.5 Conformance Class: TVP Timeseries Observation ............................................ 95
+A.1.6 Conformance Class: Measurement TVP Timeseries Observation ..................... 96
+A.1.7 Conformance Class: Categorical TVP Timeseries Observation......................... 96
+A.1.8 Conformance Class: Timeseries Core ................................................................ 97
+A.1.9 Conformance Class: Timeseries Domain Range ................................................ 99
+A.1.10 Conformance Class: Timeseries Time-Value Pair (interleaved) ..................... 99
+A.1.11 Conformance Class: Measurement Timeseries TVP (Interleaved) ............... 100
+A.1.12 Conformance Class: Categorical Timeseries TVP (Interleaved)................... 101
+A.1.13 Conformance Class: Measurement Timeseries (Domain Range).................. 101
+A.1.14 Conformance Class: Categorical Timeseries (Domain Range) ..................... 101
+A.1.15 Conformance Class: Monitoring Point .......................................................... 102
+A.1.16 Conformance Class: Monitoring Point feature of interest ............................. 102
+A.1.17 Conformance Class: Sampling feature collections ........................................ 103
+A.1.18 Conformance Class: Observation process ..................................................... 103
+A.1.19 Conformance Class: Collection ..................................................................... 104
+A.2 Conformance classes – XML Implementation ................................................. 105
+A.2.1 Conformance Class: XML Rules...................................................................... 105
+A.2.2 Conformance Class: Timeseries Observation XML (abstract)......................... 107
+A.2.3 Conformance Class: TVP (Interleaved) Timeseries Observation XML........... 108
+A.2.4 Conformance Class: Measurement TVP (Interleaved) Timeseries
+Observation XML ........................................................................................ 109
+A.2.5 Conformance Class: Categorical TVP (Interleaved) Timeseries Observation
+XML............................................................................................................. 109
+A.2.6 Conformance Class: Timeseries (Core)............................................................ 110
+A.2.7 Conformance Class: Timeseries – TVP representation .................................... 111
+A.2.8 Conformance Class: Measurement Timeseries – TVP representation ............. 113
+A.2.9 Conformance Class: Categorical Timeseries – TVP representation................. 115
+A.2.10 Conformance Class: Monitoring point feature of interest ............................. 115
+A.2.11 Conformance Class: Observation Process ..................................................... 116
+A.2.12 Conformance Class: Monitoring Point .......................................................... 116
+A.2.13 Conformance Class: Collection ..................................................................... 117
+C.1 Operational forecasting activity at hydrological forecasting service in
+support of flooding related emergencies...................................................... 124
+OGC 10-126r4 WaterML 2.0
+Copyright © 2012-2014 Open Geospatial Consortiumvi
+C.2 Routine operational forecasting activity in support of infrastructure
+operation....................................................................................................... 125
+C.3 Exchange of groundwater levels across international borders ......................... 126
+C.4 Generic data exchange scenario between stakeholders .................................... 127
+C.5 Retrieval for data by external users .................................................................. 129
+OGC WaterML 2.0 OGC 10-126r4
+Copyright © 2012-2014 Open Geospatial Consortium ix
+i. Abstract
+WaterML 2.0 is a standard information model for the representation of water
+observations data, with the intent of allowing the exchange of such data sets across
+information systems. Through the use of existing OGC standards, it aims at being an
+interoperable exchange format that may be re-used to address a range of exchange
+requirements, some of which are described later in this document.
+ii. Preface
+The primary goal of this profile is to capture the semantics of hydrological observational
+data for data exchange. This will allow hydrological information systems to communicate
+data between systems and to end users.
+NOTE!! - Please note that 2.0.1 is a Corrigendum in which a number of errors have been
+corrected in the WaterML 2.0 schema. As such, please make sure that your application
+re-loads the schema from the OGC schema repository and that local copies are not being
+used.
+iii. Submitting Organizations
+The following organizations submitted this Implementation Profile to the Open
+Geospatial Consortium Inc.:
+a) CSIRO
+b) San Diego Supercomputer Center
+c) Australian Bureau of Meteorology
+d) Geological Survey of Canada, Natural Resources Canada
+e) USGS
+f) KISTERS AG
+g) NOAA
+h) Deltares
+i) Federal Waterways Engineering and Research Institute
+j) disy Informationssysteme GmbH
+k) German Federal Institute of Hydrology
+OGC WaterML 2.0 OGC 10-126r4
+Copyright © 2012-2014 Open Geospatial Consortium xiii
+Foreword
+This work has, for the most part, been funded through a water information research and
+development alliance between CSIRO‘s Water for a Healthy Country Flagship and the
+Australian Bureau of Meteorology. The work has also been supported by The Consortium
+for the Advancement of Hydrological Sciences Inc. (CUAHSI). The work is operating
+under the joint World Meteorological Organisation (WMO) and Open Geospatial
+Consortium (OGC) Hydrology Domain Working Group [1].
+Attention is drawn to the possibility that some of the elements of this document may be
+the subject of patent rights. Open Geospatial Consortium shall not be held responsible
+for identifying any or all such patent rights. However, to date, no such rights have been
+claimed or identified.
+Recipients of this document are requested to submit, with their comments, notification of
+any relevant patent claims or other intellectual property rights of which they may be
+aware that might be infringed by any implementation of the specification set forth in this
+document, and to provide supporting documentation.
+This document formalises work discussed in the existing discussion documents OGC 09-
+124r1 – Harmonising Standards for Water Observations Data and 07-041- WaterML.
+Copyright © 2012-2014 Open Geospatial Consortium6
+4 Terms and Definitions
+For the purpose of this document, the following terms and definitions apply:
+Coverage
+Feature that acts as a function to return values from its range for any direct position within its
+spatial, temporal or spatiotemporal domain.
+[ISO 19123:2005, definition 4.17]
+Discharge
+In its simplest concept discharge means outflow; therefore, the use of this term is not restricted as
+to course or location, and it can be applied to describe the flow of water from a pipe or from a
+drainage basin. If the discharge occurs in some course or channel, it is correct to speak of the
+discharge of a canal or of a river. It is also correct to speak of the discharge of a canal or stream
+into a lake, a stream, or an ocean.
+[USGS, http://water.usgs.gov/wsc/glossary.html#Discharge]
+Domain feature
+Feature of a type defined within a particular application domain
+NOTE: This may be contrasted with observations and sampling features, which are features of
+types defined for cross-domain purposes.
+[ISO 19156, definition 4.4]
+Feature
+Abstraction of real-world phenomena
+[ISO 19101:2002, definition 4.11]
+Observation
+Act of observing a property
+[ISO19156, definition 4.10]
+Observation procedure
+Method, algorithm or instrument, or system of these which may be used in making an observation
+[ISO19156, definition 4.11]
+Property <General Feature Model>
+Facet or attribute of an object referenced by a name
+EXAMPLE: Abby's car has the colour red, where "colour red" is a property of the car instance
+Sampling feature

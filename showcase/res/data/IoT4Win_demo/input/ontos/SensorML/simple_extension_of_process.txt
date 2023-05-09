@@ -1,0 +1,96 @@
+
+SensorML 2.0 Examples
+Simple Extension of a Process
+
+Perhaps the simplest example of the use of inheritance in SensorML is the simple extension of the LinearInterpolator process defined earlier. The LinearInterpolator is a general process that uses the linear equation y=mx + b to calculate y (output) from x (input). In our example instance below, we reference the base LinearEquation process using the typeOf element [highlighted]. Then, using the setParameter elements [also highlighted], we set the values for the two parameters, m (slope) and b (y intercept). We now have an instance of the LinearInterpolator process with specific values for slope and y-intercept.
+
+An important note regarding the typeOf element: when referencing the base process, one must provide both the resolvable URL of the description of the base process within the xlink:href attribute, and the uniqueID (as defined by gml:identifier) in the xlink:title attribute.
+?
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SimpleProcess gml:id="myLinearEquation"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+    <gml:description>
+        An example of an instance in which only the parameters are set with no additional information provided.
+        This case is for a linearInterpolator
+    </gml:description>
+    <gml:identifier codeSpace="uniqueID">urn:myDomain:swe:process:calibration</gml:identifier>
+    <sml:typeOf xlink:title="urn:net:swe:process:linearEquation01"
+        xlink:href="http://www.sensorml.com/sensorML-2.0/examples/xml/LinearInterpolator.xml"/>
+    <sml:configuration>
+        <sml:Settings>
+            <sml:setValue ref="parameters/slope-intercept/slope">2.5</sml:setValue>
+            <sml:setValue ref="parameters/slope-intercept/intercept">-3.789</sml:setValue>
+        </sml:Settings>
+    </sml:configuration>
+</sml:SimpleProcess>
+
+ 
+
+For reference, the base class LinearInterpolator is shown below.
+?
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SimpleProcess gml:id="linearInterpolator01"
+    xmlns:sml="http://www.opengis.net/sensorML/2.0"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.opengis.net/sensorML/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd"
+    definition="http://sensors.ws/process/linearInterpolator">
+    <!-- ============================= -->
+    <!--       Descriptions            -->
+    <!-- ============================= -->
+    <gml:description>A linear interpolator based on equation y = mx + b </gml:description>
+    <gml:identifier codeSpace="uid">urn:net:swe:process:linearEquation01</gml:identifier>
+    <gml:name>Linear Equation 01</gml:name>
+    <!-- ============================= -->
+    <!--             Inputs            -->
+    <!-- ============================= -->
+    <sml:inputs>
+        <sml:InputList>
+            <sml:input name="x">
+                <swe:Quantity definition="http://sensorml.com/ont/swe/property/XCoordinate">
+                    <swe:uom code="any"/>
+                </swe:Quantity>
+            </sml:input>
+        </sml:InputList>    
+    </sml:inputs>
+    <!-- ============================= -->
+    <!--            Outputs            -->
+    <!-- ============================= -->
+    <sml:outputs>
+        <sml:OutputList>
+            <sml:output name="y">
+                <swe:Quantity definition="http://sensorml.com/ont/swe/property/YCoordinate">
+                    <swe:uom code="any"/>
+                </swe:Quantity>                
+            </sml:output>
+        </sml:OutputList>     
+     </sml:outputs>
+    <!-- ============================= -->
+    <!--         Parameters            -->
+    <!-- ============================= -->
+    <sml:parameters>
+        <sml:ParameterList>
+            <sml:parameter name="slope-intercept">
+                <swe:DataRecord>
+                    <swe:field name="slope">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/LinearSlope">
+                            <swe:uom code="any"/>
+                        </swe:Quantity>
+                    </swe:field>
+                    <swe:field name="intercept">
+                        <swe:Quantity definition="http://sensorml.com/ont/swe/property/LinearAxisIntercept">
+                            <swe:uom code="any"/>
+                        </swe:Quantity>
+                    </swe:field>
+                </swe:DataRecord>                
+            </sml:parameter>
+        </sml:ParameterList>       
+    </sml:parameters>
+</sml:SimpleProcess>

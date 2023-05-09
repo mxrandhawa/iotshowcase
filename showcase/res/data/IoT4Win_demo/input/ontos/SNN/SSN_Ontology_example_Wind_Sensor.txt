@@ -1,0 +1,1652 @@
+
+SSN Ontology example: Wind Sensor
+
+Author
+    W3C Semantic Sensor Network Incubator Group
+Description
+    An example of the SSN-XG sensor ontology (http://www.w3.org/2005/Incubator/ssn/) used to describe a sensing device - the Vaisala WM30. The Vaisala WM30 measures wind speed and wind direction. The device data sheet is available at http://www.vaisala.com/en/products/windsensors/Pages/WM30.aspx The specification here follows the data sheet closely and describes all the measurement capabilites, power supply and operating and survial properties. This example shows how to use and build on the definitions in the SSN-XG's ontology as well as how to import and use other ontologies (in this example units) and how to extend the definitions. There are things about a sensor that one may wish to describe that aren't covered by this example (or the SSN-XG ontology). For example, data about the company that made the device, the url of documentation, the size and weight of the device, etc. These aren't sensor specific issues and so aren't covered, one needs to import other approapriate ontologies to describe those aspects. Also, this example doesn't provide any instance specifications - it describes what a WM30 is, not any particular WM30 devices. Generally an ontology like this one would describe the TBox specification and the ABox instances provided by a separate ontology; hence the instances are in an acompaning example.
+Latest Version
+    http://purl.oclc.org/NET/ssnx/meteo/WM30
+Rights
+    Copyright 2010 - 2011 W3C.
+URI
+    The namespace for this ontology is http://purl.oclc.org/NET/ssnx/meteo/WM30
+Prefix
+    When used in XML documents the suggested prefix is WM30
+
+Table of Contents
+Section 	Module 	Classes 	Properties
+DUL 	DUL 	Amount, Region, UnitOfMeasure 	hasRegionDataValue, isParametrizedBy, parametrizes
+cc 	cc 		license
+ssn 	ssn 	Accuracy, FeatureOfInterest, MeasurementCapability, MeasurementProperty, MeasurementRange, OperatingPowerRange, OperatingRange, Property, Sensing, SensingDevice, Sensor, SurvivalRange 	forProperty, hasMeasurementCapability, hasMeasurementProperty, hasOperatingProperty, hasProperty, hasSubSystem, hasValue, implements, inCondition, isPropertyOf, observes, ofFeature
+qu 	qu 	QuantityKind, Unit 	quantityKind, symbol
+dim 	dim 	Angle, Temperature, TemperatureUnit, VelocityOrSpeed 	
+WM30 	WM30 	DampingRatio, DelayDistance, DistanceConstant, OverShootRatio, StartingThreshold, TransducerOutput, Vaisala_WM30, ValueRange, WM30_CharacteristicTransferFunction, WM30_OperatingRange, WM30_SurvivalRange, WM30_WindDirection, WM30_WindDirection_MeasurementCapability, WM30_WindDirection_MeasurementCapability_WMS301, WM30_WindDirection_MeasurementCapability_WMS302, WM30_WindSpeed, WM30_WindSpeed_MeasurementCapability, WM30_WindSpeed_MeasurementCapability_WSgrt10ms, WM30_WindSpeed_MeasurementCapability_WSless10ms, WMS301, WMS302, WindDirection, WindFeature, WindSpeed 	hasRangeMaxValue, hasRangeMaxValueExclusive, hasRangeMaxValueInclusive, hasRangeMinValue, hasRangeMinValueExclusive, hasRangeMinValueInclusive, sensingDescription, unitOfMeasure, unitOfMeasureFor
+Section DUL
+Introduction DUL
+
+This part of the ontology defines 3 classes and 3 properties .
+Module 	Term Name 	Type 	Definition
+DUL 	Amount 	class 	
+DUL 	Region 	class 	
+DUL 	UnitOfMeasure 	class 	
+DUL 	hasRegionDataValue 	property 	
+DUL 	isParametrizedBy 	property 	
+DUL 	parametrizes 	property 	
+Module DUL
+Amount
+URI: 	http://www.loa-cnr.it/ontologies/DUL.owl#Amount
+Schema:
+
+
+<owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+
+Region
+URI: 	http://www.loa-cnr.it/ontologies/DUL.owl#Region
+Schema:
+
+
+<owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Region"/>
+
+UnitOfMeasure
+URI: 	http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure
+Schema:
+
+
+<owl:Class rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure"/>
+
+hasRegionDataValue
+URI: 	http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+
+isParametrizedBy
+URI: 	http://www.loa-cnr.it/ontologies/DUL.owl#isParametrizedBy
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#isParametrizedBy"/>
+
+parametrizes
+URI: 	http://www.loa-cnr.it/ontologies/DUL.owl#parametrizes
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#parametrizes"/>
+
+Section cc
+Introduction cc
+
+This part of the ontology defines no classes and one property .
+Module 	Term Name 	Type 	Definition
+cc 	license 	property 	
+Module cc
+license
+URI: 	http://creativecommons.org/ns#license
+Type of property: 	Annotation property
+Schema:
+
+
+<owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+
+Section ssn
+Introduction ssn
+
+This part of the ontology defines 12 classes and 12 properties .
+Module 	Term Name 	Type 	Definition
+ssn 	Accuracy 	class 	
+ssn 	FeatureOfInterest 	class 	
+ssn 	MeasurementCapability 	class 	
+ssn 	MeasurementProperty 	class 	
+ssn 	MeasurementRange 	class 	
+ssn 	OperatingPowerRange 	class 	
+ssn 	OperatingRange 	class 	
+ssn 	Property 	class 	
+ssn 	Sensing 	class 	
+ssn 	SensingDevice 	class 	
+ssn 	Sensor 	class 	
+ssn 	SurvivalRange 	class 	
+ssn 	forProperty 	property 	
+ssn 	hasMeasurementCapability 	property 	
+ssn 	hasMeasurementProperty 	property 	
+ssn 	hasOperatingProperty 	property 	
+ssn 	hasProperty 	property 	
+ssn 	hasSubSystem 	property 	
+ssn 	hasValue 	property 	
+ssn 	implements 	property 	
+ssn 	inCondition 	property 	
+ssn 	isPropertyOf 	property 	
+ssn 	observes 	property 	
+ssn 	ofFeature 	property 	
+Module ssn
+Accuracy
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#Accuracy
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Accuracy"/>
+
+FeatureOfInterest
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+
+MeasurementCapability
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#MeasurementCapability
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#MeasurementCapability"/>
+
+MeasurementProperty
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+
+MeasurementRange
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#MeasurementRange
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#MeasurementRange"/>
+
+OperatingPowerRange
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#OperatingPowerRange
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#OperatingPowerRange"/>
+
+OperatingRange
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#OperatingRange
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#OperatingRange"/>
+
+Property
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#Property
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+
+Sensing
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#Sensing
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensing"/>
+
+SensingDevice
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#SensingDevice
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+
+Sensor
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#Sensor
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+
+SurvivalRange
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#SurvivalRange
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#SurvivalRange"/>
+
+forProperty
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#forProperty
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#forProperty"/>
+
+hasMeasurementCapability
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability"/>
+
+hasMeasurementProperty
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+
+hasOperatingProperty
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#hasOperatingProperty
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasOperatingProperty"/>
+
+hasProperty
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#hasProperty
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasProperty"/>
+
+hasSubSystem
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+
+hasValue
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#hasValue
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+
+implements
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#implements
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+
+inCondition
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#inCondition
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#inCondition"/>
+
+isPropertyOf
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#isPropertyOf
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#isPropertyOf"/>
+
+observes
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#observes
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+
+ofFeature
+URI: 	http://purl.oclc.org/NET/ssnx/ssn#ofFeature
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#ofFeature"/>
+
+Section qu
+Introduction qu
+
+This part of the ontology defines 2 classes and 2 properties .
+Module 	Term Name 	Type 	Definition
+qu 	QuantityKind 	class 	
+qu 	Unit 	class 	
+qu 	quantityKind 	property 	
+qu 	symbol 	property 	
+Module qu
+QuantityKind
+URI: 	http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
+Subclass of 	ssn:Property
+Paraphrase (experimental) 	A qu:QuantityKind is something that is a ssn:Property
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+</owl:Class>
+
+Unit
+URI: 	http://purl.oclc.org/NET/ssnx/qu/qu#Unit
+Subclass of 	DUL:UnitOfMeasure
+Paraphrase (experimental) 	A qu:Unit is something that is a DUL:UnitOfMeasure
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/qu#Unit">
+<rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#UnitOfMeasure"/>
+</owl:Class>
+
+quantityKind
+URI: 	http://purl.oclc.org/NET/ssnx/qu/qu#quantityKind
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/qu/qu#quantityKind"/>
+
+symbol
+URI: 	http://purl.oclc.org/NET/ssnx/qu/qu#symbol
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/qu/qu#symbol"/>
+
+Section dim
+Introduction dim
+
+This part of the ontology defines 4 classes and no properties .
+Module 	Term Name 	Type 	Definition
+dim 	Angle 	class 	
+dim 	Temperature 	class 	
+dim 	TemperatureUnit 	class 	
+dim 	VelocityOrSpeed 	class 	
+Module dim
+Angle
+URI: 	http://purl.oclc.org/NET/ssnx/qu/dim#Angle
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Angle"/>
+
+Temperature
+URI: 	http://purl.oclc.org/NET/ssnx/qu/dim#Temperature
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+
+TemperatureUnit
+URI: 	http://purl.oclc.org/NET/ssnx/qu/dim#TemperatureUnit
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#TemperatureUnit"/>
+
+VelocityOrSpeed
+URI: 	http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+
+Section unit
+Introduction unit
+Section WM30
+Introduction WM30
+
+This part of the ontology defines 24 classes and 9 properties .
+Module 	Term Name 	Type 	Definition
+WM30 	DampingRatio 	class 	
+WM30 	DelayDistance 	class 	
+WM30 	DistanceConstant 	class 	
+WM30 	OverShootRatio 	class 	
+WM30 	StartingThreshold 	class 	
+WM30 	TransducerOutput 	class 	
+WM30 	Vaisala_WM30 	class 	The WM30 is a device (a piece of hardware and embedded software 260x300mm) that measures both wind speed and wind direction. For the purposes of the example, we are underspecifying the two main parts of the WM30. The specification isn't concerned if the wind speed and direction sensors are devices or not. If they were separable from the WM30 and usable separately they should probably be modelled as devices. As it stands the WM30 is a device with two sensing capabilities that aren't separable from the device; hence the are just modelled as sensors that implement sensing (the use of hasSubSystem means they must be Systems, which is fair enough as they are pieces of technology).
+WM30 	ValueRange 	class 	
+WM30 	WM30_CharacteristicTransferFunction 	class 	The WM30's characteristic transfer function is the formula used by the device to relate the turning of the cups to windspeed: i.e. it's really the method of measurement used. That's why it specified here as a sensing method. The actual transducer in the device outputs hertz and the WM30 converts this to WindSpeed via the function. Thus another modelling option would be to model the whole chain (subdivide the WM30 into further component and show how the output of the transducer is the input of the characteristic transfer function, etc) indicating more closely how the device actually makes the measurement. For this example that's not really necessary. There are any number of ways to specify the characteristic transfer function. DUL's information objects and realisations could be used provide some other concrete description. If we had an application that needed to read in the function, perhaps if the specification was of an abstract sensor that needed to be realised at runtime, then some systematic standard or format should be used - technically though anything could be attached: formated text, a reference to a scientific paper describing the measurement process, MathML, an algorithm specification in a formal language, program code or an executable.
+WM30 	WM30_OperatingRange 	class 	
+WM30 	WM30_SurvivalRange 	class 	This is called 'Storage temperature' on the WM30 data sheet. The intention is likely to be the same as SurvivalRange: i.e. if the device is stored outside this temperature range it no longer works as specified. In any case, for the purposes of the example it shows the use of SurvivalRange.
+WM30 	WM30_WindDirection 	class 	The WM30 can be purchased with one of two options for its wind direction sensor. The WMS301 has one wiper, while the WMS302 has two, and thus a greater measurement range.
+WM30 	WM30_WindDirection_MeasurementCapability 	class 	Similarly to the wind speed capabilities, the definitions approapriate to both the WMS301 and the WMS302 are specified here and inherited by the subconcepts.
+WM30 	WM30_WindDirection_MeasurementCapability_WMS301 	class 	
+WM30 	WM30_WindDirection_MeasurementCapability_WMS302 	class 	
+WM30 	WM30_WindSpeed 	class 	The WindSpeed sensor of the WM30. It implements a known formula for relating the spinning of the cups to windspeed and has different accuracies in different conditions.
+WM30 	WM30_WindSpeed_MeasurementCapability 	class 	The WM30 will have two measurement capabilities, one for each of the subconcepts here. The specifications applicable to both are made here and inherited by the subconcepts. The transducer output could perhapse be better modelled with a structure that is more easily recognised at 1 Hz per 0.7 m/s, but as it is looks sufficient. The MeasurementRange of the WM30 can be infered as the combined ranges of the two capabilites. Another way to do it would be to provide a third capability of the WM30 that specifies only the MeasurementRange.
+WM30 	WM30_WindSpeed_MeasurementCapability_WSgrt10ms 	class 	
+WM30 	WM30_WindSpeed_MeasurementCapability_WSless10ms 	class 	
+WM30 	WMS301 	class 	
+WM30 	WMS302 	class 	
+WM30 	WindDirection 	class 	
+WM30 	WindFeature 	class 	
+WM30 	WindSpeed 	class 	
+WM30 	hasRangeMaxValue 	property 	
+WM30 	hasRangeMaxValueExclusive 	property 	
+WM30 	hasRangeMaxValueInclusive 	property 	
+WM30 	hasRangeMinValue 	property 	
+WM30 	hasRangeMinValueExclusive 	property 	
+WM30 	hasRangeMinValueInclusive 	property 	
+WM30 	sensingDescription 	property 	
+WM30 	unitOfMeasure 	property 	
+WM30 	unitOfMeasureFor 	property 	
+Module WM30
+DampingRatio
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#DampingRatio
+Subclass of 	ssn:MeasurementProperty
+Paraphrase (experimental) 	A WM30:DampingRatio is something that is a ssn:MeasurementProperty
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#DampingRatio">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+</owl:Class>
+
+DelayDistance
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#DelayDistance
+Subclass of 	ssn:MeasurementProperty
+Paraphrase (experimental) 	A WM30:DelayDistance is something that is a ssn:MeasurementProperty
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#DelayDistance">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+</owl:Class>
+
+DistanceConstant
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#DistanceConstant
+Subclass of 	ssn:MeasurementProperty
+Paraphrase (experimental) 	A WM30:DistanceConstant is something that is a ssn:MeasurementProperty
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#DistanceConstant">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+</owl:Class>
+
+OverShootRatio
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#OverShootRatio
+Subclass of 	ssn:MeasurementProperty
+Paraphrase (experimental) 	A WM30:OverShootRatio is something that is a ssn:MeasurementProperty
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#OverShootRatio">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+</owl:Class>
+
+StartingThreshold
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#StartingThreshold
+Subclass of 	ssn:MeasurementProperty
+Paraphrase (experimental) 	A WM30:StartingThreshold is something that is a ssn:MeasurementProperty
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#StartingThreshold">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+</owl:Class>
+
+TransducerOutput
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#TransducerOutput
+Subclass of 	ssn:MeasurementProperty
+Paraphrase (experimental) 	A WM30:TransducerOutput is something that is a ssn:MeasurementProperty
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#TransducerOutput">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"/>
+</owl:Class>
+
+Vaisala_WM30
+
+The WM30 is a device (a piece of hardware and embedded software 260x300mm) that measures both wind speed and wind direction. For the purposes of the example, we are underspecifying the two main parts of the WM30. The specification isn't concerned if the wind speed and direction sensors are devices or not. If they were separable from the WM30 and usable separately they should probably be modelled as devices. As it stands the WM30 is a device with two sensing capabilities that aren't separable from the device; hence the are just modelled as sensors that implement sensing (the use of hasSubSystem means they must be Systems, which is fair enough as they are pieces of technology).
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#Vaisala_WM30
+Subclass of 	ssn:SensingDevice, things that have a ssn:hasSubSystem property who may be a WM30:WM30_WindSpeed, things that have a ssn:observes property who may be a WM30:WindSpeed, things that have a ssn:observes property who may be a WM30:WindDirection and things that have a ssn:hasSubSystem property who may be a WM30:WM30_WindDirection
+Paraphrase (experimental) 	A WM30:Vaisala_WM30 is something that is a ssn:SensingDevice and has a ssn:hasSubSystem property who may be a WM30:WM30_WindSpeed and has a ssn:observes property who may be a WM30:WindSpeed and has a ssn:observes property who may be a WM30:WindDirection and has a ssn:hasSubSystem property who may be a WM30:WM30_WindDirection
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#Vaisala_WM30">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindDirection"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment>
+The WM30 is a device (a piece of hardware and embedded software 
+260x300mm) that measures both wind speed and wind direction. For the 
+purposes of the example, we are underspecifying the two main parts of 
+the WM30. The specification isn't concerned if the wind speed and 
+direction sensors are devices or not. If they were separable from the 
+WM30 and usable separately they should probably be modelled as devices. 
+As it stands the WM30 is a device with two sensing capabilities that 
+aren't separable from the device; hence the are just modelled as sensors 
+that implement sensing (the use of hasSubSystem means they must be 
+Systems, which is fair enough as they are pieces of technology).
+</rdfs:comment>
+</owl:Class>
+
+ValueRange
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange
+Subclass of 	DUL:Region
+Paraphrase (experimental) 	A WM30:ValueRange is something that is a DUL:Region
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange">
+<rdfs:subClassOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#Region"/>
+</owl:Class>
+
+WM30_CharacteristicTransferFunction
+
+The WM30's characteristic transfer function is the formula used by the device to relate the turning of the cups to windspeed: i.e. it's really the method of measurement used. That's why it specified here as a sensing method. The actual transducer in the device outputs hertz and the WM30 converts this to WindSpeed via the function. Thus another modelling option would be to model the whole chain (subdivide the WM30 into further component and show how the output of the transducer is the input of the characteristic transfer function, etc) indicating more closely how the device actually makes the measurement. For this example that's not really necessary. There are any number of ways to specify the characteristic transfer function. DUL's information objects and realisations could be used provide some other concrete description. If we had an application that needed to read in the function, perhaps if the specification was of an abstract sensor that needed to be realised at runtime, then some systematic standard or format should be used - technically though anything could be attached: formated text, a reference to a scientific paper describing the measurement process, MathML, an algorithm specification in a formal language, program code or an executable.
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_CharacteristicTransferFunction
+Subclass of 	ssn:Sensing
+Equivalent to 	One of : WM30:wm30_CharacteristicTransferFunction
+Paraphrase (experimental) 	A WM30:WM30_CharacteristicTransferFunction is something that is a ssn:SensingA WM30:WM30_CharacteristicTransferFunction is something that must be a one of WM30:wm30_CharacteristicTransferFunction
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_CharacteristicTransferFunction">
+<owl:equivalentClass>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#wm30_CharacteristicTransferFunction"/>
+</owl:oneOf>
+</owl:Class>
+</owl:equivalentClass>
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensing"/>
+<rdfs:comment>
+The WM30's characteristic transfer function is the formula used by the 
+device to relate the turning of the cups to windspeed: i.e. it's really 
+the method of measurement used. That's why it specified here as a 
+sensing method. The actual transducer in the device outputs hertz and 
+the WM30 converts this to WindSpeed via the function. Thus another 
+modelling option would be to model the whole chain (subdivide the WM30 
+into further component and show how the output of the transducer is the 
+input of the characteristic transfer function, etc) indicating more 
+closely how the device actually makes the measurement. For this example 
+that's not really necessary. There are any number of ways to specify the 
+characteristic transfer function. DUL's information objects and 
+realisations could be used provide some other concrete description. If 
+we had an application that needed to read in the function, perhaps if 
+the specification was of an abstract sensor that needed to be realised 
+at runtime, then some systematic standard or format should be used - 
+technically though anything could be attached: formated text, a 
+reference to a scientific paper describing the measurement process, 
+MathML, an algorithm specification in a formal language, program code or 
+an executable.
+</rdfs:comment>
+</owl:Class>
+
+WM30_OperatingRange
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_OperatingRange
+Subclass of 	ssn:OperatingRange, things that have a ssn:hasOperatingProperty property who may be a something which is (a nested class, see schema) and things that have a ssn:inCondition property who may be a something which is (a nested class, see schema)
+Paraphrase (experimental) 	A WM30:WM30_OperatingRange is something that is a ssn:OperatingRange and has a ssn:hasOperatingProperty property who may be something which (composite term, see schema) and has a ssn:inCondition property who may be something which (composite term, see schema)
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_OperatingRange">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#OperatingRange"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasOperatingProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#OperatingPowerRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#volt"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+15.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+3.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#inCondition"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#degreeCelsius"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+55.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+-40.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+WM30_SurvivalRange
+
+This is called 'Storage temperature' on the WM30 data sheet. The intention is likely to be the same as SurvivalRange: i.e. if the device is stored outside this temperature range it no longer works as specified. In any case, for the purposes of the example it shows the use of SurvivalRange.
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_SurvivalRange
+Subclass of 	ssn:SurvivalRange and things that have a ssn:inCondition property who may be a something which is (a nested class, see schema)
+Paraphrase (experimental) 	A WM30:WM30_SurvivalRange is something that is a ssn:SurvivalRange and has a ssn:inCondition property who may be something which (composite term, see schema)
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_SurvivalRange">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SurvivalRange"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#inCondition"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#degreeCelsius"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+65.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+-60.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment>
+This is called 'Storage temperature' on the WM30 data sheet. The 
+intention is likely to be the same as SurvivalRange: i.e. if the device 
+is stored outside this temperature range it no longer works as 
+specified. In any case, for the purposes of the example it shows the use 
+of SurvivalRange.
+</rdfs:comment>
+</owl:Class>
+
+WM30_WindDirection
+
+The WM30 can be purchased with one of two options for its wind direction sensor. The WMS301 has one wiper, while the WMS302 has two, and thus a greater measurement range.
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection
+Subclass of 	Union of : WM30:WMS301 and WM30:WMS302 , ssn:Sensor and things that have a ssn:observes property who may be a WM30:WindDirection
+Paraphrase (experimental) 	A WM30:WM30_WindDirection is something that is a is a WM30:WMS301 or WM30:WMS302 and is a ssn:Sensor and has a ssn:observes property who may be a WM30:WindDirection
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection">
+<rdfs:subClassOf>
+<owl:Class>
+<owl:unionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WMS301"/>
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WMS302"/>
+</owl:unionOf>
+</owl:Class>
+</rdfs:subClassOf>
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindDirection"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment>
+The WM30 can be purchased with one of two options for its wind direction 
+sensor. The WMS301 has one wiper, while the WMS302 has two, and thus a 
+greater measurement range.
+</rdfs:comment>
+</owl:Class>
+
+WM30_WindDirection_MeasurementCapability
+
+Similarly to the wind speed capabilities, the definitions approapriate to both the WMS301 and the WMS302 are specified here and inherited by the subconcepts.
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability
+Subclass of 	ssn:MeasurementCapability, things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema), things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema), things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema), things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema), things that have a ssn:forProperty property who must be a WM30:WindDirection, things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema) and things that have a ssn:ofFeature property who must be a WM30:WindFeature
+Paraphrase (experimental) 	A WM30:WM30_WindDirection_MeasurementCapability is something that is a ssn:MeasurementCapability and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:forProperty property who must be a WM30:WindDirection and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:ofFeature property who must be a WM30:WindFeature
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementCapability"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#DelayDistance"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metre"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">
+0.6</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#DampingRatio"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">
+0.3</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#OverShootRatio"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">
+0.4</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#StartingThreshold"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecond"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueExclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">
+1.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#forProperty"/>
+<owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindDirection"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Accuracy"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#degreeUnitOfAngle"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueExclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+3.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueExclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+-3.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ofFeature"/>
+<owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindFeature"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment>
+Similarly to the wind speed capabilities, the definitions approapriate 
+to both the WMS301 and the WMS302 are specified here and inherited by 
+the subconcepts.
+</rdfs:comment>
+</owl:Class>
+
+WM30_WindDirection_MeasurementCapability_WMS301
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability_WMS301
+Subclass of 	WM30:WM30_WindDirection_MeasurementCapability and things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema)
+Paraphrase (experimental) 	A WM30:WM30_WindDirection_MeasurementCapability_WMS301 is something that is a WM30:WM30_WindDirection_MeasurementCapability and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema)
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability_WMS301">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#MeasurementRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#degreeUnitOfAngle"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+355.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+0.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+WM30_WindDirection_MeasurementCapability_WMS302
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability_WMS302
+Subclass of 	WM30:WM30_WindDirection_MeasurementCapability and things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema)
+Paraphrase (experimental) 	A WM30:WM30_WindDirection_MeasurementCapability_WMS302 is something that is a WM30:WM30_WindDirection_MeasurementCapability and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema)
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability_WMS302">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#MeasurementRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#degreeUnitOfAngle"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+360.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+0.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+WM30_WindSpeed
+
+The WindSpeed sensor of the WM30. It implements a known formula for relating the spinning of the cups to windspeed and has different accuracies in different conditions.
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed
+Subclass of 	ssn:Sensor, things that have a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindSpeed_MeasurementCapability_WSless10ms, things that have a ssn:observes property who may be a WM30:WindSpeed, things that have a ssn:implements property who may be a something which is (a nested class, see schema) and things that have a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindSpeed_MeasurementCapability_WSgrt10ms
+Paraphrase (experimental) 	A WM30:WM30_WindSpeed is something that is a ssn:Sensor and has a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindSpeed_MeasurementCapability_WSless10ms and has a ssn:observes property who may be a WM30:WindSpeed and has a ssn:implements property who may be something which one of WM30:wm30_CharacteristicTransferFunction and has a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindSpeed_MeasurementCapability_WSgrt10ms
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability_WSless10ms"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#observes"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#implements"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#wm30_CharacteristicTransferFunction"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability_WSgrt10ms"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment>
+The WindSpeed sensor of the WM30. It implements a known formula for 
+relating the spinning of the cups to windspeed and has different 
+accuracies in different conditions.
+</rdfs:comment>
+</owl:Class>
+
+WM30_WindSpeed_MeasurementCapability
+
+The WM30 will have two measurement capabilities, one for each of the subconcepts here. The specifications applicable to both are made here and inherited by the subconcepts. The transducer output could perhapse be better modelled with a structure that is more easily recognised at 1 Hz per 0.7 m/s, but as it is looks sufficient. The MeasurementRange of the WM30 can be infered as the combined ranges of the two capabilites. Another way to do it would be to provide a third capability of the WM30 that specifies only the MeasurementRange.
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability
+Subclass of 	ssn:MeasurementCapability, things that have a ssn:forProperty property who must be a WM30:WindSpeed, things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema), things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema), things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema) and things that have a ssn:ofFeature property who must be a WM30:WindFeature
+Paraphrase (experimental) 	A WM30:WM30_WindSpeed_MeasurementCapability is something that is a ssn:MeasurementCapability and has a ssn:forProperty property who must be a WM30:WindSpeed and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:ofFeature property who must be a WM30:WindFeature
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#MeasurementCapability"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#forProperty"/>
+<owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#TransducerOutput"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#hertz"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+1.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecond"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+0.7</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#StartingThreshold"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecond"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueExclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">
+0.4</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#DistanceConstant"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://www.loa-cnr.it/ontologies/DUL.owl#Amount"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metre"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+2.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#ofFeature"/>
+<owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindFeature"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:comment>
+The WM30 will have two measurement capabilities, one for each of the 
+subconcepts here. The specifications applicable to both are made here 
+and inherited by the subconcepts. The transducer output could perhapse 
+be better modelled with a structure that is more easily recognised at 1 
+Hz per 0.7 m/s, but as it is looks sufficient. The MeasurementRange of 
+the WM30 can be infered as the combined ranges of the two capabilites. 
+Another way to do it would be to provide a third capability of the WM30 
+that specifies only the MeasurementRange.
+</rdfs:comment>
+</owl:Class>
+
+WM30_WindSpeed_MeasurementCapability_WSgrt10ms
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability_WSgrt10ms
+Subclass of 	WM30:WM30_WindSpeed_MeasurementCapability, things that have a ssn:inCondition property who may be a something which is (a nested class, see schema) and things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema)
+Paraphrase (experimental) 	A WM30:WM30_WindSpeed_MeasurementCapability_WSgrt10ms is something that is a WM30:WM30_WindSpeed_MeasurementCapability and has a ssn:inCondition property who may be something which (composite term, see schema) and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema)
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability_WSgrt10ms">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#inCondition"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecond"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+60.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+10.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Accuracy"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#percent"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+2.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+-2.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+WM30_WindSpeed_MeasurementCapability_WSless10ms
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability_WSless10ms
+Subclass of 	WM30:WM30_WindSpeed_MeasurementCapability, things that have a ssn:hasMeasurementProperty property who may be a something which is (a nested class, see schema) and things that have a ssn:inCondition property who may be a something which is (a nested class, see schema)
+Paraphrase (experimental) 	A WM30:WM30_WindSpeed_MeasurementCapability_WSless10ms is something that is a WM30:WM30_WindSpeed_MeasurementCapability and has a ssn:hasMeasurementProperty property who may be something which (composite term, see schema) and has a ssn:inCondition property who may be something which (composite term, see schema)
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability_WSless10ms">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindSpeed_MeasurementCapability"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Accuracy"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecond"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+3.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+-3.0</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#inCondition"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasValue"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:intersectionOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#ValueRange"/>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<owl:someValuesFrom>
+<owl:Class>
+<owl:oneOf rdf:parseType="Collection">
+<rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/unit#metrePerSecond"/>
+</owl:oneOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueExclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+10.0</owl:hasValue>
+</owl:Restriction>
+<owl:Restriction>
+<owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive"/>
+<owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+0.4</owl:hasValue>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</owl:intersectionOf>
+</owl:Class>
+</owl:someValuesFrom>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+WMS301
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WMS301
+Subclass of 	WM30:WM30_WindDirection and things that have a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindDirection_MeasurementCapability_WMS301
+Disjoint with 	WM30:WMS302
+Paraphrase (experimental) 	A WM30:WMS301 is something that is a WM30:WM30_WindDirection and has a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindDirection_MeasurementCapability_WMS301A WM30:WMS301 is not a WM30:WMS302
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WMS301">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability_WMS301"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<owl:disjointWith rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WMS302"/>
+</owl:Class>
+
+WMS302
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WMS302
+Subclass of 	WM30:WM30_WindDirection and things that have a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindDirection_MeasurementCapability_WMS302
+Paraphrase (experimental) 	A WM30:WMS302 is something that is a WM30:WM30_WindDirection and has a ssn:hasMeasurementCapability property who may be a WM30:WM30_WindDirection_MeasurementCapability_WMS302
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WMS302">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WM30_WindDirection_MeasurementCapability_WMS302"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+WindDirection
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WindDirection
+Subclass of 	dim:Angle
+Paraphrase (experimental) 	A WM30:WindDirection is something that is a dim:Angle
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindDirection">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Angle"/>
+</owl:Class>
+
+WindFeature
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WindFeature
+Subclass of 	ssn:FeatureOfInterest and things that have a ssn:hasProperty property who may be a WM30:WindSpeed
+Paraphrase (experimental) 	A WM30:WindFeature is something that is a ssn:FeatureOfInterest and has a ssn:hasProperty property who may be a WM30:WindSpeed
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindFeature">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasProperty"/>
+<owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+WindSpeed
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed
+Subclass of 	dim:VelocityOrSpeed and things that have a ssn:isPropertyOf property who must be a WM30:WindFeature
+Paraphrase (experimental) 	A WM30:WindSpeed is something that is a dim:VelocityOrSpeed and has a ssn:isPropertyOf property who must be a WM30:WindFeature
+Schema:
+
+
+<owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindSpeed">
+<rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+<rdfs:subClassOf>
+<owl:Restriction><owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#isPropertyOf"/>
+<owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#WindFeature"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+
+hasRangeMaxValue
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValue
+Subproperty of 	DUL:hasRegionDataValue
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValue">
+<rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+</owl:DatatypeProperty>
+
+hasRangeMaxValueExclusive
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueExclusive
+Subproperty of 	WM30:hasRangeMaxValue
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueExclusive">
+<rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValue"/>
+</owl:DatatypeProperty>
+
+hasRangeMaxValueInclusive
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive
+Subproperty of 	WM30:hasRangeMaxValue
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValueInclusive">
+<rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMaxValue"/>
+</owl:DatatypeProperty>
+
+hasRangeMinValue
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValue
+Subproperty of 	DUL:hasRegionDataValue
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValue">
+<rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#hasRegionDataValue"/>
+</owl:DatatypeProperty>
+
+hasRangeMinValueExclusive
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueExclusive
+Subproperty of 	WM30:hasRangeMinValue
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueExclusive">
+<rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValue"/>
+</owl:DatatypeProperty>
+
+hasRangeMinValueInclusive
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive
+Subproperty of 	WM30:hasRangeMinValue
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValueInclusive">
+<rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#hasRangeMinValue"/>
+</owl:DatatypeProperty>
+
+sensingDescription
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#sensingDescription
+Domain 	ssn:Sensing
+Range 	xsd:string
+Paraphrase (experimental) 	Having a WM30:sensingDescription implies being something that is a ssn:Sensing
+Paraphrase (experimental) 	Being the WM30:sensingDescription of something, implies being something that is a xsd:string
+Schema:
+
+
+<owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#sensingDescription">
+<rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensing"/>
+<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+unitOfMeasure
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure
+Subproperty of 	DUL:isParametrizedBy
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure">
+<rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#isParametrizedBy"/>
+</owl:ObjectProperty>
+
+unitOfMeasureFor
+URI: 	http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasureFor
+Subproperty of 	DUL:parametrizes
+Inverse of 	WM30:unitOfMeasure
+Schema:
+
+
+<owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasureFor">
+<owl:inverseOf rdf:resource="http://purl.oclc.org/NET/ssnx/meteo/WM30#unitOfMeasure"/>
+<rdfs:subPropertyOf rdf:resource="http://www.loa-cnr.it/ontologies/DUL.owl#parametrizes"/>
+</owl:ObjectProperty>
+
+Section quantity
+Introduction quantity
+Documentation generated using a generation tool derived from the vocab.org toolchain.

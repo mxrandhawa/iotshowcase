@@ -1,0 +1,103 @@
+
+SensorML 2.0 Examples
+Simple Multiplexed Streaming
+
+Previous examples illustrated the continuous streaming a values for a given data record. It is also possible to support a data stream consisting of a collection of different messages (i.e. records), each with their own data fields. These messages can occur in any order and any frequency and thus require the ability to distinguish one message type from the others. This is accomplished in SensorML by using the SWE Common DataChoice element within a DataStream.
+
+In the example below, there are two message types: one for temperature measurements and one for wind measurements. Each are defined as a DataRecord and are items within a DataChoice element. In the resulting data stream, the first item of each message must be the item name, in order to distinguish the message type (this is similar to the "sentence type" used in the NMEA format.
+
+An example of the stream data is given after the SensorML example.
+?
+
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>Network of 100's of sensors</gml:description>
+   <gml:identifier codeSpace="uniqueID">urn:meteofrance:stations:76455</gml:identifier>
+   <!-- metadata deleted for brevity sake -->
+ 
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="tempAndWind">
+            <sml:DataInterface>
+               <sml:data>
+                  <swe:DataStream>
+                     <swe:elementType name="message">
+                        <swe:DataChoice>
+ 
+                           <!-- packet definition 1 - temperature -->
+                           <swe:item name="TEMP">
+                              <swe:DataRecord>
+                                 <swe:label>Temperature Measurement</swe:label>
+                                 <swe:field name="time">
+                                    <swe:Time definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                       <swe:uom  xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                                    </swe:Time>
+                                 </swe:field>
+                                 <swe:field name="temp">
+                                    <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/air_temperature">
+                                       <swe:uom code="Cel"/>
+                                    </swe:Quantity>
+                                 </swe:field>
+                              </swe:DataRecord>
+                           </swe:item>
+ 
+                           <!-- packet definition 2 - wind -->
+                           <swe:item name="WIND">
+                              <swe:DataRecord>
+                                 <swe:label>Wind Measurement</swe:label>
+                                 <swe:field name="time">
+                                    <swe:Time  definition="http://sensorml.com/ont/swe/property/SamplingTime">
+                                       <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                                    </swe:Time>
+                                 </swe:field>
+                                 <swe:field name="wind_speed">
+                                    <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/wind_speed">
+                                       <swe:uom code="km/h"/>
+                                    </swe:Quantity>
+                                 </swe:field>
+                                 <swe:field name="wind_dir">
+                                    <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/wind_to_direction">
+                                       <swe:uom code="deg"/>
+                                    </swe:Quantity>
+                                 </swe:field>
+                              </swe:DataRecord>
+                           </swe:item>
+                        </swe:DataChoice>
+                     </swe:elementType>
+                     <swe:encoding>
+                        <swe:TextEncoding tokenSeparator="," blockSeparator=""/>
+                     </swe:encoding>
+                     <swe:values xlink:href="rtp://mySensors.com:4356/76455"/>
+                  </swe:DataStream>
+               </sml:data>
+            </sml:DataInterface>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  Station Location                 -->
+   <!-- ================================================= -->
+   <sml:position>
+      <gml:Point gml:id="stationLocation" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+         <gml:coordinates>47.8 88.56</gml:coordinates>
+      </gml:Point>
+   </sml:position>
+</sml:PhysicalComponent>
+
+ 
+
+The encoding of this data stream is specified in the SensorML description as TextEncoding with a comma separating tokens (or fields) and a space separating blocks (or records). A stream of multiplexed measurements returned by the URL might look like:
+
+TEMP,2009-05-23T19:36:15Z,25.5 TEMP,2009-05-23T19:37:15Z,25.6 WIND,2009-05-23T19:37:17Z,56.3,226.3 TEMP,2009-05-23T19:38:15Z,25.5 WIND,2009-05-23T19:38:16Z,58.4,225.1 ...

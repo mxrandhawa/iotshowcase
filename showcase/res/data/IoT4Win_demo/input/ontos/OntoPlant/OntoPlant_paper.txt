@@ -1,0 +1,357 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/270880264
+An ontology-based approach for the instrumentation, control and automation
+infrastructure of a WWTP
+Conference Paper · June 2014
+CITATIONS
+3
+READS
+151
+7 authors, including:
+Some of the authors of this publication are also working on these related projects:
+Modeling the information-value decay of medical problems for problem list maintenance View project
+OMG API for Knowledge Base submission for standardization View project
+Luca Luccarini
+ENEA
+37 PUBLICATIONS 206 CITATIONS
+SEE PROFILE
+Fabrizio Paolucci
+ENEA
+5 PUBLICATIONS 4 CITATIONS
+SEE PROFILE
+Davide Sottara
+Arizona State University
+50 PUBLICATIONS 303 CITATIONS
+SEE PROFILE
+All content following this page was uploaded by Luca Luccarini on 13 February 2015.
+The user has requested enhancement of the downloaded file.
+International Environmental Modelling and Software Society (iEMSs)
+7th Int. Congress on Env. Modelling and Software, San Diego, Ca, USA,
+Daniel P. Ames, Nigel W.T. Quinn and Andrea E. Rizzoli (Eds.)
+http://www.iemss.org/society/index.php/iemss-2014-proceedings
+An ontology-based approach for the instrumentation,
+control and automation infrastructure of a WWTP
+Davide Sottara a, Jean Claude Correale b, Thierry Spetebroot b Dalila Pulcini c Daniele Giunchi d
+Fabrizio Paolucci e, Luca Luccarini e
+aArizona State University, Biomedical Informatics Department, 13212 E Shea Blvd 85259 Scottsdale
+(AZ), (davide.sottara@asu.edu)
+bDISI, University of Bologna, Viale Risorgimento 2, 40136 Bologna, Italy,
+(jeanclaude.correale@studio.unibo.it, thierry.spetebroot@studio.unibo.it)
+cDepartment of Civil and Environmental Engineering, Politecnico di Milano, Piazza L. da Vinci 32,
+Milano, Italy, (dalila.pulcini@mail.polimi.it)
+dHERA SpA, Via Balzella 24, 47122 Forl`ı, Italy, (daniele.giunchi@gruppohera.it)
+eENEA, UTVALAMB-IDR, Via Martiri di Monte Sole 4, 40129 Bologna, Italy (fabrizio.paolucci@enea.it,
+luca.luccarini@enea.it)
+Abstract: The instrumentation, control and automation of wastewater treatment plants (WWTPs) is a
+key aspect to ensure good performance and lower operational costs. However, control systems are
+seldom interoperable and standard-compliant. In this paper, we propose a knowledge-based approach
+which decouples the description of the plants and their control strategies from their physical structure
+and instrumentation. In particular, we propose a semantic model based on ontologies, formalized using
+the W3C OWL2 standard. We have extended the Semantic Sensor Network and created a specialized
+representation of the WWTP domain, to provide a consistent description of instrumentation (sensors
+and probes), actuators and data acquisition systems. We show how this ontology can be used to model
+typical management actions, such as collecting samples or applying a control policy, and their outcomes.
+Keywords: ontology; knowledge based control systems; wastewater treatment plants; IEDSS
+1 INTRODUCTION
+The optimal management of a wastewater treatment plant (WWTP) requires a continuous monitoring of
+the plant state. The biochemical processes taking place in the plant’s tanks must be observed to ensure
+that the environment guarantees their maximum efficiency. A less than optimal process may result in
+the degradation of the effluent quality, possibly exceeding the limits set by the local legislation. On the
+other hand, preserving the ideal operating conditions does not only improve the yield of the treatment,
+but can also lower maintenance and energy costs [Olsson, 2012]. To achieve this goal, plant operators
+should collect samples from the plant regularly and analyze them to diagnose the actual plant’s conditions
+and plan the appropriate control and maintenance actions. However, Instrumentation, Control and
+Automation (ICA) technologies provide the only cost and time- effective solutions Olsson et al. [2005],
+allowing to monitor a plant in near-real time and to act in a timely fashion. Recently, improvements in
+technology have lowered the costs of sensors, data acquisition systems and mechanical and electronic
+actuators, so that even smaller-scale plants can be instrumented with a reasonable cost/benefit ratio.
+Equipping the plants has allowed to implement a variety of diagnostic and control strategies, aimed at
+improving the process, preventing malfunctionings and reducing operational costs. These strategies are
+implemented within Environmental Decision Support Systems (EDSS), which combine methods from
+statistics [Yoo et al., 2004] and artificial intelligence [Luccarini et al., 2010] with varying degrees of success
+[D¨urrenmatt and Gujer, 2012]. Most of the times, however, the control logic is either hardcoded
+into the devices that collect the data and command the actuators, or is implemented directly on top of
+D. Sottara et al. An ontology-based approach for the instrumentation, control and automation infrastructure of a WWTP
+the interfaces provided by the devices themselves. The tight coupling between the control logic and the
+plant’s equipment makes it difficult to port the controllers between different plants. Instead, if standards
+existed and were supported, the control strategies and the hardware could be deployed, replaced and
+upgraded independently. In fact, in a typical scenario, a manager responsible for multiple plants would
+like to apply policies based on the plants’ class (e.g. traditional continuous flow, sequencing batch reactor,
+membrane bio-rector, . . . ) and scale, rather than the specific type and brand of equipment installed
+in each plant. In this paper, we propose an initial step in the direction of the standardization of the
+interface between control systems and hardware. Our approach is based on semantic web technologies
+[Berners-Lee et al., 2001]: we have extended and combined the popular Semantic Sensor Network
+Ontology (SSNO) [Compton et al., 2012] and the Measurement Unit Ontology (MUO) [MUO, 2008] to
+create a new modular ontology, called OntoPlant. This ontology includes concepts and properties to
+describe the topology of a WWTP, its instrumentation and the data and policies that would be generated
+by the sensors and controllers. The ontology, instead, does not describe the processes themselves and
+the control logic. In fact, a semantic description of the former could be provided by the OntoWEDSS
+ontology [Ceccaroni et al., 2004], while the latter are better represented using other models such as
+business rules, decision trees or workflows [Sottara et al., 2012]. Our ontology, however, provides the
+concepts and the vocabulary which can be used both by human operators and the control systems to
+represent the data, the actions and the context where they are generated. In particular, we focused
+on four typical scenarios: i) describing the plant, ii) acquiring data automatically through the sensors,
+iii) acquiring manual samples to perform laboratory tests and iv) defining control interventions. We will
+use the scenarios to present the OntoPlant ontology and its architectural principles in Section 2, while
+in Section 3 will discuss how the concepts can be applied concretely to a real plant, using a pilot scale
+WWTP as a concrete use case.
+2 MATERIALS AND METHODS
+Pilot Plant The pilot plant, located inside the area of the municipal WWTP in Trebbo di Reno (Bologna),
+is fed with real wastewater and composed of a pre-denitrification tank (95 L), an oxidation tank (162 L), a
+secondary sedimentation tank (85 L). Three peristaltic pumps (for influent loading, internal and external
+recycle), a stirrer and a variable-flow blower are included. It is also provided with probes to measure
+pH, redox potential (ORP), NH4+-N, NO3–N in the anoxic tank and pH, ORP, DO, NH4+-N, NO3–N and
+Total Suspended Solids (TSS) in the aeration tank.
+Ontologies An ontology “is a formal, explicit specification of a shared conceptualization” [Gruber,
+1995]. The corpus of knowledge about WWTPs is a fitting candidate for such a conceptualization. From
+an operator’s perspective, the concepts required to run a plant are relatively stable and well-defined, but
+the ability to share information is likely to be a more critical aspect. Usually, companies operating in
+the water treatment market manage several dozens (if not hundreds) of plants. The lack of a common
+framework to describe the plants and the data collected about their functioning limits a company’s ability
+to operate and grow efficiently. In fact, multi-utilities such as Hera s.p.a. (http://www.gruppohera.it/) are
+progressively centralizing the management activities using remote control technologies, but the integration
+of the different local platforms often not designed for a distributed environment is currently a major
+issue. To create such a common ontology, we have chosen the OWL-2 DL language W3C [2012]. In
+addition to being a W3C standard, it has a number of other benefits. It can be consumed both by domain
+experts and machines, so it facilitates the development of knowledge-based software applications.
+It is designed for the (Semantic) Web, so it is compatible with a distributed environment. It is a formal
+language based on a fragment of first-order logic, which supports some types of automated reasoning
+such as the detection of inconsistencies or the classification of new data (in particular, the DL sublanguage
+provides a good compromise between expressivity and computational complexity). Finally, there
+exist a number of general purpose ontologies which can be reused in more specific domains such as
+the WWTP one. One of these “horizontal” ontologies is the SSNO, which provides the core concepts
+necessary to describe Sensors and Observations. All concepts are defined in a very broad sense.
+A Sensor is an entity which, through a Sensing process, observes the Property of some Feature of
+Interest in the context of an Observation. The SSN ontology, in turn, is built on top of the upper ontology
+DOLCE (ontologydesignpatterns.org/wiki/Ontology:DOLCE+DnS_Ultralite), which defines
+an even more general layer of abstraction. Among others, it defines concepts such as Agent, Event and
+InformationObject. The concepts in the SSN/DUL are too general to be used directly for the WWTP
+D. Sottara et al. An ontology-based approach for the instrumentation, control and automation infrastructure of a WWTP
+domain, so we have created appropriate subclasses specifically for the description of treatment plants
+and their management.
+Figure 1. The OntoPlant ontology.
+The OntoPlant ontology is actually given by the combination of four different modules, as shown in Figure
+1. The first module, the OntoPlant core, serves two purposes. First, it imports both the SSNO and the
+MUO, which provides the concepts necessary to model quantities and measures. Second, it completes
+the SSNO, adding the notion of Actuators/Actuations and refining the model of the Devices. An
+Actuator is the dual counterpart of a Sensor: an entity which can influence the state of a Property: the
+context in which this action takes place is an Actuation. In general, even a human operator might qualify
+as a Sensor/Actuator: to model the hardware installed on a plant, we have defined the subclasses
+SensingDevice and ActuationDevice, respectively. Devices can be connected through Ports, which
+have Interfaces that provide the specification of their functionalities. A Port, in general, is an entity
+that allows the exchange of materials or information between an object and the external world. The
+exact nature and modality of this exchange is defined by the interface(s) exposed by the port. Notice
+that the OntoPlant module is still as much domain-agnostic as possible: the WWTP-specific concepts
+are introduced in a separate module called OntoPlantWWTP. This ontology defines the Plants and their
+macro-components (Tanks, Settlers, . . . ), the Processes that take place within the plant, such as the
+NitrificationProcess or the SettlingProcess and the Quantities of interest which are needed to
+observe the status of the processes.
+3 RESULTS AND DISCUSSION
+3.1 Case Studies
+The OntoPlantWWTP ontology and its dependencies are intended to provide the background knowledge
+to create semantic models of WWTPs. Individual plants, their instrumentation, the samples acquireds
+and the control actuations can all be represented as related individuals, instances of the classes and
+properties defined in the ontology. In particular, we have focused on four main use cases, which from
+our experience cover most of the routine requirements of a plant operator and/or an IEDSS trying to
+manage a WWTP, using, as a reference, the pilot plant introduced in Section 2.
+UC1 : Plant Topology The main requirement is the ability to model the plant, its topology, the hydraulic
+pathways and the instrumentation installed on the plant itself. Using the concepts defined in
+the OntoPlant ontology, a Plant can have one or more PlantLine, a System with a number of Tanks.
+The description of individual plants can use more specific subconcepts. The Trebbo plant is actually an
+ActivatedSludgeWWTP with a single, traditional CASPlantLine composed by a DenitrificationPlant,
+a NitrificationPlant and a Settler. The sub Systems such as the Tanks are defined in terms of the
+D. Sottara et al. An ontology-based approach for the instrumentation, control and automation infrastructure of a WWTP
+treatment Processes that take can place therein, including PrimaryTreatments, SecondaryTreatments
+such as Nitrification and Denitrification, Disinfection, WasteDisposal and so on.
+The layout of the plant is described by the connections between the tanks. In fact, Tanks can have
+HydraulicPorts, a special type of Port whose Interfaces support the flow of liquids. Through the
+distinction between InputPorts and OutputPorts and their connections it is possible to define the
+complete topology of the plant. For example the NitrificationTank has three InputPorts and two
+OutputPorts. One of the input ports is connected to the output port of the DenitrificationTank, one
+is linked to the output port of the settler and the third is used to describe the internal recirculation. The
+two output ports model, respectively, the internal recirculation itself and the piping to the settler. Once
+the structure of the plant has been defined, it is possible to describe the plant’s instrumentation. We
+distinguish several categories of Devices, but all devices are deployed in a particular System. Plants,
+PlantLines and Tanks are all subtypes of System, so a Device can be placed with the granularity that
+is appropriate, also depending on the accuracy of the knowledge about the plant. The Devices are
+then distinguished between mechanical devices, such as Blowers and Pumps, instrumentation devices
+such as Probes and electronic devices used to interface the instrumentation with the control software
+(including an EDSS). The notion of Port is instrumental in the definition of devices and their properties.
+For example, a Probe is a SensingDevice (which in turn is a Device) with a Port that exposes
+one or more MeasurementInterfaces. A measurement interface exposes the ability to measure some
+ChemicalQuantity (e.g. pH, concentration) or PhysicalQuantity (e.g. temperature, flow rate). The
+distinction between ports and interfaces is needed because modern probes are multi-function sensors
+which can measure more than a quantity at a time, and may expose the values through multiple channels
+in different formats. In a similar fashion, a device’s port is considerd an InputPort: some input ports,
+used to send commands to a controllable device are further classified as ControlPorts. For example,
+the hydraulic pump used for the internal recirculation in the plant’s NitrificationTank has two input
+ports and one output port: the port used for the hydraulic intake, the port used for the hydraulic output
+and the control port used to regulate the rate. The latter, in particular, has two alternative interfaces: a
+manual interface, accessible through a display on the device itself, and an analogic interface that allows
+to set the number of revolutions per minute using an appropriate voltage. As always, ports allow to define
+connections, both between devices and the other (sub)systems such as the tanks or the pipes. Using
+these concepts, it is possible to define the instrumentation of the Trebbo plant, which is equipped with
+pH, redox potential (ORP) and temperature probes in the anoxic tank, and pH, ORP, dissolved oxygen
+concentration (DO), nitrogen (NH4-N and NO3-N) and suspended solids (TSS) probes in the aerobic
+one, three peristaltic pumps (load, internal and external recycle) and a blower. All analogic probe signals
+are sampled and acquired in current (4-20 mA) by a stand-alone data logger (Datataker DT80), at
+the rate of 1 sample/min, while all the actuators are regulated in current (4-20 mA), by an Advantech
+ADAM 5000 module, driven by the DT80.
+UC2 : Manual Sample Collection The description of the plant enables a number of other use cases. A
+typical management operation is the collection of one or more samples in the plant’s tanks. The samples
+are sent to a laboratory where routine chemical analysis are performed to check that the concentrations
+of the pollutants in the tanks are within the allowed limits. The OntoPlant ontlogy provides the concepts
+to describe the samples, the context in which they were acquired and the result of the analysis performed
+on the samples themselves.
+The act of gathering a Sample is a specific type of Observation, a Situation taking place at a given
+TimeInstant, where a Sensor performs an act that has a result, in this case the Sample itself. A Sample
+is acquired in a CollectionPoint, which is located inside a (sub) system such as a Tank. The position
+of the collection point can be specified using the exact coordinates, or left undetermined. Using the
+OntoPlant ontology, the results of the analysis of the Sample can be modelled as well. In this second
+phase, the original sample itself is the subject of the Observation: the content of the sample is the
+FeatureOfInterest whose Properties are measured to obtain the desired QualityValues, expressed
+in terms of a quantity and a unit of measure, concepts taken from the MUO ontology.
+This model is possibly redundant but accurate. Strictly speaking, the results are qualities of the sample
+rather than the plant. In fact, the model allows to differentiate between the time when the sample has
+been collected and the time the analysis have been performed, the method for the collection of the
+sample and the method(s) used for the analysis of each property, and the tools and actors involved in
+D. Sottara et al. An ontology-based approach for the instrumentation, control and automation infrastructure of a WWTP
+the operations. This historical trace can be used to establish the provenance of the results and their
+degree of reliability, depending on the type of analysis that have been performed. For a result to reflect
+the state of the plant accurately, it is necessary that the sample is acquired from an appropriate location
+in the tank (modelled by the CollectionPoint), using an appropriate method (e.g. by pre-filtering the
+sample) and that the chemical analyses are performed in a timely fashion (modelled by the comparison
+of the TimeInstants) and suitable techniques. The automated assessment of the provenance of a
+sample and the validation of the result of the analysis may have technical and legal implications which
+will the subject of future studies.
+UC3 : Plant Equipment and Automatic Sampling Probes measuring quantities such as pH, temperature,
+and dissolved oxygen concentration require minimal investments, while more sophisticated
+sensors for quantities such as nitrates and other ammonia compounds are still more expensive, but
+manageable especially in large-scale plants. These sensors can potentially acquire a vast amount of
+data which, while useful to continuously trace the state of the processes, necessarily require some kind
+of automated management and large amounts of space for data storage. The advent of stable internet
+connectivity and, more recently, cloud-based solutions makes a centralized, remote management of the
+data a feasible option, especially when an organization is managing multiple plants.
+However, this approach has to deal with two main challenges: the diversity of the instrumentation installed
+on each plant and the necessity to distinguish the source of the various data streams. The
+OntoPlant ontology has been designed to deal with both issues. First of all, it provides an abstraction
+layer that can be used to describe the various devices in terms of their functionality rather than the
+specific brand or technology. A SensingDevice, like other Devices has Ports that expose Interfaces,
+physical or logical, that can be connected or mapped respectively. SensingDevices, more specifically,
+are Sensors that can measure the QualityValues of one or more Properties directly. The measure is
+an instantaneous Observation performed by the probe using the methodology built in the probe itself.
+Unlike a manual sampling, there is no need to create an explicit Sample since the two steps (collection
+and analysis) usually coincide. However, probes are installed in a CollectionPoint, so that the provenance
+of the results can still be established. The values computed by the probes are accessible through
+at least one of their Interfaces, which models the endpoint of the concrete communication channel
+used to acquire or download the data.
+From a data acquisition system’s perspective, the ontology allows to describe the context where a “number”
+is generated, so the values can be completely qualified even in a distributed environment. If URIs
+are used to denote individuals, as recommended by the standard, the risk of ambiguities is removed.
+The linked and graph-oriented nature of the semantic data model allows to decide how much data should
+be shared between two endpoints so that both can share the same information. In particular, if a data
+acquisition system installed locally on a plant and a remote data center share the same description of
+the plant, as per the first use case discussed, it is merely sufficient to communicate the QualityValues
+acquired by each probe to keep the two systems synchronized, thus minimizing the amount of network
+traffic.
+UC4 : Control and Actuation The approach used for the data acquisition can be reversed and
+adopted for (automated) control. Most plants allow for some form of control over time: the change
+of a recirculation rate or the amount of air blown in an oxidation tank are two basic and common examples.
+However, control policies are usually defined in terms of a target goal (e.g. the nitrogen compound
+or the oxygen concentration in a tank) and a manipulation variable (e.g. a pump’s rpm or a blower’s flow
+rate). A logical command such as “set the pump speed to 20rpm” has to be translated into a specific
+signal delivered to a specific channel which is normally device-specific. The OntoPlant ontology allows
+to decouple the two steps: the high-level commands can be formulated in terms of Actuations the dual
+counterpart of an Observation , which set the Property of a Device to the desired QualityValue, as
+always expressed by a unit/value pair. In particular, the actuation is targeted to an Interface exposed
+by a Port of the device. The semantic representation, as always, leverages the description of the plant
+and its equipment, also defined using the concepts in the ontology. The abstraction provided by the
+developed semantic model allows to decouple control policies from hardware configuration (Figure 2).
+The control system, regardless of whether it is an interface for an operator or a full EDSS, can issue
+the commands in a format which is independent of the specific device, but is focused on the desired
+functionality. The assumption is that local equipment is enhanced with a device-specific driver that can
+D. Sottara et al. An ontology-based approach for the instrumentation, control and automation infrastructure of a WWTP
+parse the semantic request and translate it into the appropriate signals on the appropriate channels. The
+advantages of this approach are twofold: the original command is expressed using terms more standard
+and familiar to the domain experts, so the development of controllers and their logic could be simplified;
+moreover, the dependency on the actual devices is pushed as close as possible to the device itself, so
+that it is easier to replace or upgrade them.
+Figure 2. Semantic model.
+3.2 Discussion
+The current version of the OntoPlant ontology is an OWL2-DL modular theory with 234 classes, 53
+object properties and 14 data properties. The ontology is still being developed, so the figures are
+subject to change. It leverages popular ontologies such as the SSNO, but is one of the first examples
+of its kind specifically targeted at the development of WWTP EDSS focused on the monitoring, control
+and optimization of the plant’s performance. To be used effectively, plants should be modelled using the
+concepts defined in the ontology, creating a standard and shareable representation of their structure and
+equipment. This description, together with the remaining concepts in the ontology, allows to implement a
+variety of other use cases. First of all, it can help manage the vast amount of data that can be potentially
+acquire from one or more plants, allowing to explicitly define the semantics and the provenance of the
+values. Second, it allows to decouple the management policies from their concrete application to the
+specific plants. This is a critical aspect in the realization of portable EDSS, which would otherwise
+have to be developed for explicit combinations of plants and equipments. Instead, the policies which
+are usually implemented by EDSSs are likely to be expressed in general terms, such as “The value of
+concentration of nitrates in the effluent of a large-scale plant near a safety-critical zone must not exceed
+a given threshold”. Using an ontology that contains the appropriate definitions, similar constraints can be
+implemented directly using the vocabulary provided by the ontology itself, leaving the task of performing
+the appropriate translations and matches to the underlying reasoning components embedded in the
+EDSS. In our case, a policy such as the one presented could easily be expressed in terms of the
+QualityValue of a Property (the concentration of nitrates) acquired in a CollectionPoint located
+downstream a Settler that is part of a Plant with a certain person-equivalent attribute value. The
+OntoPlant ontology can thus become an important component in the implementation of an EDSS. It
+provides the vocabulary to unambiguously describe a plant and its equipment, in a way that is shareable
+between human operators and EDSS. The semantic description can also be indexed and queried using
+languages such as SPARQL or SQWRL, enabling the feasibility of a plant “directory”, where multiple
+plants are cataloged. More generally, the ontology would allow to use graph databases to store and
+possibly share environmental data. In such as format, the data can be queried and processed using
+techniques based on DL reasoning in addition to business rules, which are more traditionally adopted
+in knowledge-based EDSSs. A detailed discussion on the implementation of an EDSS based on the
+OntoPlant ontology goes beyond the scope of this work, even if a preliminary analysis can be found in
+Sottara et al. [2012].
+The OntoPlant ontology is currently available at https://github.com/sotty/OntoPlant
+4 CONCLUSIONS
+We have proposed a new ontology, OntoPlant, that models WWTPs from the perspective of a plant
+operator. The ontology is modular and is built on top of preexisting upper ontologies, which facilitates
+D. Sottara et al. An ontology-based approach for the instrumentation, control and automation infrastructure of a WWTP
+its extension and integration in other systems. The ontology serves several purposes. First, it is an
+asset that provides the concepts and the vocabulary to formalize a domain expert’s knowledge about
+plants and their management policies. Second, it allows to express the knowledge in a format that is
+interoperable and shareable between different plants and their automated control systems. In fact, it
+allows to decouple the control policies from the setting-specific details, which depend on the particular
+devices installed on a plant at a given time. Last, as a machine-readable representation, it facilitates
+the development and the integration of monitoring and control softwares required by a modern plant. In
+particular, it is designed to model and implement the monitoring and control and policies necessary to
+optimize the operation of a plant. The ontology is currently being used to model a pilot-scale conventional
+activated sludge (CAS) plant and its agent-based Intelligent Environmental Decision Support System
+(IEDSS).
+REFERENCES
+Berners-Lee, T., Hendler, J., and Lassila, O. (2001). The semantic web. Scientific American, 284(5):34–
+43.
+Ceccaroni, L., Cort ´es, U., and S`anchez-Marr` e, M. (2004). Ontowedss: augmenting environmental
+decision-support systems with ontologies. Environmental Modelling & Software, 19(9):785 – 797.
+Compton, M., Barnaghi, P., Bermudez, L., Garca-Castro, R., Corcho, O., Cox, S., Graybeal, J.,
+Hauswirth, M., Henson, C., Herzog, A., Huang, V., Janowicz, K., Kelsey, W. D., Phuoc, D. L., Lefort,
+L., Leggieri, M., Neuhaus, H., Nikolov, A., Page, K., Passant, A., Sheth, A., and Taylor, K. (2012).
+The SSN ontology of the W3C semantic sensor network incubator group. Web Semantics: Science,
+Services and Agents on the World Wide Web, 17(0):25 – 32.
+D¨urrenmatt, D. and Gujer, W. (2012). Data-driven modeling approaches to support wastewater treatment
+plant operation. Environment Modelling & Software, 30:47–56.
+Gruber, T. R. (1995). Toward principles for the design of ontologies used for knowledge sharing. Int. J.
+Hum.-Comput. Stud., 43(5-6):907–928.
+Luccarini, L., Bragadin, G., Colombini, G., Mancini, M., Mello, P., Montali, M., and Sottara, D. (2010).
+Formal verification of wastewater treatment processes using events detected from continuous signals
+by means of artificial neural networks. case study: Sbr plant. Environmental Modelling & Software,
+25(5):648–660.
+MUO (2008). Muo ontology: http://idi.fundacionctic.org/muo/muo-vocab.html.
+Olsson, G. (2012). ICA and me – a subjective review. Water Research, 46(6):1585–624.
+Olsson, G., Nielsen, M., Yuan, Z., Lynggaard-Jensen, A., and Steyer, J. P. (2005). Instrumentation,
+Control and Automation in Wastewater Systems. IWA Publishing, London UK.
+Sottara, D., Bragaglia, S., Pulcini, D., Mello, P., Giunchi, D., and Luccarini, L. (2012). Ontologies, rules,
+workflow and predictive models: Knowledge assets for an EDSS. In R. Seppelt, A.A. Voinov, S. Lange,
+D. Bankamp (Eds.) (2012): International Environmental Modelling and Software Society (iEMSs)
+2012 International Congress on Environmental Modelling and Software. Managing Resources of a
+Limited Planet: Pathways and Visions under Uncertainty, Sixth Biennial Meeting, Leipzig, Germany.
+http://www.iemss.org/society/index.php/iemss-2012-proceedings. ISBN: 978-88-9035-742-8.
+W3C (2012). W3c recommendation 11–12–2012: http://www.w3.org/tr/owl2-overview/.
+Yoo, C., Lee, D., and Vanrolleghem, P. (2004). Application of multiway ica for on-line process monitoring
+of a sequencing batch reactor. Water Research, 38(7):1715–1732.
+View publication stats

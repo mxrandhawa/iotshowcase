@@ -1,0 +1,45 @@
+
+SensorML 2.0 Examples
+Sensor with location description (byDescription)
+
+In order to support a wide variety of needs for providing location, orientation, and dynamic state of a physical component or system, there are several means for specifying "where". These include byDescription, byPoint, byLocation, byState, byTrajectory, and byProcess.
+
+The simplest of these is byDescription (see example below). This should only be used when the exact location relative to a geospatial frame or other components is unknown or not important.
+?
+
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description> Static Location - Temperature sensor on my window </gml:description>
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="O2">
+            <swe:Quantity definition="http://sensorml.com/ont/swe/property/DissolvedOxygen">
+               <swe:label>Dissolved Oxygen</swe:label>
+               <swe:uom code="%"/>
+            </swe:Quantity>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  Station Location                 -->
+   <!-- ================================================= -->
+   <sml:position>
+       <swe:Text>
+           <swe:value>on the exhaust line after the catalytic converter</swe:value>
+       </swe:Text>
+   </sml:position>
+</sml:PhysicalComponent>
+
+ 

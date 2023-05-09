@@ -1,0 +1,10 @@
+Link http://schemas.opengis.net/waterml/2.0/examples/
+Index of /waterml/2.0/examples
+[ICO]	Name	Last modified	Size	Description
+[PARENTDIR]	Parent Directory	 	- 	 
+[ ]	collection-forecasting-example.xml	2012-09-07 15:17 	7.3K	 
+[DIR]	encoding_examples/	2017-04-21 11:33 	- 	 
+[ ]	measurement-timeseries-discharge.xml	2012-09-07 15:17 	6.5K	 
+[ ]	measurement-timeseries-example.xml	2012-09-07 15:17 	2.6K	 
+[ ]	measurement-timeseries-min-daily-discharge-monthly.xml	2012-09-07 15:17 	6.8K	 
+[ ]	measurement-timeseries-qualifier.xml	2012-09-07 15:17 	7.8K	 

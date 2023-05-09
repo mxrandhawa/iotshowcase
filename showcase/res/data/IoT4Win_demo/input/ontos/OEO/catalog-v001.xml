@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://openenergy-platform.org/ontology/oeo/imports/ro-module.owl" uri="ro-module.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://openenergy-platform.org/ontology/oeo/oeo-model/" uri="oeo-model.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://openenergy-platform.org/ontology/oeo/oeo-physical-axioms/" uri="oeo-physical-axioms.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://openenergy-platform.org/ontology/oeo/oeo-physical/" uri="oeo-physical.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://openenergy-platform.org/ontology/oeo/oeo-shared/" uri="oeo-shared.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://openenergy-platform.org/ontology/oeo/oeo-social/" uri="oeo-social.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://purl.obolibrary.org/obo/iao.owl" uri="iao-module.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675867077865" name="http://purl.obolibrary.org/obo/ro.owl" uri="uo-module.owl"/>
+    </group>
+</catalog>

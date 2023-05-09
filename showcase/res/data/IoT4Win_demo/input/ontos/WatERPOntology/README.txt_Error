@@ -1,0 +1,4 @@
+
+  File "G:\dev\bin\Python310\lib\site-packages\rdflib\plugins\parsers\rdfxml.py", line 225, in error
+    raise ParserError(info + message)
+rdflib.exceptions.ParserError: file:///G:/MY/bcu/OneDrive%20-%20Birmingham%20City%20University/phd/dev/0Projects/graph4nlp/examples/diim/res/data/input/ontos/domain/WatERPOntology/WatERPOntology.owl:31:198: Repeat node-elements inside property elements: http://www.w3.org/2002/07/owl#Literal

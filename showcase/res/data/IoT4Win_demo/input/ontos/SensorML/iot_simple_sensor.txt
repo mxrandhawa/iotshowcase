@@ -1,0 +1,70 @@
+
+SensorML 2.0 Examples
+Internet of Things - Simple Sensor
+
+SensorML supports the Internet of Things (IoT) and Web of Things (WoT) by providing the ability to describe a sensor (or other online processing component) and to provide a link to the real-time values coming from this component. The components and encoding of this data stream are fully described in the SensorML description, allowing one to automatically parse the results with a SWE Common Data Parser (including both ASCII and binary data), or in many cases with a simple ASCII reader. Describing a data stream into or out of a process (or sensor/actuator) is accomplished by having the input or output be of type DataInterface. The DataInterface element allows one to describe the DataStream, as well as provides for an optional interface description.
+
+The example below describes a sensor with a simple data stream consisting of temperature. The data is described in the DataStream element. The optional interface description is not required and thus omitted. The data themselves can be accessed through the URL provided by the xlink:href attribute in the swe:values element. Accessing this URL would return either the latest value(s) or open up an html stream of real-time values.
+?
+	
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description>simple thermometer with time tag</gml:description>
+   <gml:identifier codeSpace="uniqueID">urn:meteofrance:stations:76455</gml:identifier>
+ 
+   <!-- metadata deleted for brevity sake -->
+ 
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="temp">
+            <sml:DataInterface>
+               <sml:data>
+                  <swe:DataStream>
+                      <!-- describe output -->
+                     <swe:elementType name="temperature">
+                         <swe:Quantity
+                                definition="http://mmisw.org/ont/cf/parameter/air_temperature">
+                             <swe:uom code="Cel"/>
+                         </swe:Quantity>
+                     </swe:elementType>
+ 
+                     <!-- simple text encoding  -->
+                     <swe:encoding>
+                        <swe:TextEncoding tokenSeparator="," blockSeparator=" "/>
+                     </swe:encoding>
+                      
+                     <!-- reference the values at a RESTful resource -->
+                     <!-- returns latest measurement or continues to send new values through open http pipe -->
+                     <swe:values xlink:href="http://myServer.com:4563/sensor/02080"/>
+ 
+                  </swe:DataStream>
+               </sml:data>
+             </sml:DataInterface>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  Station Location                 -->
+   <!-- ================================================= -->
+   <sml:position>
+      <gml:Point gml:id="stationLocation" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+         <gml:coordinates>47.8 88.56</gml:coordinates>
+      </gml:Point>
+   </sml:position>
+</sml:PhysicalComponent>
+
+ 
+
+A stream of values from this sensors might look like this: 28.6 28.7 28.7 28.8 28.9

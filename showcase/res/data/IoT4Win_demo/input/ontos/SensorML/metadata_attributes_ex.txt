@@ -1,0 +1,40 @@
+
+SensorML 2.0 Examples
+Metadata - Attributes (gml:id, xml:lang, and definition)
+
+link: http://www.sensorml.com/sensorML-2.0/examples/attributes.html
+All SensorML 2.0 XML-described objects will have an XML header similar to the example snippet shown below. The xmlns attributes identify the namespaces and schemas used in the XML encoding. All SensorML 2.0 documents will likely use the sml, swe, gml, xsi, and xlink namespaces as well as the gmd and gco namespaces when they include the ISO values for sml:contact and sml:document. The ism namespace is used in this particular XML instance to demonstrate the use of security tagging using the Intelligence Community: Information Security Markings (ic:ism) schema. Any other external schema will also require its namespace declared if used within a SensorML 2.0 instance. The schemaLocation shown here is the official location and namespace for SensorML 2.0.
+
+Also provided within any SensorML 2.0 XML header are three optional attributes: gml:id, xml:lang, and definition. The gml:id is derived from xsd:id and provides a means of reference this particular XML instance from within another XML document (using the an idref property).
+
+The xml:lang attribute allows one to specify the language in which the document is written. The value of this attribute will be a two-letter code which conforms to ISO 639-1:
+
+(see: http://www.w3schools.com/tags/ref_language_codes.asp for language codes).
+
+Finally, the definition attribute allows one to reference (through a resolvable URL) an online ontology or definition of this object, similar to the definition attribute for other elements within SensorML and SWE Common Data (discussed later).
+?
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+	
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="Gamma2070" xml:lang="en" definition="http://sensorml.com/def/sensor/gammaDetector"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:gmd="http://www.isotc211.org/2005/gmd"
+xmlns:gco="http://www.isotc211.org/2005/gco"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:ism="urn:us:gov:ic:ism"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+
+ 

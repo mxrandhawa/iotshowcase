@@ -1,0 +1,1133 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2021/5/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/user/ontologies/2021/5/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:whowqs="http://www.iot4win.co.uk/esr2/ontologies/whowqs#">
+    <owl:Ontology rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs">
+        <rdfs:comment xml:lang="en">source: http://www.fao.org/3/X5624E/x5624e05.htm
+ 
+Table 2-2: W.H.O. DRINKING WATER STANDARDS
+Table 2-3: EU ESTUARY AND HARBOUR BASIN WATER STANDARDS</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasUnit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <rdfs:range rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue">
+        <rdfs:domain rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <rdfs:comment>ug = microgram
+G = Guideline
+mg = milligram
+S = Suggested
+D = Dissolved</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_MaxLimitValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_MaxLimitValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_MinLimitValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_MinLimitValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasName">
+        <rdfs:domain rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <rdfs:domain rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasWHO_LimitValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasWHO_LimitValue">
+        <rdfs:domain rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS -->
+
+    <owl:Class rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS">
+        <rdfs:subClassOf rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER -->
+
+    <owl:Class rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER">
+        <owl:disjointWith rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT -->
+
+    <owl:Class rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT">
+        <rdfs:comment>ug = microgram or ppb
+mg = milligram or ppm</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Aldrin -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Aldrin">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Aldrin</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Alkalinity -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Alkalinity">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l"/>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">500.0</whowqs:hasWHO_LimitValue>
+        <whowqs:hasWHO_LimitValue xml:lang="en">Alkalinity</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Aluminium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Aluminium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Al/l"/>
+        <whowqs:hasName xml:lang="en">Aluminium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.2</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Anionic_Detergents -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Anionic_Detergents">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l"/>
+        <whowqs:hasName xml:lang="en">Anionic Detergents</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Arsenic -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Arsenic">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_As/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Arsenic</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.05</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Arsenic"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</owl:annotatedTarget>
+        <rdfs:comment>G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Barium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Barium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ba/l"/>
+        <whowqs:hasName xml:lang="en">Barium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.05</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Berylium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Berylium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Be/l"/>
+        <whowqs:hasName xml:lang="en">Berylium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.2</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Cadmium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Cadmium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Cd/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Cadmium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Cadmium"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</owl:annotatedTarget>
+        <rdfs:comment>D</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Calcium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Calcium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ca/l"/>
+        <whowqs:hasName xml:lang="en">Calcium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Carbon_tetrachloride -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Carbon_tetrachloride">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">12.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Carbon tetrachloride</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Chlorides -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Chlorides">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cl/l"/>
+        <whowqs:hasName xml:lang="en">Chlorides</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">500.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Chloroform -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Chloroform">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">12.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Chloroform</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Chromium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Chromium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cr/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Chromium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.05</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Chromium"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Coliform -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Coliform">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Count/100ml"/>
+        <whowqs:hasName xml:lang="en">Coliform</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Copper -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Copper">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cu/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Copper</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Copper"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Cyanide -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Cyanide">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cn/l"/>
+        <whowqs:hasName xml:lang="en">Cyanide</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.1</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Dieldrin -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Dieldrin">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Dieldrin</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Dissolved_Oxygen -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Dissolved_Oxygen">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#percentage_Saturation"/>
+        <whowqs:hasEU_MaxLimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.0</whowqs:hasEU_MaxLimitValue>
+        <whowqs:hasEU_MinLimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.0</whowqs:hasEU_MinLimitValue>
+        <whowqs:hasName xml:lang="en">Dissolved Oxygen</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#E._Coli -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#E._Coli">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Count/100ml"/>
+        <whowqs:hasName xml:lang="en">E. Coli</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Endrin -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Endrin">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.005</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Endrin</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Entero_viruses -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Entero_viruses">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Entero viruses</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Ethylene_Dichloride -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Ethylene_Dichloride">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Ethylene Dichloride</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Faecal_conforms -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Faecal_conforms">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#per_100ml"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2000.0</whowqs:hasEU_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Fluorides -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Fluorides">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_F/l"/>
+        <whowqs:hasName xml:lang="en">Fluorides</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hexachloro-cyclohexane -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hexachloro-cyclohexane">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.02</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Hexachloro-cyclohexane</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hexachlorobenzene -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hexachlorobenzene">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.03</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Hexachlorobenzene</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hexachlorobutadiene -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hexachlorobutadiene">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.1</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Hexachlorobutadiene</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hydrocarbons -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hydrocarbons">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">300.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.1</whowqs:hasName>
+        <whowqs:hasName xml:lang="en">Hydrocarbons</whowqs:hasName>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Hydrocarbons"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">300.0</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Iron_Total -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Iron_Total">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Fe/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Iron Total</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.3</whowqs:hasWHO_LimitValue>
+        <rdfs:label>Iron</rdfs:label>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Iron_Total"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Isodrin -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Isodrin">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.005</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Isodrin</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Lead -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Lead">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Pb/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Lead</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Lead"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Magnesium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Magnesium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Mg/l"/>
+        <whowqs:hasName xml:lang="en">Magnesium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">150.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Manganese -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Manganese">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Mn/l"/>
+        <whowqs:hasName xml:lang="en">Manganese</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.1</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Mercury -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Mercury">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Hg/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Mercury</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Mercury"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">D</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Nickel -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Nickel">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ni/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</whowqs:hasEU_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Nickel"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Nitrates -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Nitrates">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_NO3/l"/>
+        <whowqs:hasName xml:lang="en">Nitrates</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Nitrites -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Nitrites">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_NO2/l"/>
+        <whowqs:hasName xml:lang="en">Nitrites</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double"></whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Pentachlorophenol -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Pentachlorophenol">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Pentachlorophenol</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Perchloroethylene -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Perchloroethylene">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Perchloroethylene</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Phenols -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Phenols">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Salmonella -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Salmonella">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Total coliforms</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Selenium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Selenium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Se/l"/>
+        <whowqs:hasName xml:lang="en">Selenium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Sodium -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Sodium">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Na/l"/>
+        <whowqs:hasName xml:lang="en">Sodium</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">200.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Sulphates -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Sulphates">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_SO4/l"/>
+        <whowqs:hasName xml:lang="en">Sulphates</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">400.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Sulphide -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Sulphide">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l"/>
+        <whowqs:hasEU_MinLimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.04</whowqs:hasEU_MinLimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Sulphide"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_MinLimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.04</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">S</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Suphides -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Suphides">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_H2S/l"/>
+        <whowqs:hasName xml:lang="en">Suphides</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Surfactants -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Surfactants">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">300.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Surfactants</whowqs:hasName>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Surfactants"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">300.0</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#TOTAL_ddt -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#TOTAL_ddt">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.025</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">TOTAL &quot;ddt&quot;</whowqs:hasName>
+        <whowqs:hasName xml:lang="en">TOTAL &quot;ddt&quot; all 4 isomers</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#TOTAL_ddt"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasName"/>
+        <owl:annotatedTarget xml:lang="en">TOTAL &quot;ddt&quot; all 4 isomers</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">EU Parameter name is &apos;TOTAL &quot;ddt&quot; all 4 isomers&apos;</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#TOTAL_drins -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#TOTAL_drins">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.03</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">TOTAL &quot;drins&quot;</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.03</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_Bacteria -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_Bacteria">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Count/ml"/>
+        <whowqs:hasName xml:lang="en">Total Bacteria</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_coliforms -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_coliforms">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#MICROBIOLOGICAL_PARAMETERS"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#per_100ml"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10000.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Total coliforms</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_dissolved_solids -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_dissolved_solids">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l"/>
+        <whowqs:hasName xml:lang="en">Total dissolved solids</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1500.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_hardness -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Total_hardness">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l"/>
+        <whowqs:hasName xml:lang="en">Total hardness</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">500.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Tributyltin -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Tributyltin">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.002</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Tributyltin</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Trichlorobenzene -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Trichlorobenzene">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.4</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Trichlorobenzene</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Trichloroethylene -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Trichloroethylene">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Trichloroethylene</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Triphenyltin -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Triphenyltin">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.008</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Triphenyltin</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Zinc -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Zinc">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Zn/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">Zinc</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Zinc"/>
+        <owl:annotatedProperty rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#hasEU_LimitValue"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">G</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#pH -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#pH">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasEU_MaxLimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">9.0</whowqs:hasEU_MaxLimitValue>
+        <whowqs:hasEU_MinLimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">6.0</whowqs:hasEU_MinLimitValue>
+        <whowqs:hasName xml:lang="en">pH</whowqs:hasName>
+        <whowqs:hasWHO_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">9.2</whowqs:hasWHO_LimitValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#para-ddt -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#para-ddt">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#PARAMETER"/>
+        <whowqs:hasUnit rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l"/>
+        <whowqs:hasEU_LimitValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</whowqs:hasEU_LimitValue>
+        <whowqs:hasName xml:lang="en">para-ddt</whowqs:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#per_100ml -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#per_100ml">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#percentage_Saturation -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#percentage_Saturation">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+        <rdfs:comment xml:lang="en">% Saturation</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Count/ml -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Count/ml">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#Count/100ml -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#Count/100ml">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Al/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Al/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_As/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_As/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ba/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ba/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ca/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ca/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cl/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cl/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cn/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cn/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cr/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cr/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cu/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Cu/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_F/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_F/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Fe/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Fe/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_H2S/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_H2S/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Mg/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Mg/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Mn/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Mn/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_NO2/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_NO2/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_NO3/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_NO3/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Na/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Na/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ni/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Ni/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Pb/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Pb/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_SO4/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_SO4/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Se/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Se/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Zn/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#mg_Zn/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Be/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Be/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Cd/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Cd/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Hg/l -->
+
+    <owl:NamedIndividual rdf:about="http://www.iot4win.co.uk/esr2/ontologies/whowqs#ug_Hg/l">
+        <rdf:type rdf:resource="http://www.iot4win.co.uk/esr2/ontologies/whowqs#UNIT"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

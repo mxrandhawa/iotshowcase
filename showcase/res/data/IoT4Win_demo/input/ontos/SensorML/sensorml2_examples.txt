@@ -1,0 +1,175 @@
+link http://www.sensorml.com/sensorML-2.0/examples/
+
+    Home Standards Examples Ontologies Links News 
+
+Welcome
+
+  SensorML 2.0
+
+    "Hello Sensor World!"
+
+    Friendly sensor
+
+    Friendly and informative sensor
+
+    Friendly process (linear equation)
+
+    Sensor instance (simple extension)
+    Metadata
+
+    Lots of Metadata
+
+    Attributes: gml:ID, xml:lang, and definition
+
+    Name, description, keywords, and unique-ID
+
+    Identifiers and Classifiers
+
+    Characteristics and Capabilities
+
+    Constraints
+
+    Feature of interest (FoI)
+
+    Documentation
+
+    Contacts
+
+    Sensor history
+    Physical Components
+
+    Detector (digital)
+
+    Detector (analog)
+
+    Actuator (digital)
+
+    Filter (analog)
+
+    Platform
+    Physical Systems
+
+    Weather station
+
+    Web cam
+    Computational Processes
+
+    Simple process (Wind Chill Factor)
+
+    Simple Process (Orbit Propagator)
+
+    Aggregate process (components described inline)
+
+    Aggregate process (configured components)
+    Location and Position
+
+    Sensor with location by description (byDescription)
+
+    Sensor with GML point location (byPoint)
+
+    Sensor with static location (byLocation)
+
+    Sensor with orientation (byState)
+
+    Sensor with dynamic position (byTrajectory)
+
+    Sensor with location output (byTrajectory)
+
+    Sensor with orbit propagator (byProcess)
+
+    Sensor with SOS for location (byProcess)
+    Inheritance and Configuration
+
+    Simple extension of process
+
+    Constraining on a process
+
+    Simple extension of sensor
+
+    Supporting modes
+
+    Supporting configuration
+
+    Complex configuration
+    Web-based Processes
+
+    Web-based Process Client
+
+    SOS Client Process
+
+    SOS Client (Configured Instance)
+
+    SPS Client Process
+    Using Extensions
+
+    Security tagging
+
+    Using MathML
+    Data Interface / Streaming Data
+
+    Simple streaming (return latest value)
+
+    Simple streaming (returns RTP stream)
+
+    Simple multiplexed streaming
+
+    Homogeneous sensor network (identical sensor output)
+
+    Disparate sensor network
+
+    Complex multiplexed sensor (CBRN)
+
+    Streaming navigation data
+    Inernet of Things / Web of Things
+
+    Simple Sensor
+
+    Sensor System
+
+    Sensor System (multiple output streams)
+    Data Interface Types
+
+    RS-232
+
+    Real-Time Protocol (RTP)
+
+    http protocol
+    Output Encodings
+
+    ASCII encoding
+
+    Binary encoding
+    Various Output Types
+
+    Time Series
+
+    Imagery
+
+    Video
+
+    Alerts
+
+    Multiplex Messages
+    Precise Geolocation
+
+    Community Sensor Model (CSM) Frame Camera
+
+    My High-Definition Camera
+
+    CSM Frame Camera with Platform
+
+    Static Web Camera
+
+    Dynamic Video Camera
+    Miscellaneous
+
+    Outputting Parameter Values (sensor settings)
+
+    Outputting Sensor Position
+
+     
+
+ 
+
+ 
+Contact© Botts Innovative Research Inc 2013

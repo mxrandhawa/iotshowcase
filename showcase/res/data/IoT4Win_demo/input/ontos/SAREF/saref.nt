@@ -1,0 +1,908 @@
+_:B2f36f46190fba246a1effb09812e8d2b <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/OnOffFunction> .
+_:B2f36f46190fba246a1effb09812e8d2b <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B2f36f46190fba246a1effb09812e8d2b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Safety> <http://www.w3.org/2000/01/rdf-schema#label> "Safety"@en .
+<https://saref.etsi.org/core/Safety> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/Safety> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/Safety> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/ToggleCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Toggle command"@en .
+<https://saref.etsi.org/core/ToggleCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/ToggleCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc275a0fecb90b027f9838d8ad87ecba9 .
+<https://saref.etsi.org/core/ToggleCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/ToggleCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/PowerUnit> <http://www.w3.org/2000/01/rdf-schema#label> "Power unit"@en .
+<https://saref.etsi.org/core/PowerUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure for power"@en .
+<https://saref.etsi.org/core/PowerUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/UnitOfMeasure> .
+<https://saref.etsi.org/core/PowerUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://saref.etsi.org/core/" .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/creator> <http://maxime-lefrancois.info/me#> .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/source> <https://saref.etsi.org/sources/saref-core/> .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/creator> <https://w3id.org/people/mpoveda/> .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/title> "SAREF: the Smart Applications REFerence ontology"@en .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/creator> <http://www.garcia-castro.com/foaf.rdf#me> .
+<https://saref.etsi.org/core/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.etsi.org/deliver/etsi_ts/103200_103299/103264/03.01.01_60/ts_103264v030101p.pdf> .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/creator> <https://www.linkedin.com/in/lauradaniele> .
+<https://saref.etsi.org/core/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "saref" .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/modified> "2020-05-29"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/publisher> <https://www.etsi.org/> .
+<https://saref.etsi.org/core/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/license> <https://forge.etsi.org/etsi-software-license> .
+<https://saref.etsi.org/core/> <http://www.w3.org/2002/07/owl#versionInfo> "v3.1.1" .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/description> "The Smart Applications REFerence ontology (SAREF) is intended to enable interoperability between solutions from different providers and among various activity sectors in the Internet of Things (IoT), thus contributing to the development of the global digital market."@en .
+<https://saref.etsi.org/core/> <http://www.w3.org/2000/01/rdf-schema#comment> "Information about changes compared to version 1.1.1:\n - The classes and properties related to how to represent devices in building spaces (such as the saref:BuildingSpace class,  saref:BuildingObject class and saref:isLocatedIn property) have been removed from SAREF and incorporated  into the SAREF4BLDG extension related to buildings, including the reuse of the W3C? WGS84 geo positioning vocabulary.\n - The saref:DeviceCategory and saref:FunctionCategory classes have been removed. Instead, the hierarchy of device categories has been implemented directly as subclasses of the saref:Device class.\n - The information specific for energy efficiency has been moved to the SAREF4ENER extension. For example, the saref:Profile class has been redefined to accommodate only the properties that are general enough for any type of profile, not only for energy and power. Details on how to specifically model a power profile can be found in the SAREF4ENER extension. \n - The subclasses of the saref:Energy class  have been removed (i.e., Average Energy, Maximum Energy, Minimum Energy, Total Energy, HVAC Energy, Hot Water Energy and Lighting Energy).\n - The saref:Property class has been split into two classes (saref:Property and saref:Measurement), as it is done in the SAREF4ENVI extension, in order to properly accommodate the distinction between the concept of property (an observable quality of something) and the concept of measurement (a concrete value observed for a property).\n - Too restrictive cardinality restrictions have been revised, sometimes making them optional rather than mandatory (better to make properties mandatory in the extensions that specialize SAREF for a specific purpose, rather than restricting SAREF, whose purpose is more general). For example, definitions of units of measurement using an enumeration (owl:oneOf) were too restrictive because they did not allow using other units than those enumerated. Therefore, the individuals of each class are still there, but the owl:oneOf enumeration has been removed.\n - The saref:UnitOfMeasure subclasses use individuals from the OM ontology for unit of measures, but this is not the only solution. It has been clarified in the comments that the OM ontology is an example, but other ontologies can be used.\n - The global restrictions (rdfs:domain and rdfs:range) in object properties have been completely removed not to hinder interoperability. Object properties are now only restricted locally in the classes. \n - The subclasses of saref:Task have been transormed in individuals.\n - The saref:hasTask property has been removed from the saref:Profile class to resolve an ambiguity with the saref:Task class." .
+<https://saref.etsi.org/core/> <http://www.w3.org/2000/01/rdf-schema#comment> "Information about changes compared to version 2.1.1: \n - Added the saref:FeatureOfInterest class and the properties used to relate it to saref:Measurement (saref:hasMeasurement and saref:isMeasurementOf) and to saref:Property (saref:hasProperty and saref:isPropertyOf).\n - Added the saref:measurementMadeBy property as inverse of saref:makesMeasurement.\n - The saref:relatesToProperty and saref:relatesToMeasurement properties are now inverse of each other.\n - The range of saref:hasValue, which was defined as xsd:float, has been removed to support other datatypes for measurements.\n - The range of datatype properties, which was defined as xsd:string, has been removed in order to support strings with language tags (rdf:langString). This affects saref:hasDescription, saref:hasManufacturer, saref:hasModel and saref:hasName, which now have implicitly a range of rdfs:Literal.\n - The saref:hasName property has been removed and the use of rdfs:label is recommended. \n - The saref:hasDescription property has been deprecated and the use of rdfs:comment is recommended. \n - Too restrictive restrictions have been removed and in some cases the ontology documentation has been updated to reflect this: a saref:Command having at most one saref:hasDescription; a saref:Task being accomplished by at least one saref:Device; a saref:Device having a typical consumption of only energy or power; a saref:Commodity being measured in units of measure; restrictions on the values of saref:accomplishes that only covered specific use cases; universal restrictions on the saref:actsUpon property have been changed to existential ones; restrictions on the commands that a saref:Function may have, since there could be others not included in the defined enumerations; restrictive documentation of saref:EventFunction and saref:SmokeSensor.\n - Bugs have been fixed: some devices (saref:DoorSwitch, saref:EnergyMeter, saref:LigthSwitch, saref:SmokeSensor, and saref:TemperatureSensor) were defined as subclass of a device and at the same time as consisting of such device; a saref:LightSwitch controls light and does not measure light, since it is an actuator; incorrect documentation of saref:OnState and saref:OffState.\n - The saref:BuildingRelated, saref:EnergyRelated and saref:FunctionRelated classes have been removed, since the different extensions already classify the device types.\n - The instances of the subclasses of saref:Command have been removed, since they represent examples.\n - The instances of saref:UnitOfMeasure have been moved to examples.\n - The classes related to the SAREF4ENER extension have been removed: saref:Generator, saref:Storage, saref:Load and saref:EnergyMeter.\n - Some instances of saref:Device have been moved to examples: saref:WashingMachine, saref:LightingDevice, saref:MicroRenewable, saref:Multimedia, and saref:Network.\n - Added domain and range axioms wherever the definition of a property unambiguously identifies the domain or the range of the property.\n - The OWL Time ontology is not imported anymore.\n - The documentation of some ontology terms has been updated for clarification.\n - Language tags have been added to all labels and comments.\n" .
+<https://saref.etsi.org/core/> <http://purl.org/dc/terms/issued> "2020-02-11"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://saref.etsi.org/core/> <http://www.w3.org/2002/07/owl#versionIRI> <https://saref.etsi.org/core/v3.1.1/> .
+<https://saref.etsi.org/core/hasThresholdMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "has threshold measurement"@en .
+<https://saref.etsi.org/core/hasThresholdMeasurement> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/hasThresholdMeasurement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/EventFunction> .
+<https://saref.etsi.org/core/hasThresholdMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship associated with an event function to notify that a certain threshold measurement has been exceeded"@en .
+<https://saref.etsi.org/core/hasThresholdMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/GetCurrentMeterValueCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Get current meter value command"@en .
+<https://saref.etsi.org/core/GetCurrentMeterValueCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of get command"@en .
+<https://saref.etsi.org/core/GetCurrentMeterValueCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5f2c583dedb374f8ef9a6ba5d07697d7 .
+<https://saref.etsi.org/core/GetCurrentMeterValueCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/GetCommand> .
+<https://saref.etsi.org/core/GetCurrentMeterValueCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B27dd9e6fef9c71002a99d90c7c865bd9 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Price> .
+_:B27dd9e6fef9c71002a99d90c7c865bd9 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasPrice> .
+_:B27dd9e6fef9c71002a99d90c7c865bd9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B0f06fe58521dc919a942f6ac816e9570 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OnOffState> .
+_:B0f06fe58521dc919a942f6ac816e9570 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:B0f06fe58521dc919a942f6ac816e9570 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B4cf9d09b16acbcc633616e994884b6aa <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/SensingFunction> .
+_:B4cf9d09b16acbcc633616e994884b6aa <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:B4cf9d09b16acbcc633616e994884b6aa <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B34a74b2fc25236ace93a5bde3e455ecf <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/StartStopState> .
+_:B34a74b2fc25236ace93a5bde3e455ecf <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:B34a74b2fc25236ace93a5bde3e455ecf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasModel> <http://www.w3.org/2000/01/rdf-schema#label> "has model"@en .
+<https://saref.etsi.org/core/hasModel> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the model of an entity (e.g., device). The value is expected to be a string or a string with language tag."@en .
+<https://saref.etsi.org/core/hasModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://saref.etsi.org/core/GetSensingDataCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Get sensing data command"@en .
+<https://saref.etsi.org/core/GetSensingDataCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of get command"@en .
+<https://saref.etsi.org/core/GetSensingDataCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9629cbf85df53ed8d50ed552d88a9732 .
+<https://saref.etsi.org/core/GetSensingDataCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/GetCommand> .
+<https://saref.etsi.org/core/GetSensingDataCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bb9c78bdfac928b36eaabc7499cbcc22c <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OnOffFunction> .
+_:Bb9c78bdfac928b36eaabc7499cbcc22c <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/represents> .
+_:Bb9c78bdfac928b36eaabc7499cbcc22c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/GetCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Get command"@en .
+<https://saref.etsi.org/core/GetCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/GetCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/GetCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/State> <http://www.w3.org/2000/01/rdf-schema#label> "State"@en .
+<https://saref.etsi.org/core/State> <http://www.w3.org/2000/01/rdf-schema#comment> "The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended."@en .
+<https://saref.etsi.org/core/State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/EnergyUnit> <http://www.w3.org/2000/01/rdf-schema#label> "Energy unit"@en .
+<https://saref.etsi.org/core/EnergyUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure for energy"@en .
+<https://saref.etsi.org/core/EnergyUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/UnitOfMeasure> .
+<https://saref.etsi.org/core/EnergyUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/offers> <http://www.w3.org/2000/01/rdf-schema#label> "offers"@en .
+<https://saref.etsi.org/core/offers> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Service> .
+<https://saref.etsi.org/core/offers> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/offers> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a device and a service"@en .
+<https://saref.etsi.org/core/offers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/Meter> <http://www.w3.org/2000/01/rdf-schema#label> "Meter"@en .
+<https://saref.etsi.org/core/Meter> <http://www.w3.org/2000/01/rdf-schema#comment> "A device built to accurately detect and display a quantity in a form readable by a human being. Further, a device of category saref:Meter that performs a saref:MeteringFunction."@en .
+<https://saref.etsi.org/core/Meter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf753febb86da72b9b62c5de89acfebe6 .
+<https://saref.etsi.org/core/Meter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/Meter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/TemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature sensor"@en .
+<https://saref.etsi.org/core/TemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A sensor that is used for the purpose of sensing a property of type saref:Temperature. A saref:TemperatureSensor is typically used to saref:accomplish saref:Comfort."@en .
+<https://saref.etsi.org/core/TemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9fc1860f410bb55fb0d1ee327199f1b9 .
+<https://saref.etsi.org/core/TemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4cf9d09b16acbcc633616e994884b6aa .
+<https://saref.etsi.org/core/TemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Sensor> .
+<https://saref.etsi.org/core/TemperatureSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://saref.etsi.org/core/Pressure> <http://www.w3.org/2000/01/rdf-schema#label> "Pressure"@en .
+<https://saref.etsi.org/core/Pressure> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value that is measured in a pressure unit (bar or pascal)"@en .
+<https://saref.etsi.org/core/Pressure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Pressure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Switch> <http://www.w3.org/2000/01/rdf-schema#label> "Switch"@en .
+<https://saref.etsi.org/core/Switch> <http://www.w3.org/2000/01/rdf-schema#comment> "A device of category saref:Actuator that performs an actuating function of type saref:OnOffFunction or saref:OpenCloseFunction"@en .
+<https://saref.etsi.org/core/Switch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Actuator> .
+<https://saref.etsi.org/core/Switch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Service> <http://www.w3.org/2000/01/rdf-schema#label> "Service"@en .
+<https://saref.etsi.org/core/Service> <http://www.w3.org/2000/01/rdf-schema#comment> "A service is a representation of a function to a network that makes the function discoverable, registerable, remotely controllable by other devices in the network. A service can represent one or more functions. A Service is offered by a device that wants (a certain set of) its function(s) to be discoverable, registerable, remotely controllable by other devices in the network. A Service must specify the device that is offering the service and the function(s) to be represented."@en .
+<https://saref.etsi.org/core/Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B6ba186c321024bd0d7bf52550f0d428c .
+<https://saref.etsi.org/core/Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd1d06e6540366e9c5a2bf9f0143b4a94 .
+<https://saref.etsi.org/core/Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B6e4465d6eb8230e905cd5e1ba831aac1 <http://www.w3.org/2002/07/owl#unionOf> _:B47dea760X2D3ba6X2D428bX2Db06cX2D288714a53d10 .
+_:B6e4465d6eb8230e905cd5e1ba831aac1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/EnergyEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "EnergyEfficiency"@en .
+<https://saref.etsi.org/core/EnergyEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/EnergyEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/EnergyEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/hasMeterReading> <http://www.w3.org/2000/01/rdf-schema#label> "has meter reading"@en .
+<https://saref.etsi.org/core/hasMeterReading> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/hasMeterReading> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/MeteringFunction> .
+<https://saref.etsi.org/core/hasMeterReading> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a metering function and the measurement of the reading"@en .
+<https://saref.etsi.org/core/hasMeterReading> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/OffState> <http://www.w3.org/2000/01/rdf-schema#label> "Off state"@en .
+<https://saref.etsi.org/core/OffState> <http://www.w3.org/2000/01/rdf-schema#comment> "The state of a device that is Off"@en .
+<https://saref.etsi.org/core/OffState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/OnOffState> .
+<https://saref.etsi.org/core/OffState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Power> <http://www.w3.org/2000/01/rdf-schema#label> "Power"@en .
+<https://saref.etsi.org/core/Power> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value that is measured in a power unit (such as watt or kilowatt).  Further specializations of the saref:Power class can be found in the SAREF4ENER extension, where classes such as PowerMax, PowerMin and PowerExpected are defined."@en .
+<https://saref.etsi.org/core/Power> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Power> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bda0c29621a0bc643a8ac071778e0d4bc <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/StartStopState> .
+_:Bda0c29621a0bc643a8ac071778e0d4bc <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:Bda0c29621a0bc643a8ac071778e0d4bc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bceed0124a42086b01a46b3f0a9398794 <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Function> .
+_:Bceed0124a42086b01a46b3f0a9398794 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bceed0124a42086b01a46b3f0a9398794 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:Bceed0124a42086b01a46b3f0a9398794 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/isMeasuredByDevice> <http://www.w3.org/2000/01/rdf-schema#label> "is measured by device"@en .
+<https://saref.etsi.org/core/isMeasuredByDevice> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/isMeasuredByDevice> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/isMeasuredByDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship specifying the devices that can measure a certain property"@en .
+<https://saref.etsi.org/core/isMeasuredByDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/hasTypicalConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "has typical consumption"@en .
+<https://saref.etsi.org/core/hasTypicalConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the typical (energy or power) consumption of a device"@en .
+<https://saref.etsi.org/core/hasTypicalConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B073706a2ca7d384167b515bc7c0d67db <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Task> .
+_:B073706a2ca7d384167b515bc7c0d67db <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B073706a2ca7d384167b515bc7c0d67db <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/accomplishes> .
+_:B073706a2ca7d384167b515bc7c0d67db <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B5d91e339c9933fb8435582a85672323b <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OnOffFunction> .
+_:B5d91e339c9933fb8435582a85672323b <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:B5d91e339c9933fb8435582a85672323b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasFunction> <http://www.w3.org/2000/01/rdf-schema#label> "has function"@en .
+<https://saref.etsi.org/core/hasFunction> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/hasFunction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/hasFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the function of a device"@en .
+<https://saref.etsi.org/core/hasFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B47dea760X2D3ba6X2D428bX2Db06cX2D288714a53d10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B23ef8e85X2D0b7cX2D471dX2D93e4X2Daf2ea5b92377 .
+_:B47dea760X2D3ba6X2D428bX2Db06cX2D288714a53d10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://saref.etsi.org/core/Commodity> .
+<https://saref.etsi.org/core/CloseState> <http://www.w3.org/2000/01/rdf-schema#label> "Close state"@en .
+<https://saref.etsi.org/core/CloseState> <http://www.w3.org/2000/01/rdf-schema#comment> "The state of a device that is CLOSE"@en .
+<https://saref.etsi.org/core/CloseState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/OpenCloseState> .
+<https://saref.etsi.org/core/CloseState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/hasCommand> <http://www.w3.org/2000/01/rdf-schema#label> "has command"@en .
+<https://saref.etsi.org/core/hasCommand> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/hasCommand> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/hasCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a function and a command"@en .
+<https://saref.etsi.org/core/hasCommand> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/core/isCommandOf> .
+<https://saref.etsi.org/core/hasCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/TemperatureUnit> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature unit"@en .
+<https://saref.etsi.org/core/TemperatureUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure for temperature"@en .
+<https://saref.etsi.org/core/TemperatureUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/UnitOfMeasure> .
+<https://saref.etsi.org/core/TemperatureUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/isOfferedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is offered by"@en .
+<https://saref.etsi.org/core/isOfferedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/isOfferedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Service> .
+<https://saref.etsi.org/core/isOfferedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a service and a device that offers the service"@en .
+<https://saref.etsi.org/core/isOfferedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/core/offers> .
+<https://saref.etsi.org/core/isOfferedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B8aebc5339ccdb37ddeb19dccd9a714d2 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Property> .
+_:B8aebc5339ccdb37ddeb19dccd9a714d2 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/relatesToProperty> .
+_:B8aebc5339ccdb37ddeb19dccd9a714d2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Washing> <http://www.w3.org/2000/01/rdf-schema#label> "Washing"@en .
+<https://saref.etsi.org/core/Washing> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/Washing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/Washing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/StartCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Start command"@en .
+<https://saref.etsi.org/core/StartCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/StartCommand> <http://www.w3.org/2002/07/owl#disjointWith> <https://saref.etsi.org/core/StopCommand> .
+<https://saref.etsi.org/core/StartCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bed7822e09922b197f9bdc3025f96032f .
+<https://saref.etsi.org/core/StartCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B34a74b2fc25236ace93a5bde3e455ecf .
+<https://saref.etsi.org/core/StartCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/StartCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Price> <http://www.w3.org/2000/01/rdf-schema#label> "Price"@en .
+<https://saref.etsi.org/core/Price> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property crelated to some measurements that are characterized by a certain value that is measured using saref:Currency"@en .
+<https://saref.etsi.org/core/Price> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B9629cbf85df53ed8d50ed552d88a9732 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/SensingFunction> .
+_:B9629cbf85df53ed8d50ed552d88a9732 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B9629cbf85df53ed8d50ed552d88a9732 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/OpenCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Open command"@en .
+<https://saref.etsi.org/core/OpenCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/OpenCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bfda020a8ad1994d11ff38d24fd6a018c .
+<https://saref.etsi.org/core/OpenCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4ceaed189c443a94386b6ad50617860f .
+<https://saref.etsi.org/core/OpenCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/OpenCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/SwitchOnService> <http://www.w3.org/2000/01/rdf-schema#label> "Switch on service"@en .
+<https://saref.etsi.org/core/SwitchOnService> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of service that represents an on/off function to the network"@en .
+<https://saref.etsi.org/core/SwitchOnService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb9c78bdfac928b36eaabc7499cbcc22c .
+<https://saref.etsi.org/core/SwitchOnService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be8d81efc9c9025aac862badc84ac90f5 .
+<https://saref.etsi.org/core/SwitchOnService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Service> .
+<https://saref.etsi.org/core/SwitchOnService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bc48a7af21d0124dded99df75e4a3dae6 <http://www.w3.org/2002/07/owl#unionOf> _:B24d5cd19X2Dfe68X2D440eX2Daf32X2D7c6ba44d5e47 .
+_:Bc48a7af21d0124dded99df75e4a3dae6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/OpenState> <http://www.w3.org/2000/01/rdf-schema#label> "Open state"@en .
+<https://saref.etsi.org/core/OpenState> <http://www.w3.org/2000/01/rdf-schema#comment> "The state of a device that is OPEN "@en .
+<https://saref.etsi.org/core/OpenState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/OpenCloseState> .
+<https://saref.etsi.org/core/OpenState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B5a728c8339443d6f01953432abdc63cd <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OpenCloseState> .
+_:B5a728c8339443d6f01953432abdc63cd <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasState> .
+_:B5a728c8339443d6f01953432abdc63cd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://saref.etsi.org/core/OnOffFunction> <http://www.w3.org/2000/01/rdf-schema#label> "On off function"@en .
+<https://saref.etsi.org/core/OnOffFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An actuating function that allows to switch on and off an actuator"@en .
+<https://saref.etsi.org/core/OnOffFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/ActuatingFunction> .
+<https://saref.etsi.org/core/OnOffFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en .
+<https://saref.etsi.org/core/Property> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature"@en .
+<https://saref.etsi.org/core/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3e738bfa59b29f6bc04dc88f26b24253 .
+<https://saref.etsi.org/core/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9e0c5387fded772b6d4093a84ced63d3 .
+<https://saref.etsi.org/core/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B03d2fed14e11d6df1bb7984bd6ccbc92 .
+<https://saref.etsi.org/core/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B1ffd272786d1d777af23ca160e931394 .
+<https://saref.etsi.org/core/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/CloseCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Close command"@en .
+<https://saref.etsi.org/core/CloseCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/CloseCommand> <http://www.w3.org/2002/07/owl#disjointWith> <https://saref.etsi.org/core/OpenCommand> .
+<https://saref.etsi.org/core/CloseCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B7f6302e5686445ee19222542035bd5c7 .
+<https://saref.etsi.org/core/CloseCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd884883a7c2d96aee22fe08e7f730c5a .
+<https://saref.etsi.org/core/CloseCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/CloseCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/isAccomplishedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is accomplished by"@en .
+<https://saref.etsi.org/core/isAccomplishedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/isAccomplishedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying an entity (e.g., a device) that can accomplish a task."@en .
+<https://saref.etsi.org/core/isAccomplishedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B76bae5bd4fd7dcd101108f8ffe5673eb <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Measurement> .
+_:B76bae5bd4fd7dcd101108f8ffe5673eb <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasMeterReading> .
+_:B76bae5bd4fd7dcd101108f8ffe5673eb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be98a6b39f432273859fbc2600e5fedab <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/State> .
+_:Be98a6b39f432273859fbc2600e5fedab <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasState> .
+_:Be98a6b39f432273859fbc2600e5fedab <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bed7822e09922b197f9bdc3025f96032f <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/StartStopFunction> .
+_:Bed7822e09922b197f9bdc3025f96032f <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:Bed7822e09922b197f9bdc3025f96032f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B441929937fd1063c475b50b32e620120 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OpenCloseFunction> .
+_:B441929937fd1063c475b50b32e620120 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:B441929937fd1063c475b50b32e620120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bff514f8a6ef82ac85faf2cb0e49684c7 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bff514f8a6ef82ac85faf2cb0e49684c7 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasValue> .
+_:Bff514f8a6ef82ac85faf2cb0e49684c7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B83879fe21fc62aac14c9cf6af41226f2 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/StartStopFunction> .
+_:B83879fe21fc62aac14c9cf6af41226f2 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B83879fe21fc62aac14c9cf6af41226f2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B35035f9741db3d188bce691a013fb20e <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/State> .
+_:B35035f9741db3d188bce691a013fb20e <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:B35035f9741db3d188bce691a013fb20e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasManufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "has manufacturer"@en .
+<https://saref.etsi.org/core/hasManufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the manufacturer of an entity (e.g., device). The value is expected to be a string or a string with language tag."@en .
+<https://saref.etsi.org/core/hasManufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://saref.etsi.org/core/Cleaning> <http://www.w3.org/2000/01/rdf-schema#label> "Cleaning"@en .
+<https://saref.etsi.org/core/Cleaning> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/Cleaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/Cleaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/StartState> <http://www.w3.org/2000/01/rdf-schema#label> "Start state"@en .
+<https://saref.etsi.org/core/StartState> <http://www.w3.org/2000/01/rdf-schema#comment> "The state of a device that is STARTED"@en .
+<https://saref.etsi.org/core/StartState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/StartStopState> .
+<https://saref.etsi.org/core/StartState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bf5f672a2c642c2631a0a460503a02207 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/ActuatingFunction> .
+_:Bf5f672a2c642c2631a0a460503a02207 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:Bf5f672a2c642c2631a0a460503a02207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/SetRelativeLevelCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Set relative level command"@en .
+<https://saref.etsi.org/core/SetRelativeLevelCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of set level command"@en .
+<https://saref.etsi.org/core/SetRelativeLevelCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/SetLevelCommand> .
+<https://saref.etsi.org/core/SetRelativeLevelCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/consistsOf> <http://www.w3.org/2000/01/rdf-schema#label> "consists of"@en .
+<https://saref.etsi.org/core/consistsOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indicating a composite entity that consists of other entities (e.g., a temperature/humidity sensor that consists of a temperature sensor and a humidity sensor)"@en .
+<https://saref.etsi.org/core/consistsOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B1ffd272786d1d777af23ca160e931394 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Device> .
+_:B1ffd272786d1d777af23ca160e931394 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isControlledByDevice> .
+_:B1ffd272786d1d777af23ca160e931394 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B2f3f2a716e421726e875c2d22d5c5be7 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Property> .
+_:B2f3f2a716e421726e875c2d22d5c5be7 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/controlsProperty> .
+_:B2f3f2a716e421726e875c2d22d5c5be7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/measurementMadeBy> <http://www.w3.org/2000/01/rdf-schema#label> "measurement made by"@en .
+<https://saref.etsi.org/core/measurementMadeBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/measurementMadeBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/measurementMadeBy> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between a measurement and the device that made it."@en .
+<https://saref.etsi.org/core/measurementMadeBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B20d1cfd369d92e36b95288ae944a821f <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Device> .
+_:B20d1cfd369d92e36b95288ae944a821f <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/consistsOf> .
+_:B20d1cfd369d92e36b95288ae944a821f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasTimestamp> <http://www.w3.org/2000/01/rdf-schema#label> "has timestamp"@en .
+<https://saref.etsi.org/core/hasTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship stating the timestamp of an entity (e.g. a measurement)."@en .
+<https://saref.etsi.org/core/hasTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://saref.etsi.org/core/IlluminanceUnit> <http://www.w3.org/2000/01/rdf-schema#label> "Illuminance unit"@en .
+<https://saref.etsi.org/core/IlluminanceUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure for light"@en .
+<https://saref.etsi.org/core/IlluminanceUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/UnitOfMeasure> .
+<https://saref.etsi.org/core/IlluminanceUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Coal> <http://www.w3.org/2000/01/rdf-schema#label> "Coal"@en .
+<https://saref.etsi.org/core/Coal> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of commodity"@en .
+<https://saref.etsi.org/core/Coal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Commodity> .
+<https://saref.etsi.org/core/Coal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://saref.etsi.org/core/relatesToProperty> <http://www.w3.org/2000/01/rdf-schema#label> "relates to property"@en .
+<https://saref.etsi.org/core/relatesToProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/relatesToProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/relatesToProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a measurement and the property it relates to"@en .
+<https://saref.etsi.org/core/relatesToProperty> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/core/relatesToMeasurement> .
+<https://saref.etsi.org/core/relatesToProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/Drying> <http://www.w3.org/2000/01/rdf-schema#label> "Drying"@en .
+<https://saref.etsi.org/core/Drying> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/Drying> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/Drying> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/StopCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Stop command"@en .
+<https://saref.etsi.org/core/StopCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/StopCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B83879fe21fc62aac14c9cf6af41226f2 .
+<https://saref.etsi.org/core/StopCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bda0c29621a0bc643a8ac071778e0d4bc .
+<https://saref.etsi.org/core/StopCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/StopCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/DoorSwitch> <http://www.w3.org/2000/01/rdf-schema#label> "Door switch"@en .
+<https://saref.etsi.org/core/DoorSwitch> <http://www.w3.org/2000/01/rdf-schema#comment> "A switch that performs the saref:OpenCloseFunction, is used for controlling a door, and can be found in the state saref:OpenCloseState. A saref:DoorSwitch is typically used to accomplish saref:Safety."@en .
+<https://saref.etsi.org/core/DoorSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5a728c8339443d6f01953432abdc63cd .
+<https://saref.etsi.org/core/DoorSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B441929937fd1063c475b50b32e620120 .
+<https://saref.etsi.org/core/DoorSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Switch> .
+<https://saref.etsi.org/core/DoorSwitch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/StartStopState> <http://www.w3.org/2000/01/rdf-schema#label> "Start stop state"@en .
+<https://saref.etsi.org/core/StartStopState> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of state"@en .
+<https://saref.etsi.org/core/StartStopState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/State> .
+<https://saref.etsi.org/core/StartStopState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Profile> <http://www.w3.org/2000/01/rdf-schema#label> "Profile"@en .
+<https://saref.etsi.org/core/Profile> <http://www.w3.org/2000/01/rdf-schema#comment> "A specification associated to a device to collect information about a certain Property (e.g., Energy) for optimizing its usage in the home, office or building in which the device is located. This specification is about a certain Property (saref:isAbout), can be calculated over a time span (saref:hasTime) and can be associated to some costs (saref:hasPrice). An example is the Power Profile defined in the SAREF4ENER extension that can be associated to a device for optimizing the Energy efficiency in the home, office or building in which the device is located."@en .
+<https://saref.etsi.org/core/Profile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be72be53733811e041678cac053666961 .
+<https://saref.etsi.org/core/Profile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Beb93eacf4a6cddbab532885720a3aba9 .
+<https://saref.etsi.org/core/Profile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B27dd9e6fef9c71002a99d90c7c865bd9 .
+<https://saref.etsi.org/core/Profile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B715750dbde73cb6ee06694e3f0b25c9e .
+<https://saref.etsi.org/core/Profile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bcd0bf2f6e7e06d8768bd57c04a9c2253 <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/UnitOfMeasure> .
+_:Bcd0bf2f6e7e06d8768bd57c04a9c2253 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bcd0bf2f6e7e06d8768bd57c04a9c2253 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isMeasuredIn> .
+_:Bcd0bf2f6e7e06d8768bd57c04a9c2253 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B62b6707fabcb6c38f8231e4719e7a669 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/Measurement> .
+_:B62b6707fabcb6c38f8231e4719e7a669 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasSensingRange> .
+_:B62b6707fabcb6c38f8231e4719e7a669 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B966c9cdadd6e852d6a996ebdee43fe78 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Property> .
+_:B966c9cdadd6e852d6a996ebdee43fe78 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasProperty> .
+_:B966c9cdadd6e852d6a996ebdee43fe78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B03d2fed14e11d6df1bb7984bd6ccbc92 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Device> .
+_:B03d2fed14e11d6df1bb7984bd6ccbc92 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isMeasuredByDevice> .
+_:B03d2fed14e11d6df1bb7984bd6ccbc92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B44848054a9c7d74990b0a766796675d6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/Smoke> .
+_:B44848054a9c7d74990b0a766796675d6 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/measuresProperty> .
+_:B44848054a9c7d74990b0a766796675d6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bf663a229259871ce7fb1237811db50ab <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Measurement> .
+_:Bf663a229259871ce7fb1237811db50ab <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/makesMeasurement> .
+_:Bf663a229259871ce7fb1237811db50ab <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Lighting> <http://www.w3.org/2000/01/rdf-schema#label> "Lighting"@en .
+<https://saref.etsi.org/core/Lighting> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/Lighting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/Lighting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:B33b1897abc51c1727879604a0191ac12 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/SwitchOnService> .
+_:B33b1897abc51c1727879604a0191ac12 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/offers> .
+_:B33b1897abc51c1727879604a0191ac12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B9e0c5387fded772b6d4093a84ced63d3 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/FeatureOfInterest> .
+_:B9e0c5387fded772b6d4093a84ced63d3 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isPropertyOf> .
+_:B9e0c5387fded772b6d4093a84ced63d3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#label> "is measured in"@en .
+<https://saref.etsi.org/core/isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/UnitOfMeasure> .
+<https://saref.etsi.org/core/isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/isMeasuredIn> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the unit of measure used for a certain entity."@en .
+<https://saref.etsi.org/core/isMeasuredIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B5eb016d9560f0dab172a25f8ec6df07f <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/MeteringFunction> .
+_:B5eb016d9560f0dab172a25f8ec6df07f <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B5eb016d9560f0dab172a25f8ec6df07f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasMeterReadingType> <http://www.w3.org/2000/01/rdf-schema#label> "has meter reading type"@en .
+<https://saref.etsi.org/core/hasMeterReadingType> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/hasMeterReadingType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/MeteringFunction> .
+<https://saref.etsi.org/core/hasMeterReadingType> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the reading type of a metering function (e.g., Water, Gas, Pressure , Energy , Power, etc.)"@en .
+<https://saref.etsi.org/core/hasMeterReadingType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B5f2c583dedb374f8ef9a6ba5d07697d7 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/MeteringFunction> .
+_:B5f2c583dedb374f8ef9a6ba5d07697d7 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B5f2c583dedb374f8ef9a6ba5d07697d7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Commodity> <http://www.w3.org/2000/01/rdf-schema#label> "Commodity"@en .
+<https://saref.etsi.org/core/Commodity> <http://www.w3.org/2000/01/rdf-schema#comment> "A marketable item for which there is demand, but which is supplied without qualitative differentiation across a market. SAREF refers to energy commodities such as electricity, gas, coal and oil. "@en .
+<https://saref.etsi.org/core/Commodity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B9625f4a3992fb8a4b222ff8f7177e81f <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/LevelControlFunction> .
+_:B9625f4a3992fb8a4b222ff8f7177e81f <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B9625f4a3992fb8a4b222ff8f7177e81f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B6ba186c321024bd0d7bf52550f0d428c <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Function> .
+_:B6ba186c321024bd0d7bf52550f0d428c <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B6ba186c321024bd0d7bf52550f0d428c <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/represents> .
+_:B6ba186c321024bd0d7bf52550f0d428c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasProfile> <http://www.w3.org/2000/01/rdf-schema#label> "has profile"@en .
+<https://saref.etsi.org/core/hasProfile> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Profile> .
+<https://saref.etsi.org/core/hasProfile> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/hasProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship associating a profile to a certain device"@en .
+<https://saref.etsi.org/core/hasProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B7c4b06a264310457ff2197cd6e88c075 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/UnitOfMeasure> .
+_:B7c4b06a264310457ff2197cd6e88c075 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isMeasuredIn> .
+_:B7c4b06a264310457ff2197cd6e88c075 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/OnState> <http://www.w3.org/2000/01/rdf-schema#label> "On state"@en .
+<https://saref.etsi.org/core/OnState> <http://www.w3.org/2000/01/rdf-schema#comment> "The state of a device that is On"@en .
+<https://saref.etsi.org/core/OnState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/OnOffState> .
+<https://saref.etsi.org/core/OnState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B059d60a0cc9520ecec755d8c959b779d <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/MultiLevelState> .
+_:B059d60a0cc9520ecec755d8c959b779d <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:B059d60a0cc9520ecec755d8c959b779d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/makesMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "makes measurement"@en .
+<https://saref.etsi.org/core/makesMeasurement> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/makesMeasurement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/makesMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between a device and the measurements it makes. Such measurement will link together the value of the measurement, its unit of measure and the property to which it relates."@en .
+<https://saref.etsi.org/core/makesMeasurement> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/core/measurementMadeBy> .
+<https://saref.etsi.org/core/makesMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/LevelControlFunction> <http://www.w3.org/2000/01/rdf-schema#label> "Level control function"@en .
+<https://saref.etsi.org/core/LevelControlFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An actuating function that allows to do level adjustments of a property in a certain range (e.g., 0%-100%), such as dimming a light in a room or setting the speed of an electric motor. "@en .
+<https://saref.etsi.org/core/LevelControlFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/ActuatingFunction> .
+<https://saref.etsi.org/core/LevelControlFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/EventFunction> <http://www.w3.org/2000/01/rdf-schema#label> "Event function"@en .
+<https://saref.etsi.org/core/EventFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A function that allows to notify about some relevant activity; e.g., that a certain threshold value has been exceeded or that some object has moved."@en .
+<https://saref.etsi.org/core/EventFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be747b8d7cabc24cfa64ff12f79129a23 .
+<https://saref.etsi.org/core/EventFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/EventFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B670ff70d3683a1d96518e681e73fd9ad <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/SensingFunction> .
+_:B670ff70d3683a1d96518e681e73fd9ad <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:B670ff70d3683a1d96518e681e73fd9ad <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B28b55d0340776fbc5952ad4c0aef3fe1 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/MeteringFunction> .
+_:B28b55d0340776fbc5952ad4c0aef3fe1 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B28b55d0340776fbc5952ad4c0aef3fe1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/OpenCloseFunction> <http://www.w3.org/2000/01/rdf-schema#label> "Open close function"@en .
+<https://saref.etsi.org/core/OpenCloseFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An actuating function that allows to open and close a device"@en .
+<https://saref.etsi.org/core/OpenCloseFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/ActuatingFunction> .
+<https://saref.etsi.org/core/OpenCloseFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+_:Bdb1b33880e71e73d34b1084605d9ddc3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/MultiLevelState> .
+_:Bdb1b33880e71e73d34b1084605d9ddc3 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:Bdb1b33880e71e73d34b1084605d9ddc3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Smoke sensor"@en .
+<https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A sensor that performs the saref:SensingFunction and the saref:EventFunction, and is used for the purpose of sensing a property of type saref:Smoke. A saref:SmokeSensor is typically used to saref:accomplish saref:Safety."@en .
+<https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B44848054a9c7d74990b0a766796675d6 .
+<https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B670ff70d3683a1d96518e681e73fd9ad .
+<https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B310f1c30ad271008d5ee9da79a7be690 .
+<https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Sensor> .
+<https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Appliance> <http://www.w3.org/2000/01/rdf-schema#label> "Appliance"@en .
+<https://saref.etsi.org/core/Appliance> <http://www.w3.org/2000/01/rdf-schema#comment> "An electrical/mechanical machine that accomplish some household functions, such as cleaning or cooking"@en .
+<https://saref.etsi.org/core/Appliance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/Appliance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Humidity> <http://www.w3.org/2000/01/rdf-schema#label> "Humidity"@en .
+<https://saref.etsi.org/core/Humidity> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"@en .
+<https://saref.etsi.org/core/Humidity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Humidity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Entertainment> <http://www.w3.org/2000/01/rdf-schema#label> "Entertainment"@en .
+<https://saref.etsi.org/core/Entertainment> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/Entertainment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/Entertainment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/Smoke> <http://www.w3.org/2000/01/rdf-schema#label> "Smoke"@en .
+<https://saref.etsi.org/core/Smoke> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value that is measured in a unit of measure for smoke"@en .
+<https://saref.etsi.org/core/Smoke> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Smoke> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#label> "has sensor type"@en .
+<https://saref.etsi.org/core/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/SensingFunction> .
+<https://saref.etsi.org/core/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the sensing type of a sensor detection (i.e., Temperature, Occupancy, Humidity, Motion , Smoke, Pressure, etc.) "@en .
+<https://saref.etsi.org/core/hasSensorType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/measuresProperty> <http://www.w3.org/2000/01/rdf-schema#label> "measures property"@en .
+<https://saref.etsi.org/core/measuresProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/measuresProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/measuresProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship specifying the property that can be measured by a certain device"@en .
+<https://saref.etsi.org/core/measuresProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/Currency> <http://www.w3.org/2000/01/rdf-schema#label> "Currency"@en .
+<https://saref.etsi.org/core/Currency> <http://www.w3.org/2000/01/rdf-schema#comment> "The class of units of measure for price"@en .
+<https://saref.etsi.org/core/Currency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/UnitOfMeasure> .
+<https://saref.etsi.org/core/Currency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/GetMeterHistoryCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Get meter history command"@en .
+<https://saref.etsi.org/core/GetMeterHistoryCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of get command"@en .
+<https://saref.etsi.org/core/GetMeterHistoryCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B28b55d0340776fbc5952ad4c0aef3fe1 .
+<https://saref.etsi.org/core/GetMeterHistoryCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/GetCommand> .
+<https://saref.etsi.org/core/GetMeterHistoryCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B32cd7b08cc20fd8817db48e76d44bd5a <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/FeatureOfInterest> .
+_:B32cd7b08cc20fd8817db48e76d44bd5a <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isMeasurementOf> .
+_:B32cd7b08cc20fd8817db48e76d44bd5a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/SetLevelCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Set level command"@en .
+<https://saref.etsi.org/core/SetLevelCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/SetLevelCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B67aea3a1a7e62b783209acef7b15f3ad .
+<https://saref.etsi.org/core/SetLevelCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B059d60a0cc9520ecec755d8c959b779d .
+<https://saref.etsi.org/core/SetLevelCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/SetLevelCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/PauseCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Pause command"@en .
+<https://saref.etsi.org/core/PauseCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/PauseCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/PauseCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Temperature> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature"@en .
+<https://saref.etsi.org/core/Temperature> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"@en .
+<https://saref.etsi.org/core/Temperature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Temperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/relatesToMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "relates to measurement"@en .
+<https://saref.etsi.org/core/relatesToMeasurement> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/relatesToMeasurement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/relatesToMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a property and the measurements it relates to"@en .
+<https://saref.etsi.org/core/relatesToMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/MultiLevelState> <http://www.w3.org/2000/01/rdf-schema#label> "Multi level state"@en .
+<https://saref.etsi.org/core/MultiLevelState> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of state"@en .
+<https://saref.etsi.org/core/MultiLevelState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/State> .
+<https://saref.etsi.org/core/MultiLevelState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/MeteringFunction> <http://www.w3.org/2000/01/rdf-schema#label> "Metering function"@en .
+<https://saref.etsi.org/core/MeteringFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A function that allows to get data from a meter, such as current meter reading or instantaneous demand"@en .
+<https://saref.etsi.org/core/MeteringFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B745924d3dd011e1841a1c339751b3898 .
+<https://saref.etsi.org/core/MeteringFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B76bae5bd4fd7dcd101108f8ffe5673eb .
+<https://saref.etsi.org/core/MeteringFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/MeteringFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Be4da04ed2ca744955614bfc588f780c5 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/EventFunction> .
+_:Be4da04ed2ca744955614bfc588f780c5 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:Be4da04ed2ca744955614bfc588f780c5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Electricity> <http://www.w3.org/2000/01/rdf-schema#label> "Electricity"@en .
+<https://saref.etsi.org/core/Electricity> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of commodity"@en .
+<https://saref.etsi.org/core/Electricity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Commodity> .
+<https://saref.etsi.org/core/Electricity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Command> <http://www.w3.org/2000/01/rdf-schema#label> "Command"@en .
+<https://saref.etsi.org/core/Command> <http://www.w3.org/2000/01/rdf-schema#comment> "A directive that a device must support to perform a certain function. A command may act upon a state, but does not necessarily act upon a state. For example, the ON command acts upon the ON/OFF state, but the GET command does not act upon any state, it simply gives a directive to retrieve a certain value. We propose here a list of commands that are relevant for the purpose of SAREF, but this list can be extended."@en .
+<https://saref.etsi.org/core/Command> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bab558fa6e6cb0d4b977df7f0f919423b .
+<https://saref.etsi.org/core/Command> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B35035f9741db3d188bce691a013fb20e .
+<https://saref.etsi.org/core/Command> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+_:B3fff6502c3daa9e107bf36435aeec72f <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Property> .
+_:B3fff6502c3daa9e107bf36435aeec72f <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasSensorType> .
+_:B3fff6502c3daa9e107bf36435aeec72f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/represents> <http://www.w3.org/2000/01/rdf-schema#label> "represents"@en .
+<https://saref.etsi.org/core/represents> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/represents> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Service> .
+<https://saref.etsi.org/core/represents> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a service and a function."@en .
+<https://saref.etsi.org/core/represents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Be8d81efc9c9025aac862badc84ac90f5 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/LightSwitch> .
+_:Be8d81efc9c9025aac862badc84ac90f5 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isOfferedBy> .
+_:Be8d81efc9c9025aac862badc84ac90f5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B24d5cd19X2Dfe68X2D440eX2Daf32X2D7c6ba44d5e47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B1fe0611cX2D9b98X2D432fX2Da304X2Dd45389d118af .
+_:B24d5cd19X2Dfe68X2D440eX2Daf32X2D7c6ba44d5e47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://saref.etsi.org/core/Commodity> .
+<https://saref.etsi.org/core/OnCommand> <http://www.w3.org/2000/01/rdf-schema#label> "On command"@en .
+<https://saref.etsi.org/core/OnCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/OnCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2f36f46190fba246a1effb09812e8d2b .
+<https://saref.etsi.org/core/OnCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0f06fe58521dc919a942f6ac816e9570 .
+<https://saref.etsi.org/core/OnCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/OnCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/controlsProperty> <http://www.w3.org/2000/01/rdf-schema#label> "controls property"@en .
+<https://saref.etsi.org/core/controlsProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/controlsProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/controlsProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship specifying the property that can be controlled by a certain device"@en .
+<https://saref.etsi.org/core/controlsProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Be747b8d7cabc24cfa64ff12f79129a23 <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Measurement> .
+_:Be747b8d7cabc24cfa64ff12f79129a23 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Be747b8d7cabc24cfa64ff12f79129a23 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasThresholdMeasurement> .
+_:Be747b8d7cabc24cfa64ff12f79129a23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Energy> <http://www.w3.org/2000/01/rdf-schema#label> "Energy"@en .
+<https://saref.etsi.org/core/Energy> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value measured in an energy unit (such as Kilowatt_Hour or Watt_hour). Furter specializations of the saref:Energy class can be found in the SAREF4ENER extension, where classes such as EnergyMax, EnergyMin and EnergyExpected are defined. "@en .
+<https://saref.etsi.org/core/Energy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Energy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Water> <http://www.w3.org/2000/01/rdf-schema#label> "Water"@en .
+<https://saref.etsi.org/core/Water> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of commodity"@en .
+<https://saref.etsi.org/core/Water> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Commodity> .
+<https://saref.etsi.org/core/Water> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/OffCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Off command"@en .
+<https://saref.etsi.org/core/OffCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/OffCommand> <http://www.w3.org/2002/07/owl#disjointWith> <https://saref.etsi.org/core/OnCommand> .
+<https://saref.etsi.org/core/OffCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bfe81597c1815ca3c9208d792642f35b9 .
+<https://saref.etsi.org/core/OffCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be0264221da30f2d4c0aadef021ada0f7 .
+<https://saref.etsi.org/core/OffCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/OffCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bf753febb86da72b9b62c5de89acfebe6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/MeteringFunction> .
+_:Bf753febb86da72b9b62c5de89acfebe6 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:Bf753febb86da72b9b62c5de89acfebe6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bfda020a8ad1994d11ff38d24fd6a018c <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/OpenCloseFunction> .
+_:Bfda020a8ad1994d11ff38d24fd6a018c <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:Bfda020a8ad1994d11ff38d24fd6a018c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasTime> <http://www.w3.org/2000/01/rdf-schema#label> "has time"@en .
+<https://saref.etsi.org/core/hasTime> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Time> .
+<https://saref.etsi.org/core/hasTime> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship to associate time information to an entity"@en .
+<https://saref.etsi.org/core/hasTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/OpenCloseState> <http://www.w3.org/2000/01/rdf-schema#label> "Open close state"@en .
+<https://saref.etsi.org/core/OpenCloseState> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of state"@en .
+<https://saref.etsi.org/core/OpenCloseState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/State> .
+<https://saref.etsi.org/core/OpenCloseState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Comfort> <http://www.w3.org/2000/01/rdf-schema#label> "Comfort"@en .
+<https://saref.etsi.org/core/Comfort> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/Comfort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/Comfort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/NotifyCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Notify command"@en .
+<https://saref.etsi.org/core/NotifyCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/NotifyCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be4da04ed2ca744955614bfc588f780c5 .
+<https://saref.etsi.org/core/NotifyCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/NotifyCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://saref.etsi.org/core/OnOffState> <http://www.w3.org/2000/01/rdf-schema#label> "On off state"@en .
+<https://saref.etsi.org/core/OnOffState> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of state"@en .
+<https://saref.etsi.org/core/OnOffState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/State> .
+<https://saref.etsi.org/core/OnOffState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/SetAbsoluteLevelCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Set absolute level command"@en .
+<https://saref.etsi.org/core/SetAbsoluteLevelCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of set level command"@en .
+<https://saref.etsi.org/core/SetAbsoluteLevelCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/SetLevelCommand> .
+<https://saref.etsi.org/core/SetAbsoluteLevelCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B1bf3cfa15dcd56928846f683866a2e91 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Profile> .
+_:B1bf3cfa15dcd56928846f683866a2e91 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasProfile> .
+_:B1bf3cfa15dcd56928846f683866a2e91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/isControlledByDevice> <http://www.w3.org/2000/01/rdf-schema#label> "is controlled by device"@en .
+<https://saref.etsi.org/core/isControlledByDevice> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/isControlledByDevice> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/isControlledByDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship specifying the devices that can control a certain property"@en .
+<https://saref.etsi.org/core/isControlledByDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B7f6302e5686445ee19222542035bd5c7 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/OpenCloseFunction> .
+_:B7f6302e5686445ee19222542035bd5c7 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B7f6302e5686445ee19222542035bd5c7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/isPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label> "is property of"@en .
+<https://saref.etsi.org/core/isPropertyOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/FeatureOfInterest> .
+<https://saref.etsi.org/core/isPropertyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/isPropertyOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a property and the feature of interest it belongs to"@en .
+<https://saref.etsi.org/core/isPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/StartStopFunction> <http://www.w3.org/2000/01/rdf-schema#label> "Start stop function"@en .
+<https://saref.etsi.org/core/StartStopFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "An actuating function that allows to start and stop a device"@en .
+<https://saref.etsi.org/core/StartStopFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/ActuatingFunction> .
+<https://saref.etsi.org/core/StartStopFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Function> <http://www.w3.org/2000/01/rdf-schema#label> "Function"@en .
+<https://saref.etsi.org/core/Function> <http://www.w3.org/2000/01/rdf-schema#comment> "The functionality necessary to accomplish the task for which a device is designed. A device can be designed to perform more than one function. Functions can be structured in categories (subclasses) that reflect different points of view, for example, considering the specific application area for which a function can be used (e.g., light, temperature, motion, heat, power, etc.), or the capability that a function can support (e.g., receive, reply, notify, etc.), and so forth. "@en .
+<https://saref.etsi.org/core/Function> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B174b54b43008991f06e528485ea0c864 .
+<https://saref.etsi.org/core/Function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Beb93eacf4a6cddbab532885720a3aba9 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Time> .
+_:Beb93eacf4a6cddbab532885720a3aba9 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasTime> .
+_:Beb93eacf4a6cddbab532885720a3aba9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/isUsedFor> <http://www.w3.org/2000/01/rdf-schema#label> "is used for"@en .
+<https://saref.etsi.org/core/isUsedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship specifying the commodity for which a device is used for"@en .
+<https://saref.etsi.org/core/isUsedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/HVAC> <http://www.w3.org/2000/01/rdf-schema#label> "HVAC"@en .
+<https://saref.etsi.org/core/HVAC> <http://www.w3.org/2000/01/rdf-schema#comment> "Heating, Ventilation and Air Conditioning (HVAC) device that provides indoor environmental comfort. A saref:HVAC is typically used to accomplish saref:Comfort."@en .
+<https://saref.etsi.org/core/HVAC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/HVAC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bac687e54422d2b95007095b9908a92d0 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/Light> .
+_:Bac687e54422d2b95007095b9908a92d0 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/controlsProperty> .
+_:Bac687e54422d2b95007095b9908a92d0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B8a1b7df83c2a9754f3d6444737828770 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B8a1b7df83c2a9754f3d6444737828770 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasModel> .
+_:B8a1b7df83c2a9754f3d6444737828770 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/MeterReading> <http://www.w3.org/2000/01/rdf-schema#label> "Meter reading"@en .
+<https://saref.etsi.org/core/MeterReading> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/MeterReading> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/MeterReading> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:Bfe81597c1815ca3c9208d792642f35b9 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/OnOffFunction> .
+_:Bfe81597c1815ca3c9208d792642f35b9 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:Bfe81597c1815ca3c9208d792642f35b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#comment> "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function."@en .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be98a6b39f432273859fbc2600e5fedab .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B954ece13f11b9970b4fc940ea84fbad1 .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2f3f2a716e421726e875c2d22d5c5be7 .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B073706a2ca7d384167b515bc7c0d67db .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B90cf1c071a39263fe9fb866ce6ebf776 .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B26e16c4f2e188070198beaf68155d648 .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdc5683bc8f1af60c7a32066c34c5e2d1 .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8a1b7df83c2a9754f3d6444737828770 .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B1bf3cfa15dcd56928846f683866a2e91 .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B20d1cfd369d92e36b95288ae944a821f .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#label> "Device"@en .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf663a229259871ce7fb1237811db50ab .
+<https://saref.etsi.org/core/Device> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bceed0124a42086b01a46b3f0a9398794 .
+<https://saref.etsi.org/core/hasState> <http://www.w3.org/2000/01/rdf-schema#label> "has state"@en .
+<https://saref.etsi.org/core/hasState> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/State> .
+<https://saref.etsi.org/core/hasState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/hasState> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying the type of state of a device"@en .
+<https://saref.etsi.org/core/hasState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Be3bffea1a09e0b3229a34e91a4482745 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OnOffState> .
+_:Be3bffea1a09e0b3229a34e91a4482745 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasState> .
+_:Be3bffea1a09e0b3229a34e91a4482745 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Motion> <http://www.w3.org/2000/01/rdf-schema#label> "Motion"@en .
+<https://saref.etsi.org/core/Motion> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value that is measured in a unit of measure for motion"@en .
+<https://saref.etsi.org/core/Motion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Motion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/accomplishes> <http://www.w3.org/2000/01/rdf-schema#label> "accomplishes"@en .
+<https://saref.etsi.org/core/accomplishes> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/accomplishes> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a certain entity (e.g., a device) and the task it accomplishes"@en .
+<https://saref.etsi.org/core/accomplishes> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/core/isAccomplishedBy> .
+<https://saref.etsi.org/core/accomplishes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B67aea3a1a7e62b783209acef7b15f3ad <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/LevelControlFunction> .
+_:B67aea3a1a7e62b783209acef7b15f3ad <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B67aea3a1a7e62b783209acef7b15f3ad <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/2000/01/rdf-schema#label> "Light switch"@en .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/2000/01/rdf-schema#comment> "A switch that performs the saref:OnOffFunction, controls the property saref:Light, and can be found in the state saref:OnOffState. It can offer a switch on service. A saref:LightSwitch is typically used to accomplish saref:Lighting."@en .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B33b1897abc51c1727879604a0191ac12 .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bac687e54422d2b95007095b9908a92d0 .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be3bffea1a09e0b3229a34e91a4482745 .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5d91e339c9933fb8435582a85672323b .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Switch> .
+<https://saref.etsi.org/core/LightSwitch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/StepDownCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Step down command"@en .
+<https://saref.etsi.org/core/StepDownCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/StepDownCommand> <http://www.w3.org/2002/07/owl#disjointWith> <https://saref.etsi.org/core/StepUpCommand> .
+<https://saref.etsi.org/core/StepDownCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8af0cdda5bce82698e05b81a40bf9121 .
+<https://saref.etsi.org/core/StepDownCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdb1b33880e71e73d34b1084605d9ddc3 .
+<https://saref.etsi.org/core/StepDownCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/StepDownCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/actsUpon> <http://www.w3.org/2000/01/rdf-schema#label> "acts upon"@en .
+<https://saref.etsi.org/core/actsUpon> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/State> .
+<https://saref.etsi.org/core/actsUpon> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/actsUpon> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a command and a state"@en .
+<https://saref.etsi.org/core/actsUpon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/SensingFunction> <http://www.w3.org/2000/01/rdf-schema#label> "Sensing function"@en .
+<https://saref.etsi.org/core/SensingFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A function that allows to transmit data from sensors, such as measurement values (e.g., temperature) or sensing data (e.g., occupancy)"@en .
+<https://saref.etsi.org/core/SensingFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3fff6502c3daa9e107bf36435aeec72f .
+<https://saref.etsi.org/core/SensingFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B62b6707fabcb6c38f8231e4719e7a669 .
+<https://saref.etsi.org/core/SensingFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/SensingFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/isCommandOf> <http://www.w3.org/2000/01/rdf-schema#label> "is command of"@en .
+<https://saref.etsi.org/core/isCommandOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/isCommandOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/isCommandOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a command and a function."@en .
+<https://saref.etsi.org/core/isCommandOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+_:Bca262e0a4d381d80e350d2560497bbbc <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Property> .
+_:Bca262e0a4d381d80e350d2560497bbbc <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bca262e0a4d381d80e350d2560497bbbc <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/relatesToProperty> .
+_:Bca262e0a4d381d80e350d2560497bbbc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bdc5683bc8f1af60c7a32066c34c5e2d1 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bdc5683bc8f1af60c7a32066c34c5e2d1 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasManufacturer> .
+_:Bdc5683bc8f1af60c7a32066c34c5e2d1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B8af0cdda5bce82698e05b81a40bf9121 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/LevelControlFunction> .
+_:B8af0cdda5bce82698e05b81a40bf9121 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:B8af0cdda5bce82698e05b81a40bf9121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B9fc1860f410bb55fb0d1ee327199f1b9 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/Temperature> .
+_:B9fc1860f410bb55fb0d1ee327199f1b9 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/measuresProperty> .
+_:B9fc1860f410bb55fb0d1ee327199f1b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasSensingRange> <http://www.w3.org/2000/01/rdf-schema#label> "has sensing range"@en .
+<https://saref.etsi.org/core/hasSensingRange> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/hasSensingRange> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/SensingFunction> .
+<https://saref.etsi.org/core/hasSensingRange> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a sensing function and a measurement identifying the range of a sensor detection"@en .
+<https://saref.etsi.org/core/hasSensingRange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B4ceaed189c443a94386b6ad50617860f <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OpenCloseState> .
+_:B4ceaed189c443a94386b6ad50617860f <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:B4ceaed189c443a94386b6ad50617860f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/Task> <http://www.w3.org/2000/01/rdf-schema#label> "Task"@en .
+<https://saref.etsi.org/core/Task> <http://www.w3.org/2000/01/rdf-schema#comment> "The goal for which a device is designed (from a user perspective). For example, a washing machine is designed for the task of washing. We propose here a list of tasks that are relevant for the purpose of SAREF, but this list can be extended. Tasks can be accomplished by devices (saref:isAccomplishedBy)."@en .
+<https://saref.etsi.org/core/Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Actuator> <http://www.w3.org/2000/01/rdf-schema#label> "Actuator"@en .
+<https://saref.etsi.org/core/Actuator> <http://www.w3.org/2000/01/rdf-schema#comment> "A device responsible for moving or controlling a mechanism or system by performing an actuating function"@en .
+<https://saref.etsi.org/core/Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf5f672a2c642c2631a0a460503a02207 .
+<https://saref.etsi.org/core/Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/Actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/isMeasurementOf> <http://www.w3.org/2000/01/rdf-schema#label> "isMeasurementOf"@en .
+<https://saref.etsi.org/core/isMeasurementOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/FeatureOfInterest> .
+<https://saref.etsi.org/core/isMeasurementOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/isMeasurementOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a measurement and the feature of interest whose quality was measured"@en .
+<https://saref.etsi.org/core/isMeasurementOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/core/hasMeasurement> .
+<https://saref.etsi.org/core/isMeasurementOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bca262e0a4d381d80e350d2560497bbbc .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B841320bef5f5892509ed72a7194e2edc .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8aebc5339ccdb37ddeb19dccd9a714d2 .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B7c4b06a264310457ff2197cd6e88c075 .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bcd0bf2f6e7e06d8768bd57c04a9c2253 .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B32cd7b08cc20fd8817db48e76d44bd5a .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bff514f8a6ef82ac85faf2cb0e49684c7 .
+<https://saref.etsi.org/core/Measurement> <http://www.w3.org/2000/01/rdf-schema#label> "Measurement"@en .
+_:B715750dbde73cb6ee06694e3f0b25c9e <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Profile> .
+_:B715750dbde73cb6ee06694e3f0b25c9e <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/consistsOf> .
+_:B715750dbde73cb6ee06694e3f0b25c9e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bab558fa6e6cb0d4b977df7f0f919423b <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Function> .
+_:Bab558fa6e6cb0d4b977df7f0f919423b <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bab558fa6e6cb0d4b977df7f0f919423b <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:Bab558fa6e6cb0d4b977df7f0f919423b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has property"@en .
+<https://saref.etsi.org/core/hasProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/hasProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/FeatureOfInterest> .
+<https://saref.etsi.org/core/hasProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a feature of interest and a property of that feature"@en .
+<https://saref.etsi.org/core/hasProperty> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/core/isPropertyOf> .
+<https://saref.etsi.org/core/hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/Time> <http://www.w3.org/2000/01/rdf-schema#label> "Time"@en .
+<https://saref.etsi.org/core/Time> <http://www.w3.org/2000/01/rdf-schema#comment> "A class that allows to specify the time concept."@en .
+<https://saref.etsi.org/core/Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B310f1c30ad271008d5ee9da79a7be690 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/EventFunction> .
+_:B310f1c30ad271008d5ee9da79a7be690 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:B310f1c30ad271008d5ee9da79a7be690 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B745924d3dd011e1841a1c339751b3898 <http://www.w3.org/2002/07/owl#allValuesFrom> _:B6e4465d6eb8230e905cd5e1ba831aac1 .
+_:B745924d3dd011e1841a1c339751b3898 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasMeterReadingType> .
+_:B745924d3dd011e1841a1c339751b3898 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasPrice> <http://www.w3.org/2000/01/rdf-schema#label> "has price"@en .
+<https://saref.etsi.org/core/hasPrice> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Price> .
+<https://saref.etsi.org/core/hasPrice> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship indentifying the price associated to an entity"@en .
+<https://saref.etsi.org/core/hasPrice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Be0264221da30f2d4c0aadef021ada0f7 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OnOffState> .
+_:Be0264221da30f2d4c0aadef021ada0f7 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:Be0264221da30f2d4c0aadef021ada0f7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bd884883a7c2d96aee22fe08e7f730c5a <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/OpenCloseState> .
+_:Bd884883a7c2d96aee22fe08e7f730c5a <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:Bd884883a7c2d96aee22fe08e7f730c5a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B174b54b43008991f06e528485ea0c864 <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Command> .
+_:B174b54b43008991f06e528485ea0c864 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B174b54b43008991f06e528485ea0c864 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasCommand> .
+_:B174b54b43008991f06e528485ea0c864 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://saref.etsi.org/core/UnitOfMeasure> <http://www.w3.org/2000/01/rdf-schema#label> "Unit of measure"@en .
+<https://saref.etsi.org/core/UnitOfMeasure> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)."@en .
+<https://saref.etsi.org/core/UnitOfMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bd1d06e6540366e9c5a2bf9f0143b4a94 <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/core/Device> .
+_:Bd1d06e6540366e9c5a2bf9f0143b4a94 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bd1d06e6540366e9c5a2bf9f0143b4a94 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isOfferedBy> .
+_:Bd1d06e6540366e9c5a2bf9f0143b4a94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Feature of interest"@en .
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#comment> "A feature of interest represents any real world entity from which a property is measured."@en .
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdd7469adb43eb3e3fd86906984c09a27 .
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B966c9cdadd6e852d6a996ebdee43fe78 .
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/hasValue> <http://www.w3.org/2000/01/rdf-schema#label> "has value"@en .
+<https://saref.etsi.org/core/hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship defining the value of a certain property, e.g., energy or power. Note that, even if numeric values are expected to enable reasoning, measurement values could use other datatypes."@en .
+<https://saref.etsi.org/core/hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B26e16c4f2e188070198beaf68155d648 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Service> .
+_:B26e16c4f2e188070198beaf68155d648 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/offers> .
+_:B26e16c4f2e188070198beaf68155d648 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has description"@en .
+<https://saref.etsi.org/core/hasDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship providing a description of an entity (e.g., device). The value is expected to be a string or a string with language tag."@en .
+<https://saref.etsi.org/core/hasDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "DEPRECATED: The use of rdfs:comment is recommended instead."@en .
+<https://saref.etsi.org/core/hasDescription> <http://www.w3.org/2002/07/owl#deprecated> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://saref.etsi.org/core/hasDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B3e738bfa59b29f6bc04dc88f26b24253 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Measurement> .
+_:B3e738bfa59b29f6bc04dc88f26b24253 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/relatesToMeasurement> .
+_:B3e738bfa59b29f6bc04dc88f26b24253 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bd4496da4a25c5a552fc2e59570553b1b <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/MultiLevelState> .
+_:Bd4496da4a25c5a552fc2e59570553b1b <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/actsUpon> .
+_:Bd4496da4a25c5a552fc2e59570553b1b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/WellBeing> <http://www.w3.org/2000/01/rdf-schema#label> "WellBeing"@en .
+<https://saref.etsi.org/core/WellBeing> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of task for which a device is designed"@en .
+<https://saref.etsi.org/core/WellBeing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://saref.etsi.org/core/Task> .
+<https://saref.etsi.org/core/WellBeing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://saref.etsi.org/core/Gas> <http://www.w3.org/2000/01/rdf-schema#label> "Gas"@en .
+<https://saref.etsi.org/core/Gas> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of commodity"@en .
+<https://saref.etsi.org/core/Gas> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Commodity> .
+<https://saref.etsi.org/core/Gas> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/isAbout> <http://www.w3.org/2000/01/rdf-schema#label> "isAbout"@en .
+<https://saref.etsi.org/core/isAbout> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship identifying what an entity, such as a profile, is about"@en .
+<https://saref.etsi.org/core/isAbout> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Be72be53733811e041678cac053666961 <http://www.w3.org/2002/07/owl#allValuesFrom> _:Bc48a7af21d0124dded99df75e4a3dae6 .
+_:Be72be53733811e041678cac053666961 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isAbout> .
+_:Be72be53733811e041678cac053666961 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "has measurement"@en .
+<https://saref.etsi.org/core/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Measurement> .
+<https://saref.etsi.org/core/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/FeatureOfInterest> .
+<https://saref.etsi.org/core/hasMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a feature of interest and a measurement about it"@en .
+<https://saref.etsi.org/core/hasMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/core/Occupancy> <http://www.w3.org/2000/01/rdf-schema#label> "Occupancy"@en .
+<https://saref.etsi.org/core/Occupancy> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value (saref:hasValue property) that is measured in a unit of measure for occupancy"@en .
+<https://saref.etsi.org/core/Occupancy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Occupancy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B23ef8e85X2D0b7cX2D471dX2D93e4X2Daf2ea5b92377 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B23ef8e85X2D0b7cX2D471dX2D93e4X2Daf2ea5b92377 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://saref.etsi.org/core/Property> .
+_:B90cf1c071a39263fe9fb866ce6ebf776 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Commodity> .
+_:B90cf1c071a39263fe9fb866ce6ebf776 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isUsedFor> .
+_:B90cf1c071a39263fe9fb866ce6ebf776 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B954ece13f11b9970b4fc940ea84fbad1 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Property> .
+_:B954ece13f11b9970b4fc940ea84fbad1 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/measuresProperty> .
+_:B954ece13f11b9970b4fc940ea84fbad1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B841320bef5f5892509ed72a7194e2edc <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:B841320bef5f5892509ed72a7194e2edc <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasTimestamp> .
+_:B841320bef5f5892509ed72a7194e2edc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/GetMeterDataCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Get meter data command"@en .
+<https://saref.etsi.org/core/GetMeterDataCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of get command"@en .
+<https://saref.etsi.org/core/GetMeterDataCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5eb016d9560f0dab172a25f8ec6df07f .
+<https://saref.etsi.org/core/GetMeterDataCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/GetCommand> .
+<https://saref.etsi.org/core/GetMeterDataCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://saref.etsi.org/core/Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor"@en .
+<https://saref.etsi.org/core/Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction."@en .
+<https://saref.etsi.org/core/Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B702276c8774ccbbd1b399c4479bdd4b9 .
+<https://saref.etsi.org/core/Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Device> .
+<https://saref.etsi.org/core/Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/Light> <http://www.w3.org/2000/01/rdf-schema#label> "Light"@en .
+<https://saref.etsi.org/core/Light> <http://www.w3.org/2000/01/rdf-schema#comment> "A saref:Property related to some measurements that are characterized by a certain value that is measured in a illuminance unit (lux)"@en .
+<https://saref.etsi.org/core/Light> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/Light> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bdd7469adb43eb3e3fd86906984c09a27 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/Measurement> .
+_:Bdd7469adb43eb3e3fd86906984c09a27 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasMeasurement> .
+_:Bdd7469adb43eb3e3fd86906984c09a27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bc275a0fecb90b027f9838d8ad87ecba9 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://saref.etsi.org/core/OnOffFunction> .
+_:Bc275a0fecb90b027f9838d8ad87ecba9 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/isCommandOf> .
+_:Bc275a0fecb90b027f9838d8ad87ecba9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B1fe0611cX2D9b98X2D432fX2Da304X2Dd45389d118af <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B1fe0611cX2D9b98X2D432fX2Da304X2Dd45389d118af <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://saref.etsi.org/core/Property> .
+<https://saref.etsi.org/core/ActuatingFunction> <http://www.w3.org/2000/01/rdf-schema#label> "Actuating function"@en .
+<https://saref.etsi.org/core/ActuatingFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "A function that allows to transmit data to actuators, such as level settings (e.g., temperature) or binary switching (e.g., open/close, on/off)"@en .
+<https://saref.etsi.org/core/ActuatingFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Function> .
+<https://saref.etsi.org/core/ActuatingFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/StepUpCommand> <http://www.w3.org/2000/01/rdf-schema#label> "Step up command"@en .
+<https://saref.etsi.org/core/StepUpCommand> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of command"@en .
+<https://saref.etsi.org/core/StepUpCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9625f4a3992fb8a4b222ff8f7177e81f .
+<https://saref.etsi.org/core/StepUpCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd4496da4a25c5a552fc2e59570553b1b .
+<https://saref.etsi.org/core/StepUpCommand> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Command> .
+<https://saref.etsi.org/core/StepUpCommand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B702276c8774ccbbd1b399c4479bdd4b9 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/core/SensingFunction> .
+_:B702276c8774ccbbd1b399c4479bdd4b9 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/core/hasFunction> .
+_:B702276c8774ccbbd1b399c4479bdd4b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/core/PressureUnit> <http://www.w3.org/2000/01/rdf-schema#label> "Pressure unit"@en .
+<https://saref.etsi.org/core/PressureUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure for pressure"@en .
+<https://saref.etsi.org/core/PressureUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/UnitOfMeasure> .
+<https://saref.etsi.org/core/PressureUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/core/StopState> <http://www.w3.org/2000/01/rdf-schema#label> "Stop state"@en .
+<https://saref.etsi.org/core/StopState> <http://www.w3.org/2000/01/rdf-schema#comment> "The state of a device that is STOPPED"@en .
+<https://saref.etsi.org/core/StopState> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/StartStopState> .
+<https://saref.etsi.org/core/StopState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

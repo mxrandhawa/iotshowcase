@@ -1,0 +1,59 @@
+
+SensorML 2.0 Examples
+Sensor with static location (byLocation)
+
+In order to support a wide variety of needs for providing location, orientation, and dynamic state of a physical component or system, there are several means for specifying "where". These include byDescription, byPoint, byLocation, byState, byTrajectory, and byProcess.
+
+For a static location where orientation is irrelevant, one may use a swe:Vector to provide a 2D or 3D location. The swe:Vector element allows one to specify the location relative to a geospatial reference frame (e.g. SRS 4326) or relative to the spatial reference frame of another physical component (e.g. the platform). Also, the axis order and units for each coordinate is expicitly provided so there should be no confusion as can occur with gml:point.
+
+If the location is relative to another physical component, that components reference frame would be provided as the value for the referenceFrame attribute.
+?
+
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalComponent gml:id="MY_SENSOR"
+xmlns:sml="http://www.opengis.net/sensorml/2.0"
+xmlns:swe="http://www.opengis.net/swe/2.0"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorml/2.0/sensorML.xsd">
+   <!-- ================================================= -->
+   <!--                  System Description               -->
+   <!-- ================================================= -->
+   <gml:description> Static Location - Temperature sensor on my window </gml:description>
+   <!-- ================================================= -->
+   <!--             Observed Property = Output            -->
+   <!-- ================================================= -->
+   <sml:outputs>
+      <sml:OutputList>
+         <sml:output name="temp">
+            <swe:Quantity definition="http://dbpedia.org/resource/Temperature">
+               <swe:label>Air Temperature</swe:label>
+               <swe:uom code="Cel"/>
+            </swe:Quantity>
+         </sml:output>
+      </sml:OutputList>
+   </sml:outputs>
+   <!-- ================================================= -->
+   <!--                  Station Location                 -->
+   <!-- ================================================= -->
+   <sml:position>
+      <swe:Vector definition="http://www.opengis.net/def/property/OGC/0/SensorLocation"
+               referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326">
+         <swe:coordinate name="Lat">
+            <swe:Quantity definition="http://sensorml.com/ont/swe/property/Latitude" axisID="Lat">
+               <swe:uom code="deg"/>
+               <swe:value>47.8</swe:value>
+            </swe:Quantity>
+         </swe:coordinate>
+         <swe:coordinate name="Lon">
+            <swe:Quantity definition="http://sensorml.com/ont/swe/property/Longitude" axisID="Long">
+               <swe:uom code="deg"/>
+               <swe:value>2.3</swe:value>
+            </swe:Quantity>
+         </swe:coordinate>
+      </swe:Vector>
+   </sml:position>
+</sml:PhysicalComponent>
+
+ 

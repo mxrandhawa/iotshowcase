@@ -1,0 +1,70 @@
+ SensorML 2.0 Examples
+Metadata - Identifiers and Classifiers
+
+Identifiers and classifiers in SensorML are primarily used for search and discovery. Identifiers are names and numbers that taken together might uniquely identify the object. These might include, for example, a long and short name, the manufacturer's name, the model number, serial number, or other various IDs (tail ID, tag number, license number, etc.).
+
+A classifier in contrast describes various aspects of the object. These might include, for instance, the type of process, the type of sensor, or its intended applications. Again, identifiers and classifiers should be considered as useful for discovery.
+
+Like most properties in SensorML, identifiers and classifers utilize the concept of "soft-typing". That is, rather than trying to pre-define in schema every possible property that might be used to describe a a particular sensor or might be measured by a sensor, SensorML allows property types to be defined outside of the SensorML schema (typically within an online ontology) and then be used within a SensorML as a value to the definition attribute. The value of the definition attribute must be a resolvable URL that references an online property definition or single entry within an property ontology.
+
+In the case of identifiers and classifiers, the definition attribute is within the Term object and defines the type of identifier or classifier. The Term element also provides for a human-readible label that is useful in the display of the property, as well as the value of the property. For instance, the "Short Name" = "2070 Gamma Detector".
+?
+	
+<!-- ======================================= -->
+<!--               Identifiers               -->
+<!-- ======================================= -->
+<sml:identification>
+    <sml:IdentifierList>
+        <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/LongName">
+                <sml:label>Long Name</sml:label>
+                <sml:value>Health Physics Instruments 2070 Gamma Detector</sml:value>
+            </sml:Term>
+        </sml:identifier>
+        <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/ShortName">
+                <sml:label>Short Name</sml:label>
+                <sml:value>2070 Gamma Detector</sml:value>
+            </sml:Term>
+        </sml:identifier>
+        <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/ModelNumber">
+                <sml:label>Model Number</sml:label>
+                <sml:value>2070</sml:value>
+            </sml:Term>
+        </sml:identifier>
+        <sml:identifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/Manufacturer">
+                <sml:label>Manufacturer</sml:label>
+                <sml:value>Health Physics Instruments</sml:value>
+            </sml:Term>
+        </sml:identifier>
+    </sml:IdentifierList>
+</sml:identification>
+ 
+<!-- ======================================= -->
+<!--               Classifiers               -->
+<!-- ======================================= -->
+<sml:classification>
+    <sml:ClassifierList>
+        <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/IntendedApplication">
+                <sml:label>Intended Application</sml:label>
+                <sml:value>CBRNE</sml:value>
+            </sml:Term>
+        </sml:classifier>
+        <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/IntendedApplication">
+                <sml:label>Intended Application</sml:label>
+                <sml:value>radiation detection</sml:value>
+            </sml:Term>
+        </sml:classifier>
+        <sml:classifier>
+            <sml:Term definition="http://sensorml.com/ont/swe/property/SensorType">
+                <sml:label>Sensor Type</sml:label>
+                <sml:codeSpace xlink:href="urn:x-ceos:def:GCMD:sensors"/>
+                <sml:value>gamma detector</sml:value>
+            </sml:Term>
+        </sml:classifier>
+    </sml:ClassifierList>
+</sml:classification>

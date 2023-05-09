@@ -1,0 +1,2225 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b0",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:OnOffFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:OnOffFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b10",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:measuresProperty",
+    "someValuesFrom" : "saref:Temperature"
+  }, {
+    "@id" : "_:b11",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "saref:Function",
+    "onProperty" : "saref:represents"
+  }, {
+    "@id" : "_:b12",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "saref:Device",
+    "onProperty" : "saref:isOfferedBy"
+  }, {
+    "@id" : "_:b13",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "saref:Commodity", "saref:Property" ]
+    }
+  }, {
+    "@id" : "_:b15",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:StartStopState"
+  }, {
+    "@id" : "_:b16",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "saref:Function",
+    "onProperty" : "saref:hasFunction"
+  }, {
+    "@id" : "_:b17",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "saref:Task",
+    "onProperty" : "saref:accomplishes"
+  }, {
+    "@id" : "_:b18",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:OnOffFunction"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:MeteringFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b20",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Property",
+    "onProperty" : "saref:relatesToProperty"
+  }, {
+    "@id" : "_:b21",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:StartStopFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b22",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:OpenCloseFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b23",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:OpenCloseState"
+  }, {
+    "@id" : "_:b24",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:isOfferedBy",
+    "someValuesFrom" : "saref:LightSwitch"
+  }, {
+    "@id" : "_:b25",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "saref:Commodity", "saref:Property" ]
+    }
+  }, {
+    "@id" : "_:b27",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasState",
+    "someValuesFrom" : "saref:OpenCloseState"
+  }, {
+    "@id" : "_:b28",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Measurement",
+    "onProperty" : "saref:relatesToMeasurement"
+  }, {
+    "@id" : "_:b29",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:FeatureOfInterest",
+    "onProperty" : "saref:isPropertyOf"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Price",
+    "onProperty" : "saref:hasPrice"
+  }, {
+    "@id" : "_:b30",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Device",
+    "onProperty" : "saref:isMeasuredByDevice"
+  }, {
+    "@id" : "_:b31",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Device",
+    "onProperty" : "saref:isControlledByDevice"
+  }, {
+    "@id" : "_:b32",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:OpenCloseFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b33",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:OpenCloseState"
+  }, {
+    "@id" : "_:b34",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Measurement",
+    "onProperty" : "saref:hasMeterReading"
+  }, {
+    "@id" : "_:b35",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:State",
+    "onProperty" : "saref:hasState"
+  }, {
+    "@id" : "_:b36",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:OpenCloseFunction"
+  }, {
+    "@id" : "_:b37",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "saref:hasValue"
+  }, {
+    "@id" : "_:b38",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:StartStopFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b39",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:State",
+    "onProperty" : "saref:actsUpon"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:OnOffState"
+  }, {
+    "@id" : "_:b40",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:ActuatingFunction"
+  }, {
+    "@id" : "_:b41",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Property",
+    "onProperty" : "saref:controlsProperty"
+  }, {
+    "@id" : "_:b42",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Device",
+    "onProperty" : "saref:consistsOf"
+  }, {
+    "@id" : "_:b43",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b25",
+    "onProperty" : "saref:isAbout"
+  }, {
+    "@id" : "_:b44",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Time",
+    "onProperty" : "saref:hasTime"
+  }, {
+    "@id" : "_:b45",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Profile",
+    "onProperty" : "saref:consistsOf"
+  }, {
+    "@id" : "_:b46",
+    "@type" : "owl:Restriction",
+    "onClass" : "saref:UnitOfMeasure",
+    "onProperty" : "saref:isMeasuredIn",
+    "qualifiedCardinality" : "1"
+  }, {
+    "@id" : "_:b47",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasSensingRange",
+    "someValuesFrom" : "saref:Measurement"
+  }, {
+    "@id" : "_:b48",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Property",
+    "onProperty" : "saref:hasProperty"
+  }, {
+    "@id" : "_:b49",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:measuresProperty",
+    "someValuesFrom" : "saref:Smoke"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:SensingFunction"
+  }, {
+    "@id" : "_:b50",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Measurement",
+    "onProperty" : "saref:makesMeasurement"
+  }, {
+    "@id" : "_:b51",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:offers",
+    "someValuesFrom" : "saref:SwitchOnService"
+  }, {
+    "@id" : "_:b52",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:MeteringFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b53",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:LevelControlFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b54",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:UnitOfMeasure",
+    "onProperty" : "saref:isMeasuredIn"
+  }, {
+    "@id" : "_:b55",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:MultiLevelState"
+  }, {
+    "@id" : "_:b56",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "saref:Measurement",
+    "onProperty" : "saref:hasThresholdMeasurement"
+  }, {
+    "@id" : "_:b57",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:SensingFunction"
+  }, {
+    "@id" : "_:b58",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:MeteringFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b59",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:MultiLevelState"
+  }, {
+    "@id" : "_:b6",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:StartStopState"
+  }, {
+    "@id" : "_:b60",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:EventFunction"
+  }, {
+    "@id" : "_:b61",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:FeatureOfInterest",
+    "onProperty" : "saref:isMeasurementOf"
+  }, {
+    "@id" : "_:b62",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:LevelControlFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b63",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "_:b13",
+    "onProperty" : "saref:hasMeterReadingType"
+  }, {
+    "@id" : "_:b64",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:EventFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b65",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "saref:Function",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b66",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Property",
+    "onProperty" : "saref:hasSensorType"
+  }, {
+    "@id" : "_:b68",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:OnOffFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b69",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:OnOffState"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:SensingFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b70",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Profile",
+    "onProperty" : "saref:hasProfile"
+  }, {
+    "@id" : "_:b71",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "saref:Command",
+    "onProperty" : "saref:hasCommand"
+  }, {
+    "@id" : "_:b72",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:controlsProperty",
+    "someValuesFrom" : "saref:Light"
+  }, {
+    "@id" : "_:b73",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "saref:hasModel"
+  }, {
+    "@id" : "_:b74",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Property",
+    "onProperty" : "saref:measuresProperty"
+  }, {
+    "@id" : "_:b75",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Commodity",
+    "onProperty" : "saref:isUsedFor"
+  }, {
+    "@id" : "_:b76",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Service",
+    "onProperty" : "saref:offers"
+  }, {
+    "@id" : "_:b77",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "saref:hasManufacturer"
+  }, {
+    "@id" : "_:b78",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasState",
+    "someValuesFrom" : "saref:OnOffState"
+  }, {
+    "@id" : "_:b79",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:LevelControlFunction",
+    "onProperty" : "saref:isCommandOf"
+  }, {
+    "@id" : "_:b8",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:represents",
+    "someValuesFrom" : "saref:OnOffFunction"
+  }, {
+    "@id" : "_:b80",
+    "@type" : "owl:Restriction",
+    "onClass" : "saref:Property",
+    "onProperty" : "saref:relatesToProperty",
+    "qualifiedCardinality" : "1"
+  }, {
+    "@id" : "_:b81",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:dateTime",
+    "onProperty" : "saref:hasTimestamp"
+  }, {
+    "@id" : "_:b82",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "saref:Measurement",
+    "onProperty" : "saref:hasMeasurement"
+  }, {
+    "@id" : "_:b83",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:actsUpon",
+    "someValuesFrom" : "saref:MultiLevelState"
+  }, {
+    "@id" : "_:b84",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:SensingFunction"
+  }, {
+    "@id" : "_:b9",
+    "@type" : "owl:Restriction",
+    "onProperty" : "saref:hasFunction",
+    "someValuesFrom" : "saref:MeteringFunction"
+  }, {
+    "@id" : "dcterms:creator",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "dcterms:description",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "dcterms:issued",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "dcterms:license",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "dcterms:modified",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "dcterms:publisher",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "dcterms:source",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "dcterms:title",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "vann:preferredNamespacePrefix",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "vann:preferredNamespaceUri",
+    "@type" : "owl:AnnotationProperty"
+  }, {
+    "@id" : "https://saref.etsi.org/core/",
+    "@type" : "owl:Ontology",
+    "creator" : [ "http://maxime-lefrancois.info/me#", "https://w3id.org/people/mpoveda/", "http://www.garcia-castro.com/foaf.rdf#me", "https://www.linkedin.com/in/lauradaniele" ],
+    "description" : {
+      "@language" : "en",
+      "@value" : "The Smart Applications REFerence ontology (SAREF) is intended to enable interoperability between solutions from different providers and among various activity sectors in the Internet of Things (IoT), thus contributing to the development of the global digital market."
+    },
+    "issued" : "2020-02-11",
+    "license" : "https://forge.etsi.org/etsi-software-license",
+    "modified" : "2020-05-29",
+    "publisher" : "https://www.etsi.org/",
+    "source" : "https://saref.etsi.org/sources/saref-core/",
+    "title" : {
+      "@language" : "en",
+      "@value" : "SAREF: the Smart Applications REFerence ontology"
+    },
+    "preferredNamespacePrefix" : "saref",
+    "preferredNamespaceUri" : "https://saref.etsi.org/core/",
+    "comment" : [ "Information about changes compared to version 1.1.1:\n - The classes and properties related to how to represent devices in building spaces (such as the saref:BuildingSpace class,  saref:BuildingObject class and saref:isLocatedIn property) have been removed from SAREF and incorporated  into the SAREF4BLDG extension related to buildings, including the reuse of the W3C? WGS84 geo positioning vocabulary.\n - The saref:DeviceCategory and saref:FunctionCategory classes have been removed. Instead, the hierarchy of device categories has been implemented directly as subclasses of the saref:Device class.\n - The information specific for energy efficiency has been moved to the SAREF4ENER extension. For example, the saref:Profile class has been redefined to accommodate only the properties that are general enough for any type of profile, not only for energy and power. Details on how to specifically model a power profile can be found in the SAREF4ENER extension. \n - The subclasses of the saref:Energy class  have been removed (i.e., Average Energy, Maximum Energy, Minimum Energy, Total Energy, HVAC Energy, Hot Water Energy and Lighting Energy).\n - The saref:Property class has been split into two classes (saref:Property and saref:Measurement), as it is done in the SAREF4ENVI extension, in order to properly accommodate the distinction between the concept of property (an observable quality of something) and the concept of measurement (a concrete value observed for a property).\n - Too restrictive cardinality restrictions have been revised, sometimes making them optional rather than mandatory (better to make properties mandatory in the extensions that specialize SAREF for a specific purpose, rather than restricting SAREF, whose purpose is more general). For example, definitions of units of measurement using an enumeration (owl:oneOf) were too restrictive because they did not allow using other units than those enumerated. Therefore, the individuals of each class are still there, but the owl:oneOf enumeration has been removed.\n - The saref:UnitOfMeasure subclasses use individuals from the OM ontology for unit of measures, but this is not the only solution. It has been clarified in the comments that the OM ontology is an example, but other ontologies can be used.\n - The global restrictions (rdfs:domain and rdfs:range) in object properties have been completely removed not to hinder interoperability. Object properties are now only restricted locally in the classes. \n - The subclasses of saref:Task have been transormed in individuals.\n - The saref:hasTask property has been removed from the saref:Profile class to resolve an ambiguity with the saref:Task class.", "Information about changes compared to version 2.1.1: \n - Added the saref:FeatureOfInterest class and the properties used to relate it to saref:Measurement (saref:hasMeasurement and saref:isMeasurementOf) and to saref:Property (saref:hasProperty and saref:isPropertyOf).\n - Added the saref:measurementMadeBy property as inverse of saref:makesMeasurement.\n - The saref:relatesToProperty and saref:relatesToMeasurement properties are now inverse of each other.\n - The range of saref:hasValue, which was defined as xsd:float, has been removed to support other datatypes for measurements.\n - The range of datatype properties, which was defined as xsd:string, has been removed in order to support strings with language tags (rdf:langString). This affects saref:hasDescription, saref:hasManufacturer, saref:hasModel and saref:hasName, which now have implicitly a range of rdfs:Literal.\n - The saref:hasName property has been removed and the use of rdfs:label is recommended. \n - The saref:hasDescription property has been deprecated and the use of rdfs:comment is recommended. \n - Too restrictive restrictions have been removed and in some cases the ontology documentation has been updated to reflect this: a saref:Command having at most one saref:hasDescription; a saref:Task being accomplished by at least one saref:Device; a saref:Device having a typical consumption of only energy or power; a saref:Commodity being measured in units of measure; restrictions on the values of saref:accomplishes that only covered specific use cases; universal restrictions on the saref:actsUpon property have been changed to existential ones; restrictions on the commands that a saref:Function may have, since there could be others not included in the defined enumerations; restrictive documentation of saref:EventFunction and saref:SmokeSensor.\n - Bugs have been fixed: some devices (saref:DoorSwitch, saref:EnergyMeter, saref:LigthSwitch, saref:SmokeSensor, and saref:TemperatureSensor) were defined as subclass of a device and at the same time as consisting of such device; a saref:LightSwitch controls light and does not measure light, since it is an actuator; incorrect documentation of saref:OnState and saref:OffState.\n - The saref:BuildingRelated, saref:EnergyRelated and saref:FunctionRelated classes have been removed, since the different extensions already classify the device types.\n - The instances of the subclasses of saref:Command have been removed, since they represent examples.\n - The instances of saref:UnitOfMeasure have been moved to examples.\n - The classes related to the SAREF4ENER extension have been removed: saref:Generator, saref:Storage, saref:Load and saref:EnergyMeter.\n - Some instances of saref:Device have been moved to examples: saref:WashingMachine, saref:LightingDevice, saref:MicroRenewable, saref:Multimedia, and saref:Network.\n - Added domain and range axioms wherever the definition of a property unambiguously identifies the domain or the range of the property.\n - The OWL Time ontology is not imported anymore.\n - The documentation of some ontology terms has been updated for clarification.\n - Language tags have been added to all labels and comments.\n" ],
+    "seeAlso" : "https://www.etsi.org/deliver/etsi_ts/103200_103299/103264/03.01.01_60/ts_103264v030101p.pdf",
+    "versionIRI" : "saref:v3.1.1/",
+    "versionInfo" : "v3.1.1"
+  }, {
+    "@id" : "saref:ActuatingFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A function that allows to transmit data to actuators, such as level settings (e.g., temperature) or binary switching (e.g., open/close, on/off)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Actuating function"
+    },
+    "subClassOf" : "saref:Function"
+  }, {
+    "@id" : "saref:Actuator",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A device responsible for moving or controlling a mechanism or system by performing an actuating function"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Actuator"
+    },
+    "subClassOf" : [ "_:b40", "saref:Device" ]
+  }, {
+    "@id" : "saref:Appliance",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An electrical/mechanical machine that accomplish some household functions, such as cleaning or cooking"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Appliance"
+    },
+    "subClassOf" : "saref:Device"
+  }, {
+    "@id" : "saref:Cleaning",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Cleaning"
+    }
+  }, {
+    "@id" : "saref:CloseCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Close command"
+    },
+    "subClassOf" : [ "_:b32", "_:b33", "saref:Command" ],
+    "disjointWith" : "saref:OpenCommand"
+  }, {
+    "@id" : "saref:CloseState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The state of a device that is CLOSE"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Close state"
+    },
+    "subClassOf" : "saref:OpenCloseState"
+  }, {
+    "@id" : "saref:Coal",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of commodity"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Coal"
+    },
+    "subClassOf" : "saref:Commodity"
+  }, {
+    "@id" : "saref:Comfort",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Comfort"
+    }
+  }, {
+    "@id" : "saref:Command",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A directive that a device must support to perform a certain function. A command may act upon a state, but does not necessarily act upon a state. For example, the ON command acts upon the ON/OFF state, but the GET command does not act upon any state, it simply gives a directive to retrieve a certain value. We propose here a list of commands that are relevant for the purpose of SAREF, but this list can be extended."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Command"
+    },
+    "subClassOf" : [ "_:b65", "_:b39" ]
+  }, {
+    "@id" : "saref:Commodity",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A marketable item for which there is demand, but which is supplied without qualitative differentiation across a market. SAREF refers to energy commodities such as electricity, gas, coal and oil. "
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Commodity"
+    }
+  }, {
+    "@id" : "saref:Currency",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The class of units of measure for price"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Currency"
+    },
+    "subClassOf" : "saref:UnitOfMeasure"
+  }, {
+    "@id" : "saref:Device",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Device"
+    },
+    "subClassOf" : [ "_:b35", "_:b74", "_:b41", "_:b17", "_:b75", "_:b76", "_:b77", "_:b73", "_:b70", "_:b42", "_:b50", "_:b16" ]
+  }, {
+    "@id" : "saref:DoorSwitch",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A switch that performs the saref:OpenCloseFunction, is used for controlling a door, and can be found in the state saref:OpenCloseState. A saref:DoorSwitch is typically used to accomplish saref:Safety."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Door switch"
+    },
+    "subClassOf" : [ "_:b27", "_:b36", "saref:Switch" ]
+  }, {
+    "@id" : "saref:Drying",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Drying"
+    }
+  }, {
+    "@id" : "saref:Electricity",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of commodity"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Electricity"
+    },
+    "subClassOf" : "saref:Commodity"
+  }, {
+    "@id" : "saref:Energy",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value measured in an energy unit (such as Kilowatt_Hour or Watt_hour). Furter specializations of the saref:Energy class can be found in the SAREF4ENER extension, where classes such as EnergyMax, EnergyMin and EnergyExpected are defined. "
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Energy"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:EnergyEfficiency",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "EnergyEfficiency"
+    }
+  }, {
+    "@id" : "saref:EnergyUnit",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The unit of measure for energy"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Energy unit"
+    },
+    "subClassOf" : "saref:UnitOfMeasure"
+  }, {
+    "@id" : "saref:Entertainment",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Entertainment"
+    }
+  }, {
+    "@id" : "saref:EventFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A function that allows to notify about some relevant activity; e.g., that a certain threshold value has been exceeded or that some object has moved."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Event function"
+    },
+    "subClassOf" : [ "_:b56", "saref:Function" ]
+  }, {
+    "@id" : "saref:FeatureOfInterest",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A feature of interest represents any real world entity from which a property is measured."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Feature of interest"
+    },
+    "subClassOf" : [ "_:b82", "_:b48" ]
+  }, {
+    "@id" : "saref:Function",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The functionality necessary to accomplish the task for which a device is designed. A device can be designed to perform more than one function. Functions can be structured in categories (subclasses) that reflect different points of view, for example, considering the specific application area for which a function can be used (e.g., light, temperature, motion, heat, power, etc.), or the capability that a function can support (e.g., receive, reply, notify, etc.), and so forth. "
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Function"
+    },
+    "subClassOf" : "_:b71"
+  }, {
+    "@id" : "saref:Gas",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of commodity"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Gas"
+    },
+    "subClassOf" : "saref:Commodity"
+  }, {
+    "@id" : "saref:GetCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Get command"
+    },
+    "subClassOf" : "saref:Command"
+  }, {
+    "@id" : "saref:GetCurrentMeterValueCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of get command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Get current meter value command"
+    },
+    "subClassOf" : [ "_:b2", "saref:GetCommand" ]
+  }, {
+    "@id" : "saref:GetMeterDataCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of get command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Get meter data command"
+    },
+    "subClassOf" : [ "_:b52", "saref:GetCommand" ]
+  }, {
+    "@id" : "saref:GetMeterHistoryCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of get command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Get meter history command"
+    },
+    "subClassOf" : [ "_:b58", "saref:GetCommand" ]
+  }, {
+    "@id" : "saref:GetSensingDataCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of get command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Get sensing data command"
+    },
+    "subClassOf" : [ "_:b7", "saref:GetCommand" ]
+  }, {
+    "@id" : "saref:HVAC",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Heating, Ventilation and Air Conditioning (HVAC) device that provides indoor environmental comfort. A saref:HVAC is typically used to accomplish saref:Comfort."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "HVAC"
+    },
+    "subClassOf" : "saref:Device"
+  }, {
+    "@id" : "saref:Humidity",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Humidity"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:IlluminanceUnit",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The unit of measure for light"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Illuminance unit"
+    },
+    "subClassOf" : "saref:UnitOfMeasure"
+  }, {
+    "@id" : "saref:LevelControlFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An actuating function that allows to do level adjustments of a property in a certain range (e.g., 0%-100%), such as dimming a light in a room or setting the speed of an electric motor. "
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Level control function"
+    },
+    "subClassOf" : "saref:ActuatingFunction"
+  }, {
+    "@id" : "saref:Light",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value that is measured in a illuminance unit (lux)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Light"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:LightSwitch",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A switch that performs the saref:OnOffFunction, controls the property saref:Light, and can be found in the state saref:OnOffState. It can offer a switch on service. A saref:LightSwitch is typically used to accomplish saref:Lighting."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Light switch"
+    },
+    "subClassOf" : [ "_:b51", "_:b72", "_:b78", "_:b18", "saref:Switch" ]
+  }, {
+    "@id" : "saref:Lighting",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Lighting"
+    }
+  }, {
+    "@id" : "saref:Measurement",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Measurement"
+    },
+    "subClassOf" : [ "_:b80", "_:b81", "_:b20", "_:b54", "_:b46", "_:b61", "_:b37" ]
+  }, {
+    "@id" : "saref:Meter",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A device built to accurately detect and display a quantity in a form readable by a human being. Further, a device of category saref:Meter that performs a saref:MeteringFunction."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Meter"
+    },
+    "subClassOf" : [ "_:b9", "saref:Device" ]
+  }, {
+    "@id" : "saref:MeterReading",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Meter reading"
+    }
+  }, {
+    "@id" : "saref:MeteringFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A function that allows to get data from a meter, such as current meter reading or instantaneous demand"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Metering function"
+    },
+    "subClassOf" : [ "_:b63", "_:b34", "saref:Function" ]
+  }, {
+    "@id" : "saref:Motion",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value that is measured in a unit of measure for motion"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Motion"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:MultiLevelState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of state"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Multi level state"
+    },
+    "subClassOf" : "saref:State"
+  }, {
+    "@id" : "saref:NotifyCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Notify command"
+    },
+    "subClassOf" : [ "_:b64", "saref:Command" ]
+  }, {
+    "@id" : "saref:Occupancy",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value (saref:hasValue property) that is measured in a unit of measure for occupancy"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Occupancy"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:OffCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Off command"
+    },
+    "subClassOf" : [ "_:b68", "_:b69", "saref:Command" ],
+    "disjointWith" : "saref:OnCommand"
+  }, {
+    "@id" : "saref:OffState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The state of a device that is Off"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Off state"
+    },
+    "subClassOf" : "saref:OnOffState"
+  }, {
+    "@id" : "saref:OnCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "On command"
+    },
+    "subClassOf" : [ "_:b0", "_:b4", "saref:Command" ]
+  }, {
+    "@id" : "saref:OnOffFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An actuating function that allows to switch on and off an actuator"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "On off function"
+    },
+    "subClassOf" : "saref:ActuatingFunction"
+  }, {
+    "@id" : "saref:OnOffState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of state"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "On off state"
+    },
+    "subClassOf" : "saref:State"
+  }, {
+    "@id" : "saref:OnState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The state of a device that is On"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "On state"
+    },
+    "subClassOf" : "saref:OnOffState"
+  }, {
+    "@id" : "saref:OpenCloseFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An actuating function that allows to open and close a device"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Open close function"
+    },
+    "subClassOf" : "saref:ActuatingFunction"
+  }, {
+    "@id" : "saref:OpenCloseState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of state"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Open close state"
+    },
+    "subClassOf" : "saref:State"
+  }, {
+    "@id" : "saref:OpenCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Open command"
+    },
+    "subClassOf" : [ "_:b22", "_:b23", "saref:Command" ]
+  }, {
+    "@id" : "saref:OpenState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The state of a device that is OPEN "
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Open state"
+    },
+    "subClassOf" : "saref:OpenCloseState"
+  }, {
+    "@id" : "saref:PauseCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Pause command"
+    },
+    "subClassOf" : "saref:Command"
+  }, {
+    "@id" : "saref:Power",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value that is measured in a power unit (such as watt or kilowatt).  Further specializations of the saref:Power class can be found in the SAREF4ENER extension, where classes such as PowerMax, PowerMin and PowerExpected are defined."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Power"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:PowerUnit",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The unit of measure for power"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Power unit"
+    },
+    "subClassOf" : "saref:UnitOfMeasure"
+  }, {
+    "@id" : "saref:Pressure",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value that is measured in a pressure unit (bar or pascal)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Pressure"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:PressureUnit",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The unit of measure for pressure"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Pressure unit"
+    },
+    "subClassOf" : "saref:UnitOfMeasure"
+  }, {
+    "@id" : "saref:Price",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property crelated to some measurements that are characterized by a certain value that is measured using saref:Currency"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Price"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:Profile",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A specification associated to a device to collect information about a certain Property (e.g., Energy) for optimizing its usage in the home, office or building in which the device is located. This specification is about a certain Property (saref:isAbout), can be calculated over a time span (saref:hasTime) and can be associated to some costs (saref:hasPrice). An example is the Power Profile defined in the SAREF4ENER extension that can be associated to a device for optimizing the Energy efficiency in the home, office or building in which the device is located."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Profile"
+    },
+    "subClassOf" : [ "_:b43", "_:b44", "_:b3", "_:b45" ]
+  }, {
+    "@id" : "saref:Property",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Property"
+    },
+    "subClassOf" : [ "_:b28", "_:b29", "_:b30", "_:b31" ]
+  }, {
+    "@id" : "saref:Safety",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Safety"
+    }
+  }, {
+    "@id" : "saref:SensingFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A function that allows to transmit data from sensors, such as measurement values (e.g., temperature) or sensing data (e.g., occupancy)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Sensing function"
+    },
+    "subClassOf" : [ "_:b66", "_:b47", "saref:Function" ]
+  }, {
+    "@id" : "saref:Sensor",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Sensor"
+    },
+    "subClassOf" : [ "_:b84", "saref:Device" ]
+  }, {
+    "@id" : "saref:Service",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A service is a representation of a function to a network that makes the function discoverable, registerable, remotely controllable by other devices in the network. A service can represent one or more functions. A Service is offered by a device that wants (a certain set of) its function(s) to be discoverable, registerable, remotely controllable by other devices in the network. A Service must specify the device that is offering the service and the function(s) to be represented."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Service"
+    },
+    "subClassOf" : [ "_:b11", "_:b12" ]
+  }, {
+    "@id" : "saref:SetAbsoluteLevelCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of set level command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Set absolute level command"
+    },
+    "subClassOf" : "saref:SetLevelCommand"
+  }, {
+    "@id" : "saref:SetLevelCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Set level command"
+    },
+    "subClassOf" : [ "_:b62", "_:b55", "saref:Command" ]
+  }, {
+    "@id" : "saref:SetRelativeLevelCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of set level command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Set relative level command"
+    },
+    "subClassOf" : "saref:SetLevelCommand"
+  }, {
+    "@id" : "saref:Smoke",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value that is measured in a unit of measure for smoke"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Smoke"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:SmokeSensor",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A sensor that performs the saref:SensingFunction and the saref:EventFunction, and is used for the purpose of sensing a property of type saref:Smoke. A saref:SmokeSensor is typically used to saref:accomplish saref:Safety."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Smoke sensor"
+    },
+    "subClassOf" : [ "_:b49", "_:b57", "_:b60", "saref:Sensor" ]
+  }, {
+    "@id" : "saref:StartCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Start command"
+    },
+    "subClassOf" : [ "_:b21", "_:b6", "saref:Command" ],
+    "disjointWith" : "saref:StopCommand"
+  }, {
+    "@id" : "saref:StartState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The state of a device that is STARTED"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Start state"
+    },
+    "subClassOf" : "saref:StartStopState"
+  }, {
+    "@id" : "saref:StartStopFunction",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An actuating function that allows to start and stop a device"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Start stop function"
+    },
+    "subClassOf" : "saref:ActuatingFunction"
+  }, {
+    "@id" : "saref:StartStopState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of state"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Start stop state"
+    },
+    "subClassOf" : "saref:State"
+  }, {
+    "@id" : "saref:State",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "State"
+    }
+  }, {
+    "@id" : "saref:StepDownCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Step down command"
+    },
+    "subClassOf" : [ "_:b79", "_:b59", "saref:Command" ],
+    "disjointWith" : "saref:StepUpCommand"
+  }, {
+    "@id" : "saref:StepUpCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Step up command"
+    },
+    "subClassOf" : [ "_:b53", "_:b83", "saref:Command" ]
+  }, {
+    "@id" : "saref:StopCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Stop command"
+    },
+    "subClassOf" : [ "_:b38", "_:b15", "saref:Command" ]
+  }, {
+    "@id" : "saref:StopState",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The state of a device that is STOPPED"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Stop state"
+    },
+    "subClassOf" : "saref:StartStopState"
+  }, {
+    "@id" : "saref:Switch",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A device of category saref:Actuator that performs an actuating function of type saref:OnOffFunction or saref:OpenCloseFunction"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Switch"
+    },
+    "subClassOf" : "saref:Actuator"
+  }, {
+    "@id" : "saref:SwitchOnService",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of service that represents an on/off function to the network"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Switch on service"
+    },
+    "subClassOf" : [ "_:b8", "_:b24", "saref:Service" ]
+  }, {
+    "@id" : "saref:Task",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The goal for which a device is designed (from a user perspective). For example, a washing machine is designed for the task of washing. We propose here a list of tasks that are relevant for the purpose of SAREF, but this list can be extended. Tasks can be accomplished by devices (saref:isAccomplishedBy)."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Task"
+    }
+  }, {
+    "@id" : "saref:Temperature",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Temperature"
+    },
+    "subClassOf" : "saref:Property"
+  }, {
+    "@id" : "saref:TemperatureSensor",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A sensor that is used for the purpose of sensing a property of type saref:Temperature. A saref:TemperatureSensor is typically used to saref:accomplish saref:Comfort."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Temperature sensor"
+    },
+    "subClassOf" : [ "_:b10", "_:b5", "saref:Sensor" ]
+  }, {
+    "@id" : "saref:TemperatureUnit",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The unit of measure for temperature"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Temperature unit"
+    },
+    "subClassOf" : "saref:UnitOfMeasure"
+  }, {
+    "@id" : "saref:Time",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A class that allows to specify the time concept."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Time"
+    }
+  }, {
+    "@id" : "saref:ToggleCommand",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of command"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Toggle command"
+    },
+    "subClassOf" : [ "_:b1", "saref:Command" ]
+  }, {
+    "@id" : "saref:UnitOfMeasure",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Unit of measure"
+    }
+  }, {
+    "@id" : "saref:Washing",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Washing"
+    }
+  }, {
+    "@id" : "saref:Water",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of commodity"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Water"
+    },
+    "subClassOf" : "saref:Commodity"
+  }, {
+    "@id" : "saref:WellBeing",
+    "@type" : "owl:NamedIndividual",
+    "rdf:type" : {
+      "@id" : "saref:Task"
+    },
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A type of task for which a device is designed"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "WellBeing"
+    }
+  }, {
+    "@id" : "saref:accomplishes",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a certain entity (e.g., a device) and the task it accomplishes"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "accomplishes"
+    },
+    "range" : "saref:Task",
+    "inverseOf" : "saref:isAccomplishedBy"
+  }, {
+    "@id" : "saref:actsUpon",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a command and a state"
+    },
+    "domain" : "saref:Command",
+    "label" : {
+      "@language" : "en",
+      "@value" : "acts upon"
+    },
+    "range" : "saref:State"
+  }, {
+    "@id" : "saref:consistsOf",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship indicating a composite entity that consists of other entities (e.g., a temperature/humidity sensor that consists of a temperature sensor and a humidity sensor)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "consists of"
+    }
+  }, {
+    "@id" : "saref:controlsProperty",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship specifying the property that can be controlled by a certain device"
+    },
+    "domain" : "saref:Device",
+    "label" : {
+      "@language" : "en",
+      "@value" : "controls property"
+    },
+    "range" : "saref:Property"
+  }, {
+    "@id" : "saref:hasCommand",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a function and a command"
+    },
+    "domain" : "saref:Function",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has command"
+    },
+    "range" : "saref:Command",
+    "inverseOf" : "saref:isCommandOf"
+  }, {
+    "@id" : "saref:hasDescription",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "en",
+      "@value" : "A relationship providing a description of an entity (e.g., device). The value is expected to be a string or a string with language tag."
+    }, {
+      "@language" : "en",
+      "@value" : "DEPRECATED: The use of rdfs:comment is recommended instead."
+    } ],
+    "label" : {
+      "@language" : "en",
+      "@value" : "has description"
+    },
+    "owl:deprecated" : true
+  }, {
+    "@id" : "saref:hasFunction",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the function of a device"
+    },
+    "domain" : "saref:Device",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has function"
+    },
+    "range" : "saref:Function"
+  }, {
+    "@id" : "saref:hasManufacturer",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the manufacturer of an entity (e.g., device). The value is expected to be a string or a string with language tag."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has manufacturer"
+    }
+  }, {
+    "@id" : "saref:hasMeasurement",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a feature of interest and a measurement about it"
+    },
+    "domain" : "saref:FeatureOfInterest",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has measurement"
+    },
+    "range" : "saref:Measurement"
+  }, {
+    "@id" : "saref:hasMeterReading",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a metering function and the measurement of the reading"
+    },
+    "domain" : "saref:MeteringFunction",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has meter reading"
+    },
+    "range" : "saref:Measurement"
+  }, {
+    "@id" : "saref:hasMeterReadingType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the reading type of a metering function (e.g., Water, Gas, Pressure , Energy , Power, etc.)"
+    },
+    "domain" : "saref:MeteringFunction",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has meter reading type"
+    },
+    "range" : "saref:Property"
+  }, {
+    "@id" : "saref:hasModel",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the model of an entity (e.g., device). The value is expected to be a string or a string with language tag."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has model"
+    }
+  }, {
+    "@id" : "saref:hasPrice",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship indentifying the price associated to an entity"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has price"
+    },
+    "range" : "saref:Price"
+  }, {
+    "@id" : "saref:hasProfile",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship associating a profile to a certain device"
+    },
+    "domain" : "saref:Device",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has profile"
+    },
+    "range" : "saref:Profile"
+  }, {
+    "@id" : "saref:hasProperty",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a feature of interest and a property of that feature"
+    },
+    "domain" : "saref:FeatureOfInterest",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has property"
+    },
+    "range" : "saref:Property",
+    "inverseOf" : "saref:isPropertyOf"
+  }, {
+    "@id" : "saref:hasSensingRange",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a sensing function and a measurement identifying the range of a sensor detection"
+    },
+    "domain" : "saref:SensingFunction",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has sensing range"
+    },
+    "range" : "saref:Measurement"
+  }, {
+    "@id" : "saref:hasSensorType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the sensing type of a sensor detection (i.e., Temperature, Occupancy, Humidity, Motion , Smoke, Pressure, etc.) "
+    },
+    "domain" : "saref:SensingFunction",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has sensor type"
+    },
+    "range" : "saref:Property"
+  }, {
+    "@id" : "saref:hasState",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the type of state of a device"
+    },
+    "domain" : "saref:Device",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has state"
+    },
+    "range" : "saref:State"
+  }, {
+    "@id" : "saref:hasThresholdMeasurement",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship associated with an event function to notify that a certain threshold measurement has been exceeded"
+    },
+    "domain" : "saref:EventFunction",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has threshold measurement"
+    },
+    "range" : "saref:Measurement"
+  }, {
+    "@id" : "saref:hasTime",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship to associate time information to an entity"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has time"
+    },
+    "range" : "saref:Time"
+  }, {
+    "@id" : "saref:hasTimestamp",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship stating the timestamp of an entity (e.g. a measurement)."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has timestamp"
+    }
+  }, {
+    "@id" : "saref:hasTypicalConsumption",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the typical (energy or power) consumption of a device"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has typical consumption"
+    }
+  }, {
+    "@id" : "saref:hasValue",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship defining the value of a certain property, e.g., energy or power. Note that, even if numeric values are expected to enable reasoning, measurement values could use other datatypes."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "has value"
+    }
+  }, {
+    "@id" : "saref:isAbout",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying what an entity, such as a profile, is about"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "isAbout"
+    }
+  }, {
+    "@id" : "saref:isAccomplishedBy",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying an entity (e.g., a device) that can accomplish a task."
+    },
+    "domain" : "saref:Task",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is accomplished by"
+    }
+  }, {
+    "@id" : "saref:isCommandOf",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a command and a function."
+    },
+    "domain" : "saref:Command",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is command of"
+    },
+    "range" : "saref:Function"
+  }, {
+    "@id" : "saref:isControlledByDevice",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship specifying the devices that can control a certain property"
+    },
+    "domain" : "saref:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is controlled by device"
+    },
+    "range" : "saref:Device"
+  }, {
+    "@id" : "saref:isMeasuredByDevice",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship specifying the devices that can measure a certain property"
+    },
+    "domain" : "saref:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is measured by device"
+    },
+    "range" : "saref:Device"
+  }, {
+    "@id" : "saref:isMeasuredIn",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship identifying the unit of measure used for a certain entity."
+    },
+    "domain" : "saref:Measurement",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is measured in"
+    },
+    "range" : "saref:UnitOfMeasure"
+  }, {
+    "@id" : "saref:isMeasurementOf",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a measurement and the feature of interest whose quality was measured"
+    },
+    "domain" : "saref:Measurement",
+    "label" : {
+      "@language" : "en",
+      "@value" : "isMeasurementOf"
+    },
+    "range" : "saref:FeatureOfInterest",
+    "inverseOf" : "saref:hasMeasurement"
+  }, {
+    "@id" : "saref:isOfferedBy",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a service and a device that offers the service"
+    },
+    "domain" : "saref:Service",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is offered by"
+    },
+    "range" : "saref:Device",
+    "inverseOf" : "saref:offers"
+  }, {
+    "@id" : "saref:isPropertyOf",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a property and the feature of interest it belongs to"
+    },
+    "domain" : "saref:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is property of"
+    },
+    "range" : "saref:FeatureOfInterest"
+  }, {
+    "@id" : "saref:isUsedFor",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship specifying the commodity for which a device is used for"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "is used for"
+    }
+  }, {
+    "@id" : "saref:makesMeasurement",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relation between a device and the measurements it makes. Such measurement will link together the value of the measurement, its unit of measure and the property to which it relates."
+    },
+    "domain" : "saref:Device",
+    "label" : {
+      "@language" : "en",
+      "@value" : "makes measurement"
+    },
+    "range" : "saref:Measurement",
+    "inverseOf" : "saref:measurementMadeBy"
+  }, {
+    "@id" : "saref:measurementMadeBy",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relation between a measurement and the device that made it."
+    },
+    "domain" : "saref:Measurement",
+    "label" : {
+      "@language" : "en",
+      "@value" : "measurement made by"
+    },
+    "range" : "saref:Device"
+  }, {
+    "@id" : "saref:measuresProperty",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship specifying the property that can be measured by a certain device"
+    },
+    "domain" : "saref:Device",
+    "label" : {
+      "@language" : "en",
+      "@value" : "measures property"
+    },
+    "range" : "saref:Property"
+  }, {
+    "@id" : "saref:offers",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a device and a service"
+    },
+    "domain" : "saref:Device",
+    "label" : {
+      "@language" : "en",
+      "@value" : "offers"
+    },
+    "range" : "saref:Service"
+  }, {
+    "@id" : "saref:relatesToMeasurement",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a property and the measurements it relates to"
+    },
+    "domain" : "saref:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "relates to measurement"
+    },
+    "range" : "saref:Measurement"
+  }, {
+    "@id" : "saref:relatesToProperty",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a measurement and the property it relates to"
+    },
+    "domain" : "saref:Measurement",
+    "label" : {
+      "@language" : "en",
+      "@value" : "relates to property"
+    },
+    "range" : "saref:Property",
+    "inverseOf" : "saref:relatesToMeasurement"
+  }, {
+    "@id" : "saref:represents",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship between a service and a function."
+    },
+    "domain" : "saref:Service",
+    "label" : {
+      "@language" : "en",
+      "@value" : "represents"
+    },
+    "range" : "saref:Function"
+  } ],
+  "@context" : {
+    "allValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#allValuesFrom",
+      "@type" : "@id"
+    },
+    "onProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
+      "@type" : "@id"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/terms/source",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "versionIRI" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
+      "@type" : "@id"
+    },
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+      "@type" : "@id"
+    },
+    "someValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom",
+      "@type" : "@id"
+    },
+    "unionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+      "@type" : "@id"
+    },
+    "onClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onClass",
+      "@type" : "@id"
+    },
+    "minQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "@type" : "@id"
+    },
+    "inverseOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
+      "@type" : "@id"
+    },
+    "disjointWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
+      "@type" : "@id"
+    },
+    "cardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#cardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "qualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#qualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "maxCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "deprecated" : {
+      "@id" : "http://www.w3.org/2002/07/owl#deprecated",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "@vocab" : "https://saref.etsi.org/core/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xml" : "http://www.w3.org/XML/1998/namespace",
+    "saref" : "https://saref.etsi.org/core/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "vann" : "http://purl.org/vocab/vann/",
+    "foaf" : "http://xmlns.com/foaf/0.1/"
+  }
+}
