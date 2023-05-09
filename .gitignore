@@ -11,8 +11,6 @@ res/data/output/all_simi_barcharts/**
 *temp*.*
 tmp*.*
 *test*.ttl
-diim_console.txt
-diim_console1.txt
 showcase/res/data/IoT4Win_demo/output/**
 # too large to commit
 showcase/res/data/IoT4Win_demo/input/ontos/GO/go.owl
